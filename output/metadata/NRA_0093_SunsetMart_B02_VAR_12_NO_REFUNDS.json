@@ -1,0 +1,48 @@
+{
+  "name": "NO REFUNDS ARCHIVE #0093",
+  "description": "A layered archival receipt NFT from NO REFUNDS ARCHIVE. Series: Sunset Mart. Composed from base template + stamp + handwritten + props + damage + overlay layers.",
+  "image": "NRA_0093_SunsetMart_B02_VAR_12_NO_REFUNDS.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Sunset Mart"
+    },
+    {
+      "trait_type": "Base Template",
+      "value": "B02_VAR_12"
+    },
+    {
+      "trait_type": "Stamp",
+      "value": "NO REFUNDS"
+    },
+    {
+      "trait_type": "Handwritten Note",
+      "value": "FINAL SALE"
+    },
+    {
+      "trait_type": "Prop 1",
+      "value": "PROP_COIN_03"
+    },
+    {
+      "trait_type": "Prop 2",
+      "value": "PROP_COIN_01"
+    },
+    {
+      "trait_type": "Paper Damage",
+      "value": "DMG_EDGE_WEAR_02"
+    },
+    {
+      "trait_type": "Overlay",
+      "value": "OVERLAY_DUST_01"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    }
+  ],
+  "compilation": {
+    "series": "Sunset Mart",
+    "base_template": "B02_VAR_12",
+    "rarity": "Common"
+  }
+}

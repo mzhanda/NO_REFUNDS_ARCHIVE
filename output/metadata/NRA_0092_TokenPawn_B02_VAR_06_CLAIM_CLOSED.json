@@ -1,0 +1,48 @@
+{
+  "name": "NO REFUNDS ARCHIVE #0092",
+  "description": "A layered archival receipt NFT from NO REFUNDS ARCHIVE. Series: Token Pawn. Composed from base template + stamp + handwritten + props + damage + overlay layers.",
+  "image": "NRA_0092_TokenPawn_B02_VAR_06_CLAIM_CLOSED.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Token Pawn"
+    },
+    {
+      "trait_type": "Base Template",
+      "value": "B02_VAR_06"
+    },
+    {
+      "trait_type": "Stamp",
+      "value": "CLAIM CLOSED"
+    },
+    {
+      "trait_type": "Handwritten Note",
+      "value": "30 DAYS"
+    },
+    {
+      "trait_type": "Prop 1",
+      "value": "PROP_PAWN_STUB_01"
+    },
+    {
+      "trait_type": "Prop 2",
+      "value": "PROP_BROKEN_WATCH_01"
+    },
+    {
+      "trait_type": "Paper Damage",
+      "value": "DMG_TAPE_01"
+    },
+    {
+      "trait_type": "Overlay",
+      "value": "OVERLAY_GLASS_GLARE_01"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    }
+  ],
+  "compilation": {
+    "series": "Token Pawn",
+    "base_template": "B02_VAR_06",
+    "rarity": "Common"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "name": "NO REFUNDS ARCHIVE #0080",
+  "description": "A layered archival receipt NFT from NO REFUNDS ARCHIVE. Series: Midnight Diner. Composed from base template + stamp + handwritten + props + damage + overlay layers.",
+  "image": "NRA_0080_MidnightDiner_B03_VAR_08_CLOSED.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Midnight Diner"
+    },
+    {
+      "trait_type": "Base Template",
+      "value": "B03_VAR_08"
+    },
+    {
+      "trait_type": "Stamp",
+      "value": "CLOSED"
+    },
+    {
+      "trait_type": "Handwritten Note",
+      "value": "TABLE 6"
+    },
+    {
+      "trait_type": "Prop 1",
+      "value": "PROP_NAPKIN_01"
+    },
+    {
+      "trait_type": "Prop 2",
+      "value": "PROP_COFFEE_STIRRER_01"
+    },
+    {
+      "trait_type": "Paper Damage",
+      "value": "DMG_FOLD_02"
+    },
+    {
+      "trait_type": "Overlay",
+      "value": "OVERLAY_FADED_INK_01"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Uncommon"
+    }
+  ],
+  "compilation": {
+    "series": "Midnight Diner",
+    "base_template": "B03_VAR_08",
+    "rarity": "Uncommon"
+  }
+}

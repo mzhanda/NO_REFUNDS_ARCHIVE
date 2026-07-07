@@ -1,0 +1,48 @@
+{
+  "name": "NO REFUNDS ARCHIVE #0078",
+  "description": "A layered archival receipt NFT from NO REFUNDS ARCHIVE. Series: Lucky 8 Gas & Motel. Composed from base template + stamp + handwritten + props + damage + overlay layers.",
+  "image": "NRA_0078_Lucky8GasMotel_B03_VAR_05_NO_VACANCY.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Lucky 8 Gas & Motel"
+    },
+    {
+      "trait_type": "Base Template",
+      "value": "B03_VAR_05"
+    },
+    {
+      "trait_type": "Stamp",
+      "value": "NO VACANCY"
+    },
+    {
+      "trait_type": "Handwritten Note",
+      "value": "1138PM"
+    },
+    {
+      "trait_type": "Prop 1",
+      "value": "PROP_COIN_02"
+    },
+    {
+      "trait_type": "Prop 2",
+      "value": "PROP_ROAD_EXIT_NOTE_01"
+    },
+    {
+      "trait_type": "Paper Damage",
+      "value": "DMG_FOLD_02"
+    },
+    {
+      "trait_type": "Overlay",
+      "value": "OVERLAY_SCAN_NOISE_01"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Uncommon"
+    }
+  ],
+  "compilation": {
+    "series": "Lucky 8 Gas & Motel",
+    "base_template": "B03_VAR_05",
+    "rarity": "Uncommon"
+  }
+}

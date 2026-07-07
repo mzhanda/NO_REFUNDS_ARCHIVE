@@ -1,0 +1,48 @@
+{
+  "name": "NO REFUNDS ARCHIVE #0011",
+  "description": "A layered archival receipt NFT from NO REFUNDS ARCHIVE. Series: Night Owl Video. Composed from base template + stamp + handwritten + props + damage + overlay layers.",
+  "image": "NRA_0011_NightOwlVideo_B06_VAR_01_CHECKED_OUT.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Night Owl Video"
+    },
+    {
+      "trait_type": "Base Template",
+      "value": "B06_VAR_01"
+    },
+    {
+      "trait_type": "Stamp",
+      "value": "CHECKED OUT"
+    },
+    {
+      "trait_type": "Handwritten Note",
+      "value": "RETURNED EMPTY"
+    },
+    {
+      "trait_type": "Prop 1",
+      "value": "PROP_PLASTIC_TAB_01"
+    },
+    {
+      "trait_type": "Prop 2",
+      "value": "PROP_STORE_TAG_01"
+    },
+    {
+      "trait_type": "Paper Damage",
+      "value": "DMG_FOLD_01"
+    },
+    {
+      "trait_type": "Overlay",
+      "value": "OVERLAY_FILM_GRAIN_01"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Uncommon"
+    }
+  ],
+  "compilation": {
+    "series": "Night Owl Video",
+    "base_template": "B06_VAR_01",
+    "rarity": "Uncommon"
+  }
+}
