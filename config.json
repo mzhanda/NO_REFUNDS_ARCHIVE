@@ -1,0 +1,7 @@
+{
+  "width": 1024,
+  "height": 1024,
+  "positive_prompt_node_id": "",
+  "save_image_node_id": "",
+  "notes": "留空时脚本会自动找第一个 CLIPTextEncode 和 SaveImage。复杂工作流建议手动填写节点ID。"
+}
