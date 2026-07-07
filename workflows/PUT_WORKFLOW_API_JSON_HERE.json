@@ -1,0 +1,11 @@
+{
+  "说明": "请把你从ComfyUI导出的 API Format 工作流保存成这个文件名：workflows/workflow_api.json",
+  "怎么导出": [
+    "启动ComfyUI",
+    "打开你的出图工作流",
+    "设置里开启 Dev mode / Developer mode",
+    "点击 Save(API Format)",
+    "保存为 workflows/workflow_api.json",
+    "运行 run_first_10.bat 先测试10张"
+  ]
+}
