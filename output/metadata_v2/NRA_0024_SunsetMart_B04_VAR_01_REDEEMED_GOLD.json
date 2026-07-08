@@ -1,0 +1,56 @@
+{
+  "name": "NO REFUNDS ARCHIVE #0024",
+  "description": "A layered archival receipt NFT from NO REFUNDS ARCHIVE. Series: Sunset Mart. Composed from base template + material + stamp + handwritten + props + damage + overlay + legendary accent layers.",
+  "image": "NRA_0024_SunsetMart_B04_VAR_01_REDEEMED_GOLD.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Sunset Mart"
+    },
+    {
+      "trait_type": "Base Template",
+      "value": "B04_VAR_01"
+    },
+    {
+      "trait_type": "Material / Pattern",
+      "value": "SNAKESKIN 01"
+    },
+    {
+      "trait_type": "Stamp",
+      "value": "REDEEMED GOLD"
+    },
+    {
+      "trait_type": "Handwritten Note",
+      "value": "LAST SHIFT"
+    },
+    {
+      "trait_type": "Prop 1",
+      "value": "PROP_ENVELOPE_CORNER_01"
+    },
+    {
+      "trait_type": "Prop 2",
+      "value": "PROP_VINTAGE_COIN_02"
+    },
+    {
+      "trait_type": "Paper Damage",
+      "value": "DMG_WATER_STAIN_01"
+    },
+    {
+      "trait_type": "Overlay",
+      "value": "OVERLAY_SCAN_NOISE_02"
+    },
+    {
+      "trait_type": "Legendary Accent",
+      "value": "GOLD DUST 01"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Legendary"
+    }
+  ],
+  "compilation": {
+    "series": "Sunset Mart",
+    "base_template": "B04_VAR_01",
+    "rarity": "Legendary"
+  }
+}

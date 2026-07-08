@@ -1,0 +1,60 @@
+{
+  "name": "NO REFUNDS ARCHIVE #0072",
+  "description": "A layered archival receipt NFT from NO REFUNDS ARCHIVE. Series: Midnight Diner. Composed from base template + material + stamp + handwritten + props + damage + overlay + legendary accent layers.",
+  "image": "NRA_0072_MidnightDiner_B02_VAR_12_1_OF_1_GOLD.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Midnight Diner"
+    },
+    {
+      "trait_type": "Base Template",
+      "value": "B02_VAR_12"
+    },
+    {
+      "trait_type": "Material / Pattern",
+      "value": "GLASS ARCHIVE 01"
+    },
+    {
+      "trait_type": "Stamp",
+      "value": "1 OF 1 GOLD"
+    },
+    {
+      "trait_type": "Handwritten Note",
+      "value": "LAST ORDER"
+    },
+    {
+      "trait_type": "Prop 1",
+      "value": "PROP_FORK_01"
+    },
+    {
+      "trait_type": "Prop 2",
+      "value": "PROP_MATCHBOOK_01"
+    },
+    {
+      "trait_type": "Paper Damage",
+      "value": "DMG_DUST_SPECKS_02"
+    },
+    {
+      "trait_type": "Overlay",
+      "value": "OVERLAY_FILM_GRAIN_01"
+    },
+    {
+      "trait_type": "Legendary Accent",
+      "value": "LUXE VIGNETTE 01"
+    },
+    {
+      "trait_type": "Legendary Accent",
+      "value": "CROWN CHROME 01"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Legendary"
+    }
+  ],
+  "compilation": {
+    "series": "Midnight Diner",
+    "base_template": "B02_VAR_12",
+    "rarity": "Legendary"
+  }
+}

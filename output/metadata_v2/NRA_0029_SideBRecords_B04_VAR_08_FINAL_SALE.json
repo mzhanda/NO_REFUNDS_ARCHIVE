@@ -1,0 +1,52 @@
+{
+  "name": "NO REFUNDS ARCHIVE #0029",
+  "description": "A layered archival receipt NFT from NO REFUNDS ARCHIVE. Series: Side B Records. Composed from base template + material + stamp + handwritten + props + damage + overlay + legendary accent layers.",
+  "image": "NRA_0029_SideBRecords_B04_VAR_08_FINAL_SALE.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Side B Records"
+    },
+    {
+      "trait_type": "Base Template",
+      "value": "B04_VAR_08"
+    },
+    {
+      "trait_type": "Stamp",
+      "value": "FINAL SALE"
+    },
+    {
+      "trait_type": "Handwritten Note",
+      "value": "SIDE B"
+    },
+    {
+      "trait_type": "Prop 1",
+      "value": "PROP_DICE_01"
+    },
+    {
+      "trait_type": "Prop 2",
+      "value": "PROP_COMPASS_01"
+    },
+    {
+      "trait_type": "Paper Damage",
+      "value": "DMG_FOLD_01"
+    },
+    {
+      "trait_type": "Overlay",
+      "value": "OVERLAY_FADED_INK_01"
+    },
+    {
+      "trait_type": "Legendary Accent",
+      "value": "PEARL TAG 01"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    }
+  ],
+  "compilation": {
+    "series": "Side B Records",
+    "base_template": "B04_VAR_08",
+    "rarity": "Rare"
+  }
+}

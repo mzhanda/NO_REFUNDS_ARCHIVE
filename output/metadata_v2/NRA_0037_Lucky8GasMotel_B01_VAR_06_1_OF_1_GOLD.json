@@ -1,0 +1,56 @@
+{
+  "name": "NO REFUNDS ARCHIVE #0037",
+  "description": "A layered archival receipt NFT from NO REFUNDS ARCHIVE. Series: Lucky 8 Gas & Motel. Composed from base template + material + stamp + handwritten + props + damage + overlay + legendary accent layers.",
+  "image": "NRA_0037_Lucky8GasMotel_B01_VAR_06_1_OF_1_GOLD.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Lucky 8 Gas & Motel"
+    },
+    {
+      "trait_type": "Base Template",
+      "value": "B01_VAR_06"
+    },
+    {
+      "trait_type": "Material / Pattern",
+      "value": "IRIDESCENT WAVE 01"
+    },
+    {
+      "trait_type": "Stamp",
+      "value": "1 OF 1 GOLD"
+    },
+    {
+      "trait_type": "Handwritten Note",
+      "value": "ROOM 8"
+    },
+    {
+      "trait_type": "Prop 1",
+      "value": "PROP_NEWSPAPER_CLIP_01"
+    },
+    {
+      "trait_type": "Prop 2",
+      "value": "PROP_OLD_KEY_01"
+    },
+    {
+      "trait_type": "Paper Damage",
+      "value": "DMG_SMALL_TEAR_01"
+    },
+    {
+      "trait_type": "Overlay",
+      "value": "OVERLAY_SOFT_VIGNETTE_01"
+    },
+    {
+      "trait_type": "Legendary Accent",
+      "value": "IRIDESCENT GLOW 01"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Legendary"
+    }
+  ],
+  "compilation": {
+    "series": "Lucky 8 Gas & Motel",
+    "base_template": "B01_VAR_06",
+    "rarity": "Legendary"
+  }
+}
