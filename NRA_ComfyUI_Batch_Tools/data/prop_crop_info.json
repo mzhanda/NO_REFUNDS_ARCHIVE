@@ -1134,5 +1134,325 @@
       60,
       83
     ]
+  },
+  "prop_barcode_sticker_01.png": {
+    "cropped_size": [
+      120,
+      94
+    ],
+    "bbox": [
+      329,
+      398,
+      701,
+      690
+    ],
+    "orig_size": [
+      1024,
+      942
+    ]
+  },
+  "prop_bottle_opener_01.png": {
+    "cropped_size": [
+      66,
+      120
+    ],
+    "bbox": [
+      394,
+      334,
+      619,
+      738
+    ],
+    "orig_size": [
+      1024,
+      942
+    ]
+  },
+  "prop_cigarette_01.png": {
+    "cropped_size": [
+      51,
+      120
+    ],
+    "bbox": [
+      465,
+      389,
+      582,
+      662
+    ],
+    "orig_size": [
+      1024,
+      942
+    ]
+  },
+  "prop_cloth_napkin_01.png": {
+    "cropped_size": [
+      110,
+      120
+    ],
+    "bbox": [
+      347,
+      336,
+      733,
+      754
+    ],
+    "orig_size": [
+      1024,
+      942
+    ]
+  },
+  "prop_coffee_stirrer_01.png": {
+    "cropped_size": [
+      19,
+      120
+    ],
+    "bbox": [
+      460,
+      250,
+      552,
+      818
+    ],
+    "orig_size": [
+      1024,
+      942
+    ]
+  },
+  "prop_dice_01.png": {
+    "cropped_size": [
+      120,
+      61
+    ],
+    "bbox": [
+      234,
+      434,
+      679,
+      661
+    ],
+    "orig_size": [
+      1024,
+      942
+    ]
+  },
+  "prop_envelope_corner_01.png": {
+    "cropped_size": [
+      120,
+      114
+    ],
+    "bbox": [
+      374,
+      390,
+      665,
+      667
+    ],
+    "orig_size": [
+      1024,
+      942
+    ]
+  },
+  "prop_fork_01.png": {
+    "cropped_size": [
+      20,
+      120
+    ],
+    "bbox": [
+      436,
+      202,
+      543,
+      839
+    ],
+    "orig_size": [
+      1024,
+      942
+    ]
+  },
+  "prop_fountain_pen_01.png": {
+    "cropped_size": [
+      120,
+      20
+    ],
+    "bbox": [
+      192,
+      477,
+      851,
+      592
+    ],
+    "orig_size": [
+      1024,
+      942
+    ]
+  },
+  "prop_hair_clip_01.png": {
+    "cropped_size": [
+      120,
+      56
+    ],
+    "bbox": [
+      372,
+      454,
+      699,
+      609
+    ],
+    "orig_size": [
+      1024,
+      942
+    ]
+  },
+  "prop_matchbook_01.png": {
+    "cropped_size": [
+      102,
+      120
+    ],
+    "bbox": [
+      337,
+      352,
+      672,
+      746
+    ],
+    "orig_size": [
+      1024,
+      942
+    ]
+  },
+  "prop_matchbook_motel_01.png": {
+    "cropped_size": [
+      120,
+      105
+    ],
+    "bbox": [
+      286,
+      343,
+      740,
+      744
+    ],
+    "orig_size": [
+      1024,
+      942
+    ]
+  },
+  "prop_newspaper_clip_01.png": {
+    "cropped_size": [
+      103,
+      120
+    ],
+    "bbox": [
+      352,
+      339,
+      680,
+      720
+    ],
+    "orig_size": [
+      1024,
+      942
+    ]
+  },
+  "prop_record_sleeve_corner_01.png": {
+    "cropped_size": [
+      120,
+      116
+    ],
+    "bbox": [
+      339,
+      346,
+      695,
+      693
+    ],
+    "orig_size": [
+      1024,
+      942
+    ]
+  },
+  "prop_safety_razor_01.png": {
+    "cropped_size": [
+      119,
+      51
+    ],
+    "bbox": [
+      324,
+      436,
+      751,
+      621
+    ],
+    "orig_size": [
+      1024,
+      942
+    ]
+  },
+  "prop_small_bottle_01.png": {
+    "cropped_size": [
+      98,
+      119
+    ],
+    "bbox": [
+      282,
+      315,
+      621,
+      727
+    ],
+    "orig_size": [
+      1024,
+      942
+    ]
+  },
+  "prop_sugar_packet_01.png": {
+    "cropped_size": [
+      96,
+      120
+    ],
+    "bbox": [
+      377,
+      365,
+      640,
+      691
+    ],
+    "orig_size": [
+      1024,
+      942
+    ]
+  },
+  "prop_vintage_comb_01.png": {
+    "cropped_size": [
+      120,
+      84
+    ],
+    "bbox": [
+      341,
+      400,
+      687,
+      643
+    ],
+    "orig_size": [
+      1024,
+      942
+    ]
+  },
+  "prop_vintage_pen_02.png": {
+    "cropped_size": [
+      50,
+      120
+    ],
+    "bbox": [
+      406,
+      246,
+      635,
+      791
+    ],
+    "orig_size": [
+      1024,
+      942
+    ]
+  },
+  "prop_vinyl_label_01.png": {
+    "cropped_size": [
+      117,
+      120
+    ],
+    "bbox": [
+      349,
+      369,
+      647,
+      673
+    ],
+    "orig_size": [
+      1024,
+      942
+    ]
   }
 }

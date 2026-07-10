@@ -3,895 +3,283 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NO REFUNDS ARCHIVE - v2 Gallery Review (100)</title>
+<title>NO REFUNDS ARCHIVE - v2 Gallery Review</title>
 <style>
-body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 20px; background: #1a1a1a; color: #eee; }
-header { margin-bottom: 20px; }
-h1 { margin: 0 0 10px 0; font-size: 24px; }
-.controls { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-bottom: 20px; }
-button { padding: 8px 14px; border: none; border-radius: 6px; cursor: pointer; background: #444; color: #fff; }
-button.active { background: #d4a853; color: #111; }
-button:hover { opacity: 0.9; }
-select, input { padding: 8px; border-radius: 6px; border: 1px solid #555; background: #2a2a2a; color: #fff; }
-.stats { color: #aaa; margin-left: auto; }
-.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
-.card { background: #262626; border-radius: 10px; overflow: hidden; position: relative; transition: transform 0.15s; }
-.card:hover { transform: translateY(-4px); }
-.card img { width: 100%; height: 220px; object-fit: cover; display: block; background: #333; }
-.card .info { padding: 10px 12px; font-size: 13px; }
-.card .id { font-weight: bold; color: #d4a853; margin-bottom: 4px; }
-.card .rarity { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; }
-.rarity-Common { background: #666; color: #fff; }
-.rarity-Uncommon { background: #4caf50; color: #fff; }
-.rarity-Rare { background: #2196f3; color: #fff; }
-.rarity-Legendary { background: linear-gradient(45deg, #ffd700, #ff8c00); color: #111; }
-.card .select-btn { position: absolute; top: 8px; right: 8px; width: 28px; height: 28px; border-radius: 50%; border: 2px solid #fff; background: rgba(0,0,0,0.4); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; }
-.card .select-btn.selected { background: #d4a853; border-color: #d4a853; color: #111; }
-.hidden { display: none !important; }
-#exportArea { margin-top: 20px; background: #222; padding: 12px; border-radius: 8px; font-family: monospace; white-space: pre-wrap; word-break: break-all; max-height: 120px; overflow: auto; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #111; color: #ddd; padding: 20px; }
+header { margin-bottom: 24px; }
+h1 { font-size: 22px; color: #d4a853; margin-bottom: 6px; }
+.subtitle { color: #888; font-size: 13px; }
+
+.controls { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-bottom: 20px; padding: 14px 16px; background: #1a1a1a; border-radius: 10px; }
+.controls label { font-size: 13px; color: #aaa; margin-right: 4px; }
+.controls select, .controls input, .controls button { padding: 7px 10px; border-radius: 6px; border: 1px solid #444; background: #2a2a2a; color: #eee; font-size: 13px; }
+.controls button { cursor: pointer; background: #d4a853; color: #111; border: none; font-weight: 600; }
+.controls button:hover { background: #e0b860; }
+.stats { font-size: 12px; color: #888; margin-left: auto; }
+
+#gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+.card { background: #1a1a1a; border-radius: 12px; overflow: hidden; border: 2px solid transparent; transition: border-color 0.2s; }
+.card:hover { border-color: #444; }
+.card.selected { border-color: #d4a853; }
+.card.marked-keep { border-color: #4caf50; }
+.card.marked-redo { border-color: #f44336; }
+.card.marked-delete { border-color: #ff5722; opacity: 0.6; }
+.card.marked-legendary { border-color: #ff9800; }
+
+.card-img { width: 100%; aspect-ratio: 1; background: #222; display: flex; align-items: center; justify-content: center; overflow: hidden; cursor: pointer; }
+.card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.2s; }
+.card-img:hover img { transform: scale(1.05); }
+
+.card-info { padding: 10px 12px; font-size: 12px; }
+.card-info .nft-id { color: #d4a853; font-weight: 700; font-size: 13px; margin-bottom: 4px; }
+.card-info .meta-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 3px; }
+.card-info .tag { display: inline-block; padding: 1px 6px; border-radius: 3px; font-size: 10px; }
+.tag-series { background: #333; color: #ccc; }
+.tag-rarity { background: #333; color: #ccc; }
+.tag-Common { background: #555; }
+.tag-Uncommon { background: #2e7d32; }
+.tag-Rare { background: #1565c0; }
+.tag-Legendary { background: #f57c00; }
+.tag-Ultra { background: #6a1b9a; }
+.tag-mat { background: #1b5e20; color: #a5d6a7; }
+.tag-legend { background: #e65100; color: #ffe0b2; }
+.card-info .file-name { color: #666; font-size: 10px; word-break: break-all; margin-top: 4px; }
+
+.card-actions { display: flex; gap: 4px; padding: 0 12px 10px; flex-wrap: wrap; }
+.card-actions button { flex: 1; min-width: 44px; padding: 5px 8px; border-radius: 4px; border: 1px solid #444; background: #2a2a2a; color: #ccc; cursor: pointer; font-size: 11px; transition: all 0.15s; }
+.card-actions button:hover { background: #3a3a3a; }
+.card-actions .btn-keep { border-color: #4caf50; color: #4caf50; }
+.card-actions .btn-keep.active { background: #4caf50; color: #fff; }
+.card-actions .btn-redo { border-color: #f44336; color: #f44336; }
+.card-actions .btn-redo.active { background: #f44336; color: #fff; }
+.card-actions .btn-delete { border-color: #ff5722; color: #ff5722; }
+.card-actions .btn-delete.active { background: #ff5722; color: #fff; }
+.card-actions .btn-legendary { border-color: #ff9800; color: #ff9800; }
+.card-actions .btn-legendary.active { background: #ff9800; color: #fff; }
+
+.export-bar { margin-top: 20px; padding: 14px 16px; background: #1a1a1a; border-radius: 10px; display: flex; gap: 12px; align-items: center; }
+.export-bar button { padding: 8px 20px; border-radius: 6px; border: none; cursor: pointer; font-weight: 600; font-size: 13px; }
+.btn-export { background: #d4a853; color: #111; }
+.btn-reset { background: #444; color: #ccc; }
+.export-bar .summary { font-size: 12px; color: #888; margin-left: 12px; }
+
+.lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); display: none; align-items: center; justify-content: center; z-index: 1000; }
+.lightbox.active { display: flex; }
+.lightbox img { max-width: 90vw; max-height: 85vh; object-fit: contain; }
+.lightbox-close { position: absolute; top: 20px; right: 30px; font-size: 36px; color: #fff; cursor: pointer; background: none; border: none; }
+
+.empty { color: #666; text-align: center; padding: 60px; grid-column: 1 / -1; }
 </style>
 </head>
 <body>
-<header>
-<h1>NO REFUNDS ARCHIVE - v2 Gallery Review</h1>
-<div class="controls">
-  <button class="filter-btn active" data-filter="all">全部 (100)</button>
-  <button class="filter-btn" data-filter="Common">Common</button>
-  <button class="filter-btn" data-filter="Uncommon">Uncommon</button>
-  <button class="filter-btn" data-filter="Rare">Rare</button>
-  <button class="filter-btn" data-filter="Legendary">Legendary</button>
-  <button id="exportBtn">导出选中</button>
-  <button id="clearBtn">清空选中</button>
-  <span class="stats">已选中: <span id="selectedCount">0</span></span>
-</div>
-</header>
-<div class="gallery" id="gallery">
-  <div class="card" data-rarity="Common" data-id="NRA-0001">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0001_TokenPawn_B05_VAR_01_UNCLAIMED.png" alt="NRA-0001" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0001</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0002">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0002_SideBRecords_B01_VAR_08_LAST_COPY.png" alt="NRA-0002" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0002</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0004">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0004_NightOwlVideo_B08_VAR_02_CHECKED_OUT.png" alt="NRA-0004" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0004</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0006">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0006_NightOwlVideo_B02_VAR_07_NO_REFUNDS.png" alt="NRA-0006" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0006</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0007">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0007_Lucky8GasMotel_B02_VAR_05_NO_VACANCY.png" alt="NRA-0007" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0007</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0009">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0009_MidnightDiner_B01_VAR_04_CLOSED.png" alt="NRA-0009" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0009</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0012">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0012_SideBRecords_B08_VAR_01_LAST_COPY.png" alt="NRA-0012" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0012</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0013">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0013_SideBRecords_B07_VAR_03_LAST_COPY.png" alt="NRA-0013" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0013</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0014">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0014_NightOwlVideo_B02_VAR_04_OVERDUE.png" alt="NRA-0014" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0014</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0016">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0016_TokenPawn_B01_VAR_07_CLAIM_CLOSED.png" alt="NRA-0016" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0016</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0017">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0017_TokenPawn_B01_VAR_01_PAWN_HOLD.png" alt="NRA-0017" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0017</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0020">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0020_MidnightDiner_B03_VAR_07_LAST_ORDER.png" alt="NRA-0020" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0020</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0021">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0021_Lucky8GasMotel_B08_VAR_04_CLOSED.png" alt="NRA-0021" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0021</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0022">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0022_SunsetMart_B04_VAR_07_CLOSED.png" alt="NRA-0022" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0022</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0023">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0023_SunsetMart_B07_VAR_03_CLOSED.png" alt="NRA-0023" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0023</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0026">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0026_NightOwlVideo_B05_VAR_03_NO_REFUNDS.png" alt="NRA-0026" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0026</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0028">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0028_SideBRecords_B06_VAR_07_STORE_CREDIT.png" alt="NRA-0028" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0028</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0030">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0030_SunsetMart_B01_VAR_03_FINAL_SALE.png" alt="NRA-0030" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0030</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0031">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0031_Lucky8GasMotel_B06_VAR_04_ROOM_PAID.png" alt="NRA-0031" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0031</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0032">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0032_MidnightDiner_B08_VAR_03_LAST_ORDER.png" alt="NRA-0032" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0032</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0033">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0033_Lucky8GasMotel_B02_VAR_07_ROOM_PAID.png" alt="NRA-0033" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0033</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0036">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0036_SideBRecords_B02_VAR_03_LAST_COPY.png" alt="NRA-0036" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0036</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0038">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0038_Lucky8GasMotel_B06_VAR_02_CLOSED.png" alt="NRA-0038" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0038</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0040">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0040_TokenPawn_B05_VAR_05_UNCLAIMED.png" alt="NRA-0040" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0040</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0041">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0041_MidnightDiner_B06_VAR_01_NO_REFUNDS.png" alt="NRA-0041" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0041</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0042">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0042_SunsetMart_B04_VAR_06_CLOSED.png" alt="NRA-0042" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0042</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0043">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0043_MidnightDiner_B06_VAR_06_LAST_ORDER.png" alt="NRA-0043" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0043</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0044">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0044_SunsetMart_B01_VAR_03_CLOSED.png" alt="NRA-0044" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0044</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0045">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0045_SideBRecords_B04_VAR_03_LAST_COPY.png" alt="NRA-0045" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0045</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0049">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0049_TokenPawn_B03_VAR_04_CLAIM_CLOSED.png" alt="NRA-0049" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0049</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0050">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0050_Lucky8GasMotel_B04_VAR_02_ROOM_PAID.png" alt="NRA-0050" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0050</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0052">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0052_TokenPawn_B06_VAR_03_UNCLAIMED.png" alt="NRA-0052" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0052</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0053">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0053_Lucky8GasMotel_B04_VAR_05_CLOSED.png" alt="NRA-0053" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0053</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0054">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0054_MidnightDiner_B03_VAR_05_CLOSED.png" alt="NRA-0054" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0054</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0055">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0055_Lucky8GasMotel_B07_VAR_05_ROOM_PAID.png" alt="NRA-0055" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0055</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0056">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0056_TokenPawn_B07_VAR_02_PAWN_HOLD.png" alt="NRA-0056" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0056</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0057">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0057_Lucky8GasMotel_B06_VAR_03_PAID_CASH.png" alt="NRA-0057" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0057</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0059">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0059_TokenPawn_B02_VAR_08_CLAIM_CLOSED.png" alt="NRA-0059" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0059</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0061">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0061_TokenPawn_B06_VAR_05_PAWN_HOLD.png" alt="NRA-0061" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0061</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0062">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0062_SideBRecords_B01_VAR_05_STORE_CREDIT.png" alt="NRA-0062" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0062</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0063">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0063_SideBRecords_B01_VAR_07_FINAL_SALE.png" alt="NRA-0063" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0063</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0066">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0066_SideBRecords_B06_VAR_10_STORE_CREDIT.png" alt="NRA-0066" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0066</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0068">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0068_MidnightDiner_B03_VAR_03_NO_REFUNDS.png" alt="NRA-0068" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0068</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0070">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0070_TokenPawn_B06_VAR_08_PAWN_HOLD.png" alt="NRA-0070" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0070</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0071">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0071_SunsetMart_B03_VAR_02_FINAL_SALE.png" alt="NRA-0071" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0071</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0073">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0073_SunsetMart_B05_VAR_02_CLOSED.png" alt="NRA-0073" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0073</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0075">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0075_MidnightDiner_B06_VAR_10_NO_REFUNDS.png" alt="NRA-0075" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0075</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0077">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0077_Lucky8GasMotel_B05_VAR_05_PAID_CASH.png" alt="NRA-0077" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0077</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0082">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0082_Lucky8GasMotel_B02_VAR_05_ROOM_PAID.png" alt="NRA-0082" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0082</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0083">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0083_SunsetMart_B01_VAR_02_CLOSED.png" alt="NRA-0083" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0083</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0086">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0086_SunsetMart_B01_VAR_04_NO_REFUNDS.png" alt="NRA-0086" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0086</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0087">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0087_NightOwlVideo_B05_VAR_03_DO_NOT_OPEN.png" alt="NRA-0087" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0087</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0089">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0089_NightOwlVideo_B02_VAR_03_NO_REFUNDS.png" alt="NRA-0089" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0089</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0092">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0092_TokenPawn_B02_VAR_06_UNCLAIMED.png" alt="NRA-0092" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0092</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0093">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0093_SunsetMart_B02_VAR_12_CLOSED.png" alt="NRA-0093" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0093</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0094">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0094_Lucky8GasMotel_B03_VAR_04_PAID_CASH.png" alt="NRA-0094" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0094</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0095">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0095_SunsetMart_B07_VAR_01_CLOSED.png" alt="NRA-0095" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0095</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0096">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0096_MidnightDiner_B04_VAR_03_CLOSED.png" alt="NRA-0096" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0096</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0098">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0098_NightOwlVideo_B02_VAR_10_OVERDUE.png" alt="NRA-0098" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0098</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Common" data-id="NRA-0099">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0099_TokenPawn_B03_VAR_01_PAWN_HOLD.png" alt="NRA-0099" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0099</div>
-      <span class="rarity rarity-Common">Common</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Uncommon" data-id="NRA-0005">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0005_MidnightDiner_B02_VAR_04_CLOSED.png" alt="NRA-0005" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0005</div>
-      <span class="rarity rarity-Uncommon">Uncommon</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Uncommon" data-id="NRA-0008">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0008_MidnightDiner_B01_VAR_08_CLOSED.png" alt="NRA-0008" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0008</div>
-      <span class="rarity rarity-Uncommon">Uncommon</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Uncommon" data-id="NRA-0010">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0010_SideBRecords_B07_VAR_04_LAST_COPY.png" alt="NRA-0010" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0010</div>
-      <span class="rarity rarity-Uncommon">Uncommon</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Uncommon" data-id="NRA-0011">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0011_NightOwlVideo_B06_VAR_01_NO_REFUNDS.png" alt="NRA-0011" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0011</div>
-      <span class="rarity rarity-Uncommon">Uncommon</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Uncommon" data-id="NRA-0015">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0015_SideBRecords_B02_VAR_11_LAST_COPY.png" alt="NRA-0015" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0015</div>
-      <span class="rarity rarity-Uncommon">Uncommon</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Uncommon" data-id="NRA-0019">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0019_NightOwlVideo_B02_VAR_01_NO_REFUNDS.png" alt="NRA-0019" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0019</div>
-      <span class="rarity rarity-Uncommon">Uncommon</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Uncommon" data-id="NRA-0025">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0025_SideBRecords_B01_VAR_02_STORE_CREDIT.png" alt="NRA-0025" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0025</div>
-      <span class="rarity rarity-Uncommon">Uncommon</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Uncommon" data-id="NRA-0027">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0027_SunsetMart_B07_VAR_01_CLOSED.png" alt="NRA-0027" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0027</div>
-      <span class="rarity rarity-Uncommon">Uncommon</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Uncommon" data-id="NRA-0034">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0034_SunsetMart_B04_VAR_06_FINAL_SALE.png" alt="NRA-0034" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0034</div>
-      <span class="rarity rarity-Uncommon">Uncommon</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Uncommon" data-id="NRA-0035">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0035_Lucky8GasMotel_B04_VAR_04_NO_VACANCY.png" alt="NRA-0035" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0035</div>
-      <span class="rarity rarity-Uncommon">Uncommon</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Uncommon" data-id="NRA-0046">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0046_TokenPawn_B03_VAR_06_PAWN_HOLD.png" alt="NRA-0046" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0046</div>
-      <span class="rarity rarity-Uncommon">Uncommon</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Uncommon" data-id="NRA-0047">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0047_NightOwlVideo_B05_VAR_04_DO_NOT_OPEN.png" alt="NRA-0047" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0047</div>
-      <span class="rarity rarity-Uncommon">Uncommon</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Uncommon" data-id="NRA-0048">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0048_NightOwlVideo_B08_VAR_01_CHECKED_OUT.png" alt="NRA-0048" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0048</div>
-      <span class="rarity rarity-Uncommon">Uncommon</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Uncommon" data-id="NRA-0058">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0058_Lucky8GasMotel_B01_VAR_06_NO_VACANCY.png" alt="NRA-0058" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0058</div>
-      <span class="rarity rarity-Uncommon">Uncommon</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Uncommon" data-id="NRA-0060">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0060_NightOwlVideo_B01_VAR_05_OVERDUE.png" alt="NRA-0060" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0060</div>
-      <span class="rarity rarity-Uncommon">Uncommon</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Uncommon" data-id="NRA-0064">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0064_NightOwlVideo_B05_VAR_04_DO_NOT_OPEN.png" alt="NRA-0064" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0064</div>
-      <span class="rarity rarity-Uncommon">Uncommon</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Uncommon" data-id="NRA-0065">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0065_NightOwlVideo_B06_VAR_08_NO_REFUNDS.png" alt="NRA-0065" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0065</div>
-      <span class="rarity rarity-Uncommon">Uncommon</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Uncommon" data-id="NRA-0067">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0067_TokenPawn_B02_VAR_02_CLAIM_CLOSED.png" alt="NRA-0067" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0067</div>
-      <span class="rarity rarity-Uncommon">Uncommon</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Uncommon" data-id="NRA-0078">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0078_Lucky8GasMotel_B03_VAR_05_CLOSED.png" alt="NRA-0078" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0078</div>
-      <span class="rarity rarity-Uncommon">Uncommon</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Uncommon" data-id="NRA-0079">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0079_MidnightDiner_B02_VAR_10_AFTER_HOURS.png" alt="NRA-0079" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0079</div>
-      <span class="rarity rarity-Uncommon">Uncommon</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Uncommon" data-id="NRA-0080">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0080_MidnightDiner_B03_VAR_08_NO_REFUNDS.png" alt="NRA-0080" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0080</div>
-      <span class="rarity rarity-Uncommon">Uncommon</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Uncommon" data-id="NRA-0081">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0081_SideBRecords_B06_VAR_07_STORE_CREDIT.png" alt="NRA-0081" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0081</div>
-      <span class="rarity rarity-Uncommon">Uncommon</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Uncommon" data-id="NRA-0088">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0088_Lucky8GasMotel_B01_VAR_01_PAID_CASH.png" alt="NRA-0088" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0088</div>
-      <span class="rarity rarity-Uncommon">Uncommon</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Uncommon" data-id="NRA-0090">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0090_NightOwlVideo_B07_VAR_04_CHECKED_OUT.png" alt="NRA-0090" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0090</div>
-      <span class="rarity rarity-Uncommon">Uncommon</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Uncommon" data-id="NRA-0100">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0100_SideBRecords_B06_VAR_05_STORE_CREDIT.png" alt="NRA-0100" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0100</div>
-      <span class="rarity rarity-Uncommon">Uncommon</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Rare" data-id="NRA-0003">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0003_SideBRecords_B04_VAR_01_STORE_CREDIT.png" alt="NRA-0003" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0003</div>
-      <span class="rarity rarity-Rare">Rare</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Rare" data-id="NRA-0018">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0018_NightOwlVideo_B08_VAR_03_CHECKED_OUT.png" alt="NRA-0018" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0018</div>
-      <span class="rarity rarity-Rare">Rare</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Rare" data-id="NRA-0029">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0029_SideBRecords_B04_VAR_08_LAST_COPY.png" alt="NRA-0029" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0029</div>
-      <span class="rarity rarity-Rare">Rare</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Rare" data-id="NRA-0039">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0039_MidnightDiner_B05_VAR_06_LAST_ORDER.png" alt="NRA-0039" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0039</div>
-      <span class="rarity rarity-Rare">Rare</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Rare" data-id="NRA-0069">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0069_MidnightDiner_B04_VAR_05_CLOSED.png" alt="NRA-0069" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0069</div>
-      <span class="rarity rarity-Rare">Rare</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Rare" data-id="NRA-0074">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0074_SunsetMart_B06_VAR_02_NO_REFUNDS.png" alt="NRA-0074" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0074</div>
-      <span class="rarity rarity-Rare">Rare</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Rare" data-id="NRA-0076">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0076_NightOwlVideo_B02_VAR_09_DO_NOT_OPEN.png" alt="NRA-0076" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0076</div>
-      <span class="rarity rarity-Rare">Rare</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Rare" data-id="NRA-0084">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0084_MidnightDiner_B03_VAR_03_LAST_ORDER.png" alt="NRA-0084" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0084</div>
-      <span class="rarity rarity-Rare">Rare</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Rare" data-id="NRA-0091">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0091_SunsetMart_B02_VAR_11_NO_REFUNDS.png" alt="NRA-0091" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0091</div>
-      <span class="rarity rarity-Rare">Rare</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Rare" data-id="NRA-0097">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0097_TokenPawn_B06_VAR_09_PAWN_HOLD.png" alt="NRA-0097" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0097</div>
-      <span class="rarity rarity-Rare">Rare</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Legendary" data-id="NRA-0024">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0024_SunsetMart_B04_VAR_01_ZERO_SUPPLY_GOLD.png" alt="NRA-0024" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0024</div>
-      <span class="rarity rarity-Legendary">Legendary</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Legendary" data-id="NRA-0037">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0037_Lucky8GasMotel_B01_VAR_06_GOLD_SEAL_GOLD.png" alt="NRA-0037" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0037</div>
-      <span class="rarity rarity-Legendary">Legendary</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Legendary" data-id="NRA-0072">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0072_MidnightDiner_B02_VAR_12_ARCHIVED_FOREVER_GOLD.png" alt="NRA-0072" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0072</div>
-      <span class="rarity rarity-Legendary">Legendary</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Legendary" data-id="NRA-0085">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0085_SideBRecords_B03_VAR_02_GOLD_SEAL_GOLD.png" alt="NRA-0085" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0085</div>
-      <span class="rarity rarity-Legendary">Legendary</span>
-    </div>
-  </div>
-  <div class="card" data-rarity="Ultra Rare" data-id="NRA-0051">
-    <div class="select-btn" onclick="toggleSelect(this)">&#10003;</div>
-    <img src="output/final_images_v2/NRA_0051_TokenPawn_B03_VAR_07_VAULTED_GOLD.png" alt="NRA-0051" loading="lazy">
-    <div class="info">
-      <div class="id">NRA-0051</div>
-      <span class="rarity rarity-Ultra Rare">Ultra Rare</span>
-    </div>
-  </div>
-</div>
-<div id="exportArea"></div>
-<script>
-let selected = new Set();
-const cards = document.querySelectorAll('.card');
-const selectedCount = document.getElementById('selectedCount');
-const exportArea = document.getElementById('exportArea');
 
-function toggleSelect(btn) {
-  const card = btn.closest('.card');
-  const id = card.dataset.id;
-  if (selected.has(id)) {
-    selected.delete(id);
-    btn.classList.remove('selected');
-  } else {
-    selected.add(id);
-    btn.classList.add('selected');
-  }
-  selectedCount.textContent = selected.size;
+<header>
+  <h1>NO REFUNDS ARCHIVE — v2 图片审核 Gallery</h1>
+  <div class="subtitle">Batch 0100 v2 · 100 images · 标记保留/重做/删除/传奇候选 · 导出决策CSV</div>
+</header>
+
+<div class="controls">
+  <label>系列:</label>
+  <select id="filterSeries">
+    <option value="">全部</option>
+  </select>
+  <label>稀有度:</label>
+  <select id="filterRarity">
+    <option value="">全部</option>
+  </select>
+  <label>标记:</label>
+  <select id="filterMark">
+    <option value="">全部</option>
+    <option value="keep">保留</option>
+    <option value="redo">重做</option>
+    <option value="delete">删除</option>
+    <option value="legendary">传奇候选</option>
+  </select>
+  <button id="btnClear">清除筛选</button>
+  <div class="stats" id="stats">共 0 张</div>
+</div>
+
+<div id="gallery"></div>
+
+<div class="export-bar">
+  <button class="btn-export" id="btnExport">📥 导出 review_decisions.csv</button>
+  <button class="btn-reset" id="btnReset">重置所有标记</button>
+  <span class="summary" id="exportSummary"></span>
+</div>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<script>
+const IMG_BASE = 'output/final_images_v2/';
+const META_BASE = 'output/metadata_v2/';
+
+let allCards = [];
+let decisions = {}; // { filename: 'keep'|'redo'|'delete'|'legendary' }
+
+// 加载 CSV 数据
+fetch('data/v2_image_selection_review.csv?' + Date.now())
+  .then(r => r.text())
+  .then(csv => {
+    const rows = csv.split('\n').filter(l => l.trim());
+    const headers = rows[0].split(',');
+    for (let i = 1; i < rows.length; i++) {
+      const cols = rows[i].split(',');
+      if (cols.length < 5) continue;
+      const card = {};
+      headers.forEach((h, j) => card[h.trim()] = (cols[j] || '').trim());
+      allCards.push(card);
+    }
+    initFilters();
+    render();
+  });
+
+function initFilters() {
+  const seriesSet = new Set(allCards.map(c => c['系列']).filter(Boolean));
+  const seriesSel = document.getElementById('filterSeries');
+  [...seriesSet].sort().forEach(s => {
+    const opt = document.createElement('option');
+    opt.value = s; opt.textContent = s;
+    seriesSel.appendChild(opt);
+  });
 }
 
-document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const filter = btn.dataset.filter;
-    cards.forEach(card => {
-      if (filter === 'all' || card.dataset.rarity === filter) {
-        card.classList.remove('hidden');
-      } else {
-        card.classList.add('hidden');
-      }
-    });
+function getFiltered() {
+  const s = document.getElementById('filterSeries').value;
+  const r = document.getElementById('filterRarity').value;
+  const m = document.getElementById('filterMark').value;
+  return allCards.filter(c => {
+    if (s && c['系列'] !== s) return false;
+    if (r && c['稀有度'] !== r) return false;
+    if (m) {
+      const fn = c['图片文件名'];
+      const d = decisions[fn] || '';
+      if (m === 'keep' && d !== 'keep') return false;
+      if (m === 'redo' && d !== 'redo') return false;
+      if (m === 'delete' && d !== 'delete') return false;
+      if (m === 'legendary' && d !== 'legendary') return false;
+      if (!d) return false;
+    }
+    return true;
   });
+}
+
+function render() {
+  const filtered = getFiltered();
+  const gallery = document.getElementById('gallery');
+  gallery.innerHTML = '';
+
+  if (filtered.length === 0) {
+    gallery.innerHTML = '<div class="empty">无匹配结果</div>';
+    document.getElementById('stats').textContent = '共 0 张';
+    return;
+  }
+
+  document.getElementById('stats').textContent = `显示 ${filtered.length} / ${allCards.length} 张`;
+
+  filtered.forEach(card => {
+    const fn = card['图片文件名'];
+    const mark = decisions[fn] || '';
+    const markClass = mark === 'keep' ? 'marked-keep' : mark === 'redo' ? 'marked-redo' : mark === 'delete' ? 'marked-delete' : mark === 'legendary' ? 'marked-legendary' : '';
+
+    const div = document.createElement('div');
+    div.className = 'card ' + markClass;
+    div.innerHTML = `
+      <div class="card-img">
+        <img src="${IMG_BASE}${fn}" alt="${card['编号']}" loading="lazy" onclick="openLightbox('${IMG_BASE}${fn}')">
+      </div>
+      <div class="card-info">
+        <div class="nft-id">${card['编号']}</div>
+        <div class="meta-row">
+          <span class="tag tag-series">${card['系列'] || '?'}</span>
+          <span class="tag tag-rarity tag-${(card['稀有度']||'').replace(/\s+/g,'')}">${card['稀有度'] || '?'}</span>
+          ${card['material_pattern'] ? `<span class="tag tag-mat">${card['material_pattern']}</span>` : ''}
+          ${card['legendary_accent'] ? `<span class="tag tag-legend">${card['legendary_accent']}</span>` : ''}
+        </div>
+        <div class="meta-row" style="font-size:10px; color:#777;">
+          ${card['是否有对应metadata'] === '是' ? '✅meta' : '❌meta'}
+          ${card['是否通过规则校验'] === '是' ? ' ✅校验' : ' ❌校验'}
+          ${mark ? ' 🔖' + ({keep:'保留',redo:'重做',delete:'删除',legendary:'传奇'})[mark] : ''}
+        </div>
+        <div class="file-name">${fn}</div>
+      </div>
+      <div class="card-actions">
+        <button class="btn-keep ${mark==='keep'?'active':''}" onclick="markCard('${fn}','keep')">保留</button>
+        <button class="btn-redo ${mark==='redo'?'active':''}" onclick="markCard('${fn}','redo')">重做</button>
+        <button class="btn-delete ${mark==='delete'?'active':''}" onclick="markCard('${fn}','delete')">删除</button>
+        <button class="btn-legendary ${mark==='legendary'?'active':''}" onclick="markCard('${fn}','legendary')">传奇</button>
+      </div>
+    `;
+    gallery.appendChild(div);
+  });
+
+  updateSummary();
+}
+
+function markCard(filename, mark) {
+  if (decisions[filename] === mark) {
+    delete decisions[filename];
+  } else {
+    decisions[filename] = mark;
+  }
+  render();
+}
+
+function updateSummary() {
+  const counts = { keep: 0, redo: 0, delete: 0, legendary: 0 };
+  Object.values(decisions).forEach(m => counts[m] = (counts[m] || 0) + 1);
+  document.getElementById('exportSummary').textContent = 
+    `保留:${counts.keep} 重做:${counts.redo} 删除:${counts.delete} 传奇:${counts.legendary} | 已标记:${Object.keys(decisions).length}`;
+}
+
+// 导出
+document.getElementById('btnExport').addEventListener('click', () => {
+  const rows = ['编号,图片文件名,标记,系列,稀有度,备注'];
+  allCards.forEach(c => {
+    const mark = decisions[c['图片文件名']] || '';
+    rows.push(`${c['编号']},${c['图片文件名']},${mark},${c['系列']},${c['稀有度']},`);
+  });
+  const blob = new Blob(['\uFEFF' + rows.join('\n')], { type: 'text/csv;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'review_decisions.csv'; a.click();
+  URL.revokeObjectURL(url);
 });
 
-document.getElementById('exportBtn').addEventListener('click', () => {
-  const ids = Array.from(selected).sort();
-  exportArea.textContent = ids.length ? ids.join(',') : '未选中任何图片';
+// 重置
+document.getElementById('btnReset').addEventListener('click', () => {
+  if (confirm('确定要清除所有标记？')) { decisions = {}; render(); }
 });
 
-document.getElementById('clearBtn').addEventListener('click', () => {
-  selected.clear();
-  document.querySelectorAll('.select-btn').forEach(b => b.classList.remove('selected'));
-  selectedCount.textContent = '0';
-  exportArea.textContent = '';
+// 筛选
+['filterSeries','filterRarity','filterMark'].forEach(id => {
+  document.getElementById(id).addEventListener('change', render);
+});
+document.getElementById('btnClear').addEventListener('click', () => {
+  document.getElementById('filterSeries').value = '';
+  document.getElementById('filterRarity').value = '';
+  document.getElementById('filterMark').value = '';
+  render();
+});
+
+// Lightbox
+function openLightbox(src) {
+  document.getElementById('lightboxImg').src = src;
+  document.getElementById('lightbox').classList.add('active');
+}
+document.getElementById('lightboxClose').addEventListener('click', () => {
+  document.getElementById('lightbox').classList.remove('active');
+});
+document.getElementById('lightbox').addEventListener('click', (e) => {
+  if (e.target === document.getElementById('lightbox')) {
+    document.getElementById('lightbox').classList.remove('active');
+  }
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
 });
 </script>
 </body>

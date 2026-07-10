@@ -19,261 +19,78 @@
 
 ---
 
-## 2. 官网前端状态
+## 2. 当前最终状态（2026-07-10 最新）
 
-### 文件清单
+### 缺失素材
+- ✅ **0 缺失** — `missing_assets_report_v2.csv` 确认无缺失
+- 20 个新 prop 已通过 AI 生成 + `rembg` 抠图补全（vintage 风格，RGBA 透明背景，最大边 80px）
 
-| 文件 | 大小 | 说明 |
-|------|------|------|
-| `index.html` | 228 KB | 单页官网，含全部 HTML/CSS/JS（内联 + 外部引用） |
-| `styles.css` | 100 KB | 官网样式表 |
-| `script.js` | 18 KB | 白名单表单逻辑 |
-| `background.mp3` | 1.2 MB | 官网背景音乐 |
-| `NoRefundsArchive.zip` | 8 MB | 官网提供的示例 NFT 下载包 |
-
-### script.js 白名单接口状态
-
-- **已接入 Google Apps Script**: ✅ 是
-- **SHEET_API_URL 当前值**:
-  ```
-  https://script.google.com/macros/s/AKfycbxUHajYs7yxsGKOiXkW-QYfRGJT8EJ-d3ab3mMX5G3TgQrsP06MTYZ-MXR2FYFtEtvY/exec
-  ```
-- **提交字段**: `id`, `wallet`, `twitter`, `followed`, `retweeted`, `followCheck`, `createdAt`
-- **使用 localStorage**: ✅ 是，键名 `nraWhitelist`，用于去重检查（钱包地址大小写不敏感）
-- **提交流程**: 用户填写钱包 + Twitter → localStorage 去重 → `mode: "no-cors"` POST 到 Google Sheet
-- **官网本地可打开**: ✅ 是（纯静态文件，直接浏览器打开 `index.html` 即可）
-- **待修复问题**: 无已知阻塞问题。`no-cors` 模式下前端无法获取服务器响应，但数据能正常写入 Google Sheet。
-
----
-
-## 3. NFT 工具链状态
-
-### 目录: `NRA_ComfyUI_Batch_Tools/`
-
-#### 核心 Python 脚本
-
-| 文件 | 大小 | 作用 |
-|------|------|------|
-| `compose_nra_assets.py` | 34.5 KB | **主拼装引擎 v3.0**。从 CSV 读取计划，分层叠加素材，输出最终 PNG + JSON metadata |
-| `generate_plan_0100.py` | 21.4 KB | **拼装计划生成器**。根据稀有度规则自动生成 100 张 NFT 的 trait 组合 CSV |
-| `validate_compose_plan.py` | 30.7 KB | **规则校验器**。检查 CSV 拼装计划是否违反系列规则、稀有度规则、跨系列限制等 |
-| `generate_trait_assets.py` | 134.8 KB | **素材生成器**。从原始素材批量处理生成各类 trait 资源 |
-| `generate_base_variants.py` | 6.8 KB | **底图变体生成器**。为每个系列生成不同变体的底图 |
-| `crop_props.py` | 1.1 KB | Props 透明区域自动裁切工具 |
-| `crop_legendary_stickers.py` | 1.4 KB | 传奇贴纸透明区域自动裁切工具 |
-| `rebuild_props.py` | 104 KB | Props 重建工具（大规模素材处理） |
-
-#### 批处理文件
-
-| 文件 | 作用 |
-|------|------|
-| `run_compose_first_100.bat` | 旧版批量拼装启动脚本 |
-| `run_compose_first_100_v2.bat` | v2 版批量拼装启动脚本 |
-
-#### 数据目录: `data/`
-
-| 文件 | 说明 |
-|------|------|
-| `auto_compose_plan_0100_v2.csv` | **当前主力拼装计划**（100 行，v2 版含 material_pattern + legendary_accent 字段） |
-| `preview_check_0100_v2.csv` | 拼装后预览检查清单 |
-| `compose_plan_validation_report_v2.csv` | 规则校验报告 |
-| `series_rules.md` | 系列规则文档（哪些 trait 允许在哪些系列使用） |
-| `prop_crop_info.json` | Props 裁切信息（原始尺寸 → 裁切尺寸映射） |
-| `legendary_sticker_crop_info.json` | 传奇贴纸裁切信息 |
-| `trait_review_list.csv` | Trait 审核清单 |
-
-#### 输出目录: `output/`
-
-| 路径 | 内容 |
-|------|------|
-| `output/final_images_v2/` | **67 张**最终拼装 PNG（1024×1024） |
-| `output/metadata_v2/` | **67 个**对应 JSON metadata（一一对应） |
-| `output/missing_assets_report_v2.csv` | 缺失素材报告 |
-| `output/preview_check_*.csv` | 各批次预览检查清单 |
-
----
-
-## 4. 当前素材库状态
-
+### 素材数量
 | 素材类别 | 数量 | 路径 |
 |----------|------|------|
-| base_templates | **61** 个 | `assets/base_templates/` |
-| stamps | **26** 个 | `assets/stamps/` |
-| handwritten | **30** 个 | `assets/handwritten/` |
-| props | **71** 个 | `assets/props/` |
-| props_cropped | **71** 个 | `assets/props_cropped/` |
-| damage | **20** 个 | `assets/damage/` |
-| overlays | **15** 个 | `assets/overlays/` |
-| material_pattern | **14** 个 | `assets/material_pattern/` |
-| legendary_accent | **18** 个 | `assets/legendary_accent/` |
-| legendary_accent_cropped | **10** 个 | `assets/legendary_accent_cropped/` |
+| base_templates | 61 | `assets/base_templates/` |
+| stamps | 26 | `assets/stamps/` |
+| handwritten | 30 | `assets/handwritten/` |
+| props | 91 | `assets/props/` |
+| props_cropped | 91 | `assets/props_cropped/` |
+| damage | 20 | `assets/damage/` |
+| overlays | 15 | `assets/overlays/` |
+| material_pattern | 14 | `assets/material_pattern/` |
+| legendary_accent | 18 | `assets/legendary_accent/` |
+| legendary_accent_cropped | 10 | `assets/legendary_accent_cropped/` |
+| **素材总计** | **376** | |
 
-> **素材总计**: 336 个素材文件，覆盖 10 个类别。
-
-### 素材说明
-
-- **props_cropped**: 与 `props/` 一一对应（71 对 71），已自动裁切透明区域。拼装时优先使用裁切版。
-- **legendary_accent**: 18 个素材 = 8 个全幅 overlay + 10 个贴纸 sticker。overlay 保持全幅，sticker 有裁切版在 `legendary_accent_cropped/`（10 个）。
-
----
-
-## 5. 当前输出状态
-
+### 输出状态
 | 指标 | 数值 |
 |------|------|
-| final_images_v2 PNG 数量 | **67 张** |
-| metadata_v2 JSON 数量 | **67 个** |
+| `final_images_v2/` PNG 数量 | **100 张** |
+| `metadata_v2/` JSON 数量 | **100 个** |
 | 是否一一对应 | ✅ 是 |
 | 是否有重复编号 | 否 |
-| 是否有旧输出残留 | 无（仅有 v2 目录，无 v1 残留） |
-| 最近一次新拼装 | 2026-07-10，重拼了 61 张含普通 props 的图 + 10 张含传奇 sticker 的图 |
-| 建议保留 | 全部 67 张 |
-| 需要人工筛选 | 部分 Rare 图缺少个别 prop 素材（如 `PROP_FOUNTAIN_PEN_01`、`PROP_HAIR_CLIP_01` 等），需确认是否接受 |
-
-### 拼装引擎当前配置 (compose_nra_assets.py v3.0)
-
-- `CANVAS_SIZE`: 1024×1024
-- 层级顺序: base → material_pattern → damage → props → stamp → handwritten → overlay → legendary_accent
-- **普通 props**: 裁切后放大 1.25x，Y 位置 20~60 px（收据上半部）
-- **传奇 sticker**: 裁切后原始尺寸，Y 位置 -10~30 px（顶部边缘）
-- **传奇 overlay**: 全幅 1024×1024 覆盖
-- 输出目录: `output/final_images_v2/` + `output/metadata_v2/`
-
----
-
-## 6. 当前 CSV / 报告状态
-
-| 文件 | 存在 | 说明 |
-|------|------|------|
-| `data/auto_compose_plan_0100_v2.csv` | ✅ | 100 行拼装计划，含 material_pattern + legendary_accent 字段 |
-| `data/preview_check_0100_v2.csv` | ✅ | 预览检查清单 |
-| `data/compose_plan_validation_report_v2.csv` | ✅ | 校验报告（176 B，可能为空/无错误） |
-| `data/missing_assets_report_v2.csv` | ⚠️ 在 `output/` 下 | 缺失素材报告（312 B） |
-| `data/v2_image_selection_review.csv` | ❌ 不存在 | **需要 Codex 生成** |
-| `review_v2_gallery.html` | ❌ 不存在 | **需要 Codex 生成** |
-| `data/series_rules.md` | ✅ | 系列规则文档 |
-
----
-
-## 7. 当前规则状态
-
-### 稀有度规则
-
-| 稀有度 | 数量/100张 | 规则 |
-|--------|-----------|------|
-| Common | 60 | 无 material_pattern，无 legendary_accent |
-| Uncommon | 25 | 50% 概率有 material_pattern |
-| Rare | 10 | 50% 概率有 material_pattern，50% 概率有 legendary_accent sticker |
-| Legendary | 4 | 必须 gold stamp + material_pattern + 至少1个 legendary_accent（overlay 必选，sticker 50%概率追加） |
-| Ultra Rare | 1 | 最顶级 gold stamp + 最顶级 material_pattern + legendary overlay + legendary sticker |
-
-### 跨系列规则
-
-- ✅ 已通过 `validate_compose_plan.py` 校验
-- ✅ `series_rules.md` 定义了每个系列允许的 trait 组合
-- ✅ material_pattern 和 legendary_accent 已接入拼装引擎
+| 是否有旧输出残留 | 无 |
 
 ### 校验状态
-
-- `validate_compose_plan.py`: 校验报告仅 176 B，推测无错误通过
-- `compose_nra_assets.py`: 正常运行，67/100 张已拼装完成
-- 缺失素材: 部分 prop ID 对应文件不存在（如 `PROP_FOUNTAIN_PEN_01`、`PROP_HAIR_CLIP_01`、`PROP_BARCODE_STICKER_01`、`PROP_RECORD_SLEEVE_CORNER_01`、`PROP_SAFETY_RAZOR_01`），这些行在拼装时会跳过缺失素材但继续生成其余图层
-
----
-
-## 8. 本次 CodeBuddy 会话新增/修改内容
-
-### 新增素材
-- `assets/legendary_accent_cropped/` — 10 个裁切版传奇贴纸
-
-### 新增脚本
-- `crop_legendary_stickers.py` — 传奇贴纸裁切工具
-
-### 修改脚本
-- `compose_nra_assets.py` — 三处关键改动：
-  1. `resolve_asset()`: 为 legendary_accent sticker 优先返回裁切版路径
-  2. `compose_image()`: 区分普通 prop / 传奇 sticker / 传奇 overlay 的加载和定位
-  3. 普通 props 放大 1.25x，Y 下移到 20~60 px
-
-### 新拼装的图
-- 10 张含传奇 sticker 的图（Rare/Legendary/Ultra Rare）— sticker 从中间移到顶部边缘
-- 61 张含普通 props 的图 — props 放大 1.25x 并下移
-
-### 官网改动
-- `preview.html` 增加了 Rare 和 Legendary 的预览行
-
-### GitHub 同步
-- 本次之前项目无 Git 版本控制，需首次推送
+| 文件 | 状态 |
+|------|------|
+| `compose_plan_validation_report_v2.csv` | ✅ 0 errors, 0 warnings, 全部通过 |
+| `missing_assets_report_v2.csv` | ✅ 0 缺失 |
+| `preview_check_0100_v2.csv` | ✅ 已同步（100行，全部标记"是/待人工确认"） |
+| `v2_image_selection_review.csv` | ✅ 已生成（100行） |
+| `review_v2_gallery.html` | ✅ 已生成（支持筛选、标记、导出） |
 
 ---
 
-## 9. 给 Codex 的下一步建议
-
-### ⚠️ 第一步：不要直接生成 3333
-
-接手后请按以下顺序操作：
-
-1. **接管检查**
-   - 跑一遍 `validate_compose_plan.py` 确认当前 CSV 无规则错误
-   - 检查 `output/missing_assets_report_v2.csv` 确认缺失素材清单
-   - 确认 `final_images_v2/` 和 `metadata_v2/` 各 67 个且一一对应
-
-2. **清点现有输出**
-   - 对 `output/final_images_v2/` 做文件名列表
-   - 对 `output/metadata_v2/` 做文件名列表
-   - 交叉比对确保无遗漏
-
-3. **生成筛选工具**
-   - 生成 `data/v2_image_selection_review.csv`（含编号、文件名、稀有度、系列、各 trait 字段、通过/不通过标记）
-   - 生成 `review_v2_gallery.html`（可视化浏览所有 67 张图，支持标记筛选）
-
-4. **让用户人工筛选**
-   - 用户通过 gallery 标记满意/不满意的图
-   - 确认哪些 trait 组合效果好、哪些需要调整
-
-5. **再决定中批量**
-   - 确认通过率后，决定是继续完善当前 100 张还是扩展到 333 张测试
-
----
-
-## 10. 不要做的事
-
-Codex 接手后**暂时不要**：
-
-- ❌ 删除 `output/final_images_v2/` 中的现有图片
-- ❌ 覆盖 `output/metadata_v2/` 中的现有 JSON
-- ❌ 直接生成 3333 张（先做好质量把控）
-- ❌ 大改官网视觉风格
-- ❌ 修改 Google Apps Script 白名单接口地址
-- ❌ 回到纯 ComfyUI 整图生成路线（当前分层拼装路线已确认）
-
----
-
-## 附录 A: 关键路径速查
+## 3. 关键文件路径速查
 
 ```
-项目根目录
+项目根目录: C:\Users\dan\CodeBuddy\20260706202534
+
 ├── index.html                          # 官网首页
 ├── styles.css                          # 官网样式
 ├── script.js                           # 白名单表单
 ├── background.mp3                      # 背景音乐
-├── NoRefundsArchive.zip                # 示例包
 ├── HANDOFF_TO_CODEX.md                 # ← 本文档
+├── PROJECT_HANDOFF_SUMMARY.md          # 项目总览
 │
 └── NRA_ComfyUI_Batch_Tools/
-    ├── compose_nra_assets.py           # 主拼装引擎
-    ├── generate_plan_0100.py           # 拼装计划生成
-    ├── validate_compose_plan.py        # 规则校验
-    ├── generate_trait_assets.py        # 素材生成
-    ├── generate_base_variants.py       # 底图变体
+    ├── compose_nra_assets.py           # 主拼装引擎 v3.0
+    ├── generate_plan_0100.py           # 拼装计划生成器
+    ├── validate_compose_plan.py        # 规则校验器 v2.0
+    ├── generate_trait_assets.py        # 素材生成器
+    ├── generate_base_variants.py       # 底图变体生成
     ├── crop_props.py                   # Props裁切
     ├── crop_legendary_stickers.py      # 传奇贴纸裁切
-    ├── run_compose_first_100_v2.bat    # 批量拼装
     │
     ├── data/
-    │   ├── auto_compose_plan_0100_v2.csv        # 拼装计划
-    │   ├── series_rules.md                      # 系列规则
-    │   └── preview_check_0100_v2.csv            # 预览检查
+    │   ├── auto_compose_plan_0100_v2.csv              # 拼装计划（100行）
+    │   ├── preview_check_0100_v2.csv                  # 预览检查（已同步）
+    │   ├── compose_plan_validation_report_v2.csv      # 校验报告（0错误）
+    │   ├── missing_assets_report_v2.csv               # 缺失报告（0缺失）
+    │   ├── v2_image_selection_review.csv              # 图片筛选清单
+    │   └── series_rules.md                            # 系列规则
+    │
+    ├── review_v2_gallery.html          # 图片审核页面
+    ├── review_props.html               # 小物件预览页面
     │
     ├── assets/
     │   ├── base_templates/       (61个)
@@ -288,12 +105,71 @@ Codex 接手后**暂时不要**：
     │   └── legendary_accent_cropped/ (10个)
     │
     └── output/
-        ├── final_images_v2/      (100张PNG)
+        ├── final_images_v2/      (100张PNG, 1024×1024)
         ├── metadata_v2/          (100个JSON)
         └── missing_assets_report_v2.csv
 ```
 
-## 附录 B: 拼装层级顺序
+---
+
+## 4. Git 状态
+
+- 远程: `origin → https://github.com/mzhanda/NO_REFUNDS_ARCHIVE.git`
+- 当前分支: `master`
+- 本地领先 origin/master 1 commit
+- `.gitignore` 已配置排除 `output/` 目录（final_images_v2 和 metadata_v2 不进 Git）
+
+---
+
+## 5. Codex 接手时应从哪个目录开始
+
+**工作目录**: `C:\Users\dan\CodeBuddy\20260706202534\NRA_ComfyUI_Batch_Tools`
+
+---
+
+## 6. Codex 下一步应该做什么
+
+### ⚠️ 不要直接生成 3333
+
+请按以下顺序操作：
+
+1. **接管检查**
+   - 跑 `python validate_compose_plan.py --csv data/auto_compose_plan_0100_v2.csv --files`
+   - 确认 0 errors, 0 warnings
+   - 确认 `missing_assets_report_v2.csv` 为 0 缺失
+
+2. **清点现有输出**
+   - `final_images_v2/`: 100 PNG (NRA-0001 ~ NRA-0100)
+   - `metadata_v2/`: 100 JSON，与 PNG 一一对应
+
+3. **使用现有审核工具**
+   - `review_v2_gallery.html` — 可视化浏览 100 张图，标记保留/重做/删除/传奇候选，导出 `review_decisions.csv`
+   - `review_props.html` — 浏览 91 个小物件素材
+
+4. **让用户人工筛选**
+   - 用户通过 gallery 标记满意/不满意的图
+   - 确认哪些 trait 组合效果好、哪些需要调整
+
+5. **更新 v2_image_selection_review.csv**
+   - 根据人工筛选结果更新 CSV
+
+6. **再决定中批量**
+   - 确认通过率后，决定是继续完善当前 100 张还是扩展到 333 张测试
+
+---
+
+## 7. 不要做的事
+
+- ❌ 直接生成 3333
+- ❌ 删除 `output/final_images_v2/` 中的现有图片
+- ❌ 覆盖 `output/metadata_v2/` 中的现有 JSON
+- ❌ 大改官网视觉风格
+- ❌ 修改 Google Apps Script 白名单接口地址
+- ❌ 回到纯 ComfyUI 整图生成路线
+
+---
+
+## 8. 拼装层级顺序
 
 ```
 第1层: base_template       → 底图（收据模板）
@@ -309,61 +185,6 @@ Codex 接手后**暂时不要**：
 
 ---
 
----
-
-## 11. Codex 接手检查记录 (2026-07-10)
-
-### Git 状态
-- ✅ commit `27cfd6d` 存在，工作区干净
-- ⚠️ **未推送到 GitHub**（网络连接被重置）
-- 远程: `origin → https://github.com/mzhanda/NO_REFUNDS_ARCHIVE.git`
-
-### 规则校验
-- ✅ `validate_compose_plan.py` — 0 errors, 0 warnings, 100行全部通过
-
-### 缺失素材（重要发现）
-- ⚠️ **交接文档原记录 2~5 个缺失，实际检查发现 20 个 prop 缺失**
-- CSV 引用 41 个不同 prop，其中 20 个素材文件不存在
-- 影响 32 行（Common 17, Uncommon 10, Rare 4, Legendary 1），全部"待拼装"
-- 最严重: `PROP_RECORD_SLEEVE_CORNER_01` 缺失影响 7 行（含 1 Legendary NRA-0085）
-- 已拼装的 67 张中**无一行**受缺失影响 ✅
-
-### 输出清点
-- ✅ `final_images_v2/`: 67 PNG，编号 NRA-0001 ~ NRA-0100
-- ✅ `metadata_v2/`: 67 JSON，与 PNG 一一对应
-- ✅ 无重复编号
-- ✅ 无旧输出残留（output/ 下仅 v2 目录）
-- 缺失编号 33 个（均为未拼装行）
-
-### 新增文件
-- ✅ `data/v2_image_selection_review.csv` — 100 行全量筛选清单（含67张已生成+33张未生成）
-- ✅ `review_v2_gallery.html` — 67 张可视化浏览页面（支持稀有度筛选、选择导出）
-
----
-
-> **文档版本**: 2.0 (Prop 补全 + 100 张全量拼装完成)  
+> **文档版本**: 3.0 (素材补齐 + 全量拼装 + 校验通过 + 审核工具就绪)  
 > **最后更新**: 2026-07-10  
 > **下一个接手者**: Codex
-
-## 12. Prop 补全与全量拼装完成记录 (2026-07-10)
-
-### 补全 20 个缺失 Prop
-- 使用 AI 图像生成 + `rembg` 自动抠图，补全 20 个缺失小物件素材
-- 新 prop 列表：`PROP_BARCODE_STICKER_01`, `PROP_BOTTLE_OPENER_01`, `PROP_CIGARETTE_01`, `PROP_CLOTH_NAPKIN_01`, `PROP_COFFEE_STIRRER_01`, `PROP_DICE_01`, `PROP_ENVELOPE_CORNER_01`, `PROP_FORK_01`, `PROP_FOUNTAIN_PEN_01`, `PROP_HAIR_CLIP_01`, `PROP_MATCHBOOK_01`, `PROP_MATCHBOOK_MOTEL_01`, `PROP_NEWSPAPER_CLIP_01`, `PROP_RECORD_SLEEVE_CORNER_01`, `PROP_SAFETY_RAZOR_01`, `PROP_SMALL_BOTTLE_01`, `PROP_SUGAR_PACKET_01`, `PROP_VINTAGE_COMB_01`, `PROP_VINTAGE_PEN_02`, `PROP_VINYL_LABEL_01`
-- 所有新 prop 已保存至 `assets/props/` 和 `assets/props_cropped/`
-
-### 全量 100 张 NFT 拼装完成
-- 运行 `compose_nra_assets.py`，成功生成 100 张最终图 + 100 个 metadata JSON
-- 之前 67 张被重新生成（CSV 中状态字段实际为"待拼装"，无历史状态冲突）
-- 缺失素材报告 `missing_assets_report_v2.csv`：0 条
-- `validate_compose_plan.py`：0 errors, 0 warnings
-- 已将 CSV 中全部 100 行"拼装状态"更新为"已拼装"
-
-### 输出清点（最终）
-- ✅ `final_images_v2/`: 100 PNG（NRA-0001 ~ NRA-0100）
-- ✅ `metadata_v2/`: 100 JSON，与 PNG 一一对应
-- ✅ 无重复编号，无旧输出残留
-
-### Review 文件更新
-- ✅ `data/v2_image_selection_review.csv` — 100 行全量筛选清单
-- ✅ `review_v2_gallery.html` — 100 张可视化浏览页面

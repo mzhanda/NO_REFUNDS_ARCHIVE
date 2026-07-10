@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NO REFUNDS ARCHIVE - Props 小物件预览</title>
+<style>
+* { box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 20px; background: #1a1a1a; color: #eee; }
+header { margin-bottom: 20px; }
+h1 { margin: 0 0 10px 0; font-size: 24px; }
+.subtitle { color: #aaa; font-size: 14px; }
+.controls { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-bottom: 20px; }
+input { padding: 8px; border-radius: 6px; border: 1px solid #555; background: #2a2a2a; color: #fff; }
+#gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 16px; }
+.prop { background: #262626; border-radius: 10px; overflow: hidden; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; position: relative; }
+.prop:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+.thumb-wrap { width: 100%; height: 140px; display: flex; align-items: center; justify-content: center; padding: 12px; background: conic-gradient(#333 0deg 90deg, #444 90deg 180deg, #333 180deg 270deg, #444 270deg 360deg); background-size: 20px 20px; background-position: center; }
+.thumb-wrap img { max-width: 100%; max-height: 100%; object-fit: contain; image-rendering: pixelated; }
+.prop .info { padding: 10px 12px; font-size: 12px; text-align: center; }
+.prop .name { color: #d4a853; font-weight: 600; word-break: break-all; margin-bottom: 4px; }
+.prop .size { color: #888; font-size: 11px; }
+.prop.new .badge { position: absolute; top: 6px; right: 6px; background: #d4a853; color: #111; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; }
+
+.lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.92); display: none; align-items: center; justify-content: center; z-index: 1000; padding: 40px; }
+.lightbox.active { display: flex; }
+.lightbox-content { position: relative; max-width: 90%; max-height: 90%; display: flex; flex-direction: column; align-items: center; }
+.lightbox-img-wrap { background: conic-gradient(#333 0deg 90deg, #444 90deg 180deg, #333 180deg 270deg, #444 270deg 360deg); background-size: 30px 30px; border-radius: 12px; padding: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.6); }
+.lightbox img { max-width: none; max-height: none; width: auto; height: auto; object-fit: contain; image-rendering: pixelated; transition: transform 0.05s ease-out; }
+.lightbox-info { color: #fff; margin-top: 16px; text-align: center; }
+.lightbox-info .name { font-size: 18px; color: #d4a853; font-weight: 600; margin-bottom: 6px; }
+.lightbox-info .dims { color: #aaa; font-size: 14px; }
+.lightbox-info .hint { color: #666; font-size: 12px; margin-top: 4px; }
+.lightbox-close { position: absolute; top: 20px; right: 30px; font-size: 36px; color: #fff; cursor: pointer; background: none; border: none; z-index: 1001; }
+.lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); font-size: 40px; color: #fff; background: rgba(255,255,255,0.1); border: none; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.lightbox-nav:hover { background: rgba(255,255,255,0.2); }
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
+.lightbox-reset { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); background: rgba(255,255,255,0.15); color: #fff; border: 1px solid #555; padding: 6px 16px; border-radius: 6px; cursor: pointer; font-size: 13px; }
+.lightbox-reset:hover { background: rgba(255,255,255,0.25); }
+.empty { color: #888; text-align: center; padding: 60px; grid-column: 1 / -1; }
+</style>
+</head>
+<body>
+<header>
+<h1>NO REFUNDS ARCHIVE - Props 小物件预览</h1>
+<div class="subtitle">点击任意小物件可放大查看（透明背景用棋盘格表示）</div>
+</header>
+<div class="controls">
+  <input type="text" id="search" placeholder="搜索 prop 名称...">
+  <div class="subtitle" id="count">加载中...</div>
+</div>
+<div id="gallery"></div>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev">&#8249;</button>
+  <button class="lightbox-nav lightbox-next" id="lightboxNext">&#8250;</button>
+  <div class="lightbox-content">
+    <div class="lightbox-img-wrap">
+      <img id="lightboxImg" src="" alt="">
+    </div>
+    <div class="lightbox-info">
+      <div class="name" id="lightboxName"></div>
+      <div class="dims" id="lightboxDims"></div>
+      <div class="hint">🖱 滚轮缩放 | 双击重置</div>
+    </div>
+    <button class="lightbox-reset" id="lightboxReset">重置大小</button>
+  </div>
+</div>
+
+<script>
+const newProps = new Set([
+  'prop_barcode_sticker_01.png','prop_bottle_opener_01.png','prop_cigarette_01.png',
+  'prop_cloth_napkin_01.png','prop_coffee_stirrer_01.png','prop_dice_01.png',
+  'prop_envelope_corner_01.png','prop_fork_01.png','prop_fountain_pen_01.png',
+  'prop_hair_clip_01.png','prop_matchbook_01.png','prop_matchbook_motel_01.png',
+  'prop_newspaper_clip_01.png','prop_record_sleeve_corner_01.png','prop_safety_razor_01.png',
+  'prop_small_bottle_01.png','prop_sugar_packet_01.png','prop_vintage_comb_01.png',
+  'prop_vintage_pen_02.png','prop_vinyl_label_01.png'
+]);
+
+const gallery = document.getElementById('gallery');
+const search = document.getElementById('search');
+const count = document.getElementById('count');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxName = document.getElementById('lightboxName');
+const lightboxDims = document.getElementById('lightboxDims');
+const lightboxClose = document.getElementById('lightboxClose');
+const lightboxPrev = document.getElementById('lightboxPrev');
+const lightboxNext = document.getElementById('lightboxNext');
+
+let props = [];
+let filtered = [];
+let currentIndex = 0;
+let scale = 1;
+const scaleMin = 0.3;
+const scaleMax = 8;
+const scaleStep = 0.15;
+
+fetch('assets/props_cropped/')
+  .then(r => r.text())
+  .then(html => {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
+    const links = Array.from(doc.querySelectorAll('a'));
+    props = links
+      .map(a => a.getAttribute('href'))
+      .filter(h => h && h.endsWith('.png'))
+      .map(h => ({ name: h, src: 'assets/props_cropped/' + h, isNew: newProps.has(h) }));
+    props.sort((a, b) => (a.isNew === b.isNew ? a.name.localeCompare(b.name) : (a.isNew ? -1 : 1)));
+    render(props);
+  })
+  .catch(err => {
+    console.error('无法加载目录列表:', err);
+    gallery.innerHTML = '<div class="empty">无法自动加载目录，请确保通过 HTTP 服务器打开此页面</div>';
+  });
+
+function render(list) {
+  filtered = list;
+  count.textContent = `共 ${list.length} 个小物件`;
+  gallery.innerHTML = '';
+  if (list.length === 0) {
+    gallery.innerHTML = '<div class="empty">无匹配结果</div>';
+    return;
+  }
+  list.forEach((prop, idx) => {
+    const div = document.createElement('div');
+    div.className = 'prop' + (prop.isNew ? ' new' : '');
+    div.innerHTML = `
+      ${prop.isNew ? '<div class="badge">NEW</div>' : ''}
+      <div class="thumb-wrap">
+        <img src="${prop.src}" alt="${prop.name}" loading="lazy">
+      </div>
+      <div class="info">
+        <div class="name">${prop.name}</div>
+      </div>
+    `;
+    div.addEventListener('click', () => openLightbox(idx));
+    gallery.appendChild(div);
+  });
+}
+
+function openLightbox(idx) {
+  currentIndex = idx;
+  scale = 1;
+  const prop = filtered[idx];
+  lightboxImg.src = prop.src;
+  lightboxImg.style.transform = `scale(${scale})`;
+  lightboxName.textContent = prop.name + (prop.isNew ? ' (NEW)' : '');
+  lightboxImg.onload = () => {
+    lightboxDims.textContent = `原始尺寸: ${lightboxImg.naturalWidth} × ${lightboxImg.naturalHeight} px`;
+  };
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  lightbox.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function setScale(newScale) {
+  scale = Math.max(scaleMin, Math.min(scaleMax, newScale));
+  lightboxImg.style.transform = `scale(${scale})`;
+}
+
+function resetScale() {
+  setScale(1);
+}
+
+lightboxImg.addEventListener('wheel', (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  if (e.deltaY < 0) {
+    setScale(scale + scaleStep);
+  } else {
+    setScale(scale - scaleStep);
+  }
+}, { passive: false });
+
+lightboxImg.addEventListener('dblclick', (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  resetScale();
+});
+
+function prev() {
+  currentIndex = (currentIndex - 1 + filtered.length) % filtered.length;
+  openLightbox(currentIndex);
+}
+
+function next() {
+  currentIndex = (currentIndex + 1) % filtered.length;
+  openLightbox(currentIndex);
+}
+
+search.addEventListener('input', (e) => {
+  const term = e.target.value.toLowerCase();
+  render(props.filter(p => p.name.toLowerCase().includes(term)));
+});
+
+lightboxClose.addEventListener('click', closeLightbox);
+lightboxPrev.addEventListener('click', (e) => { e.stopPropagation(); prev(); });
+lightboxNext.addEventListener('click', (e) => { e.stopPropagation(); next(); });
+lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+document.getElementById('lightboxReset').addEventListener('click', resetScale);
+document.addEventListener('keydown', (e) => {
+  if (!lightbox.classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') prev();
+  if (e.key === 'ArrowRight') next();
+});
+</script>
+</body>
+</html>
