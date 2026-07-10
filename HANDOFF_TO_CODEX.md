@@ -279,8 +279,8 @@ Codex 接手后**暂时不要**：
     │   ├── base_templates/       (61个)
     │   ├── stamps/               (26个)
     │   ├── handwritten/          (30个)
-    │   ├── props/                (71个)
-    │   ├── props_cropped/        (71个)
+    │   ├── props/                (91个)
+    │   ├── props_cropped/        (91个)
     │   ├── damage/               (20个)
     │   ├── overlays/             (15个)
     │   ├── material_pattern/     (14个)
@@ -288,8 +288,8 @@ Codex 接手后**暂时不要**：
     │   └── legendary_accent_cropped/ (10个)
     │
     └── output/
-        ├── final_images_v2/      (67张PNG)
-        ├── metadata_v2/          (67个JSON)
+        ├── final_images_v2/      (100张PNG)
+        ├── metadata_v2/          (100个JSON)
         └── missing_assets_report_v2.csv
 ```
 
@@ -341,6 +341,29 @@ Codex 接手后**暂时不要**：
 
 ---
 
-> **文档版本**: 1.1 (Codex 接手更新)  
+> **文档版本**: 2.0 (Prop 补全 + 100 张全量拼装完成)  
 > **最后更新**: 2026-07-10  
 > **下一个接手者**: Codex
+
+## 12. Prop 补全与全量拼装完成记录 (2026-07-10)
+
+### 补全 20 个缺失 Prop
+- 使用 AI 图像生成 + `rembg` 自动抠图，补全 20 个缺失小物件素材
+- 新 prop 列表：`PROP_BARCODE_STICKER_01`, `PROP_BOTTLE_OPENER_01`, `PROP_CIGARETTE_01`, `PROP_CLOTH_NAPKIN_01`, `PROP_COFFEE_STIRRER_01`, `PROP_DICE_01`, `PROP_ENVELOPE_CORNER_01`, `PROP_FORK_01`, `PROP_FOUNTAIN_PEN_01`, `PROP_HAIR_CLIP_01`, `PROP_MATCHBOOK_01`, `PROP_MATCHBOOK_MOTEL_01`, `PROP_NEWSPAPER_CLIP_01`, `PROP_RECORD_SLEEVE_CORNER_01`, `PROP_SAFETY_RAZOR_01`, `PROP_SMALL_BOTTLE_01`, `PROP_SUGAR_PACKET_01`, `PROP_VINTAGE_COMB_01`, `PROP_VINTAGE_PEN_02`, `PROP_VINYL_LABEL_01`
+- 所有新 prop 已保存至 `assets/props/` 和 `assets/props_cropped/`
+
+### 全量 100 张 NFT 拼装完成
+- 运行 `compose_nra_assets.py`，成功生成 100 张最终图 + 100 个 metadata JSON
+- 之前 67 张被重新生成（CSV 中状态字段实际为"待拼装"，无历史状态冲突）
+- 缺失素材报告 `missing_assets_report_v2.csv`：0 条
+- `validate_compose_plan.py`：0 errors, 0 warnings
+- 已将 CSV 中全部 100 行"拼装状态"更新为"已拼装"
+
+### 输出清点（最终）
+- ✅ `final_images_v2/`: 100 PNG（NRA-0001 ~ NRA-0100）
+- ✅ `metadata_v2/`: 100 JSON，与 PNG 一一对应
+- ✅ 无重复编号，无旧输出残留
+
+### Review 文件更新
+- ✅ `data/v2_image_selection_review.csv` — 100 行全量筛选清单
+- ✅ `review_v2_gallery.html` — 100 张可视化浏览页面
