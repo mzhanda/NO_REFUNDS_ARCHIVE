@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NO REFUNDS ARCHIVE - v2 Image Selection Review</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background:#111; color:#eee; }
+.header { position:sticky; top:0; z-index:100; background:#1a1a1a; padding:16px 24px; border-bottom:1px solid #333; }
+.header h1 { font-size:20px; margin-bottom:8px; }
+.filters { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+.filters button { padding:6px 14px; border:1px solid #444; border-radius:4px; background:#222; color:#ccc; cursor:pointer; font-size:13px; }
+.filters button:hover { background:#333; }
+.filters button.active { border-color:#fff; color:#fff; background:#333; }
+.stats { margin-top:8px; font-size:13px; color:#888; }
+.stats span { margin-right:16px; }
+.gallery { display:grid; grid-template-columns:repeat(auto-fill, minmax(320px, 1fr)); gap:16px; padding:16px 24px; }
+.card { background:#1e1e1e; border:1px solid #333; border-radius:8px; overflow:hidden; cursor:pointer; transition:border-color 0.2s; }
+.card:hover { border-color:#555; }
+.card.selected { border-color:#4caf50; box-shadow:0 0 12px rgba(76,175,80,0.3); }
+.card-header { display:flex; align-items:center; gap:8px; padding:10px 12px; background:#252525; }
+.card-id { font-weight:bold; font-size:14px; }
+.card-rarity { padding:2px 8px; border-radius:3px; font-size:11px; color:#fff; }
+.card-series { font-size:12px; color:#999; margin-left:auto; }
+.card img { width:100%; height:auto; display:block; }
+.card-traits { padding:10px 12px; font-size:12px; color:#aaa; line-height:1.6; }
+.card-traits strong { color:#ccc; }
+.card-select { padding:8px 12px; border-top:1px solid #333; display:flex; align-items:center; gap:6px; font-size:12px; }
+.select-checkbox { width:16px; height:16px; cursor:pointer; }
+.hidden { display:none; }
+.export-bar { position:sticky; bottom:0; background:#1a1a1a; padding:12px 24px; border-top:1px solid #333; display:flex; gap:12px; align-items:center; }
+.export-bar button { padding:8px 20px; border:none; border-radius:4px; cursor:pointer; font-size:14px; }
+.btn-export { background:#4caf50; color:#fff; }
+.btn-clear { background:#555; color:#fff; }
+.selected-count { color:#4caf50; font-weight:bold; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>NO REFUNDS ARCHIVE - v2 Image Selection Review</h1>
+  <div class="filters">
+    <button class="active" onclick="filterBy('all')">All (67)</button>
+    <button onclick="filterBy('Common')">Common</button>
+    <button onclick="filterBy('Uncommon')">Uncommon</button>
+    <button onclick="filterBy('Rare')">Rare</button>
+    <button onclick="filterBy('Legendary')">Legendary</button>
+    <button onclick="filterBy('Ultra Rare')">Ultra Rare</button>
+  </div>
+  <div class="stats">
+    <span>Total: 67 images</span>
+    <span>Selected: <strong class="selected-count" id="selCount">0</strong></span>
+  </div>
+</div>
+
+<div class="gallery" id="gallery">
+
+    <div class="card" data-id="NRA-0001" data-rarity="Common" data-series="Token Pawn" onclick="toggleSelect(this, 'NRA-0001')">
+      <div class="card-header">
+        <span class="card-id">NRA-0001</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Token Pawn</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0001_TokenPawn_B05_VAR_01_UNCLAIMED.png" loading="lazy" alt="NRA-0001" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> UNCLAIMED</div>
+        <div><strong>Handwritten:</strong> CASE 14</div>
+        <div><strong>Props:</strong> PROP_CHAIN_FRAGMENT_01 PROP_SMALL_JEWELRY_BAG_01</div>
+        <div><strong>Damage:</strong> DMG_DUST_SPECKS_01</div>
+        <div><strong>Overlay:</strong> OVERLAY_SCAN_NOISE_01</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0001">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0002" data-rarity="Common" data-series="Side B Records" onclick="toggleSelect(this, 'NRA-0002')">
+      <div class="card-header">
+        <span class="card-id">NRA-0002</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Side B Records</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0002_SideBRecords_B01_VAR_08_LAST_COPY.png" loading="lazy" alt="NRA-0002" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> LAST COPY</div>
+        <div><strong>Handwritten:</strong> LAST COPY</div>
+        <div><strong>Props:</strong>  </div>
+        <div><strong>Damage:</strong> DMG_FOLD_02</div>
+        <div><strong>Overlay:</strong> OVERLAY_FILM_GRAIN_01</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0002">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0003" data-rarity="Rare" data-series="Side B Records" onclick="toggleSelect(this, 'NRA-0003')">
+      <div class="card-header">
+        <span class="card-id">NRA-0003</span>
+        <span class="card-rarity" style="background:#2196f3">Rare</span>
+        <span class="card-series">Side B Records</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0003_SideBRecords_B04_VAR_01_STORE_CREDIT.png" loading="lazy" alt="NRA-0003" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> STORE CREDIT</div>
+        <div><strong>Handwritten:</strong> A SIDE GONE</div>
+        <div><strong>Props:</strong> PROP_FOUNTAIN_PEN_01 </div>
+        <div><strong>Damage:</strong> DMG_EDGE_WEAR_01</div>
+        <div><strong>Overlay:</strong> OVERLAY_FADED_INK_01</div>
+        
+        <div><strong>Legendary:</strong> PROP_CROWN_GOLD_01</div>
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0003">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0004" data-rarity="Common" data-series="Night Owl Video" onclick="toggleSelect(this, 'NRA-0004')">
+      <div class="card-header">
+        <span class="card-id">NRA-0004</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Night Owl Video</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0004_NightOwlVideo_B08_VAR_02_CHECKED_OUT.png" loading="lazy" alt="NRA-0004" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> CHECKED OUT</div>
+        <div><strong>Handwritten:</strong> TAPE 12</div>
+        <div><strong>Props:</strong>  </div>
+        <div><strong>Damage:</strong> DMG_FOLD_03</div>
+        <div><strong>Overlay:</strong> OVERLAY_SCAN_NOISE_02</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0004">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0005" data-rarity="Uncommon" data-series="Midnight Diner" onclick="toggleSelect(this, 'NRA-0005')">
+      <div class="card-header">
+        <span class="card-id">NRA-0005</span>
+        <span class="card-rarity" style="background:#4caf50">Uncommon</span>
+        <span class="card-series">Midnight Diner</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0005_MidnightDiner_B02_VAR_04_CLOSED.png" loading="lazy" alt="NRA-0005" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> CLOSED</div>
+        <div><strong>Handwritten:</strong> 1138PM</div>
+        <div><strong>Props:</strong>  </div>
+        <div><strong>Damage:</strong> DMG_COFFEE_RING_02</div>
+        <div><strong>Overlay:</strong> OVERLAY_DUST_01</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0005">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0006" data-rarity="Common" data-series="Night Owl Video" onclick="toggleSelect(this, 'NRA-0006')">
+      <div class="card-header">
+        <span class="card-id">NRA-0006</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Night Owl Video</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0006_NightOwlVideo_B02_VAR_07_NO_REFUNDS.png" loading="lazy" alt="NRA-0006" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> NO REFUNDS</div>
+        <div><strong>Handwritten:</strong> RETURNED EMPTY</div>
+        <div><strong>Props:</strong> PROP_MAGNIFYING_GLASS_01 PROP_VINTAGE_COIN_03</div>
+        <div><strong>Damage:</strong> DMG_FOLD_02</div>
+        <div><strong>Overlay:</strong> OVERLAY_FADED_INK_01</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0006">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0007" data-rarity="Common" data-series="Lucky 8 Gas &amp; Motel" onclick="toggleSelect(this, 'NRA-0007')">
+      <div class="card-header">
+        <span class="card-id">NRA-0007</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Lucky 8 Gas &amp; Motel</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0007_Lucky8GasMotel_B02_VAR_05_NO_VACANCY.png" loading="lazy" alt="NRA-0007" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> NO VACANCY</div>
+        <div><strong>Handwritten:</strong> NO VACANCY</div>
+        <div><strong>Props:</strong> PROP_VINTAGE_COIN_03 PROP_OLD_KEY_01</div>
+        <div><strong>Damage:</strong> DMG_WATER_STAIN_02</div>
+        <div><strong>Overlay:</strong> OVERLAY_SOFT_VIGNETTE_01</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0007">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0008" data-rarity="Uncommon" data-series="Midnight Diner" onclick="toggleSelect(this, 'NRA-0008')">
+      <div class="card-header">
+        <span class="card-id">NRA-0008</span>
+        <span class="card-rarity" style="background:#4caf50">Uncommon</span>
+        <span class="card-series">Midnight Diner</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0008_MidnightDiner_B01_VAR_08_CLOSED.png" loading="lazy" alt="NRA-0008" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> CLOSED</div>
+        <div><strong>Handwritten:</strong> TABLE 6</div>
+        <div><strong>Props:</strong>  </div>
+        <div><strong>Damage:</strong> DMG_DUST_SPECKS_02</div>
+        <div><strong>Overlay:</strong> OVERLAY_SOFT_VIGNETTE_01</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0008">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0009" data-rarity="Common" data-series="Midnight Diner" onclick="toggleSelect(this, 'NRA-0009')">
+      <div class="card-header">
+        <span class="card-id">NRA-0009</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Midnight Diner</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0009_MidnightDiner_B01_VAR_04_CLOSED.png" loading="lazy" alt="NRA-0009" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> CLOSED</div>
+        <div><strong>Handwritten:</strong> LAST ORDER</div>
+        <div><strong>Props:</strong> PROP_VINTAGE_COIN_02 </div>
+        <div><strong>Damage:</strong> DMG_THERMAL_FADE_01</div>
+        <div><strong>Overlay:</strong> OVERLAY_FADED_INK_01</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0009">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0010" data-rarity="Uncommon" data-series="Side B Records" onclick="toggleSelect(this, 'NRA-0010')">
+      <div class="card-header">
+        <span class="card-id">NRA-0010</span>
+        <span class="card-rarity" style="background:#4caf50">Uncommon</span>
+        <span class="card-series">Side B Records</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0010_SideBRecords_B07_VAR_04_LAST_COPY.png" loading="lazy" alt="NRA-0010" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> LAST COPY</div>
+        <div><strong>Handwritten:</strong> SIDE B</div>
+        <div><strong>Props:</strong> PROP_RECORD_SLEEVE_CORNER_01 </div>
+        <div><strong>Damage:</strong> DMG_FOLD_02</div>
+        <div><strong>Overlay:</strong> OVERLAY_FILM_GRAIN_01</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0010">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0011" data-rarity="Uncommon" data-series="Night Owl Video" onclick="toggleSelect(this, 'NRA-0011')">
+      <div class="card-header">
+        <span class="card-id">NRA-0011</span>
+        <span class="card-rarity" style="background:#4caf50">Uncommon</span>
+        <span class="card-series">Night Owl Video</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0011_NightOwlVideo_B06_VAR_01_NO_REFUNDS.png" loading="lazy" alt="NRA-0011" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> NO REFUNDS</div>
+        <div><strong>Handwritten:</strong> REWIND</div>
+        <div><strong>Props:</strong> PROP_RECORD_SLEEVE_CORNER_01 </div>
+        <div><strong>Damage:</strong> DMG_EDGE_WEAR_01</div>
+        <div><strong>Overlay:</strong> OVERLAY_FADED_INK_01</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0011">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0015" data-rarity="Uncommon" data-series="Side B Records" onclick="toggleSelect(this, 'NRA-0015')">
+      <div class="card-header">
+        <span class="card-id">NRA-0015</span>
+        <span class="card-rarity" style="background:#4caf50">Uncommon</span>
+        <span class="card-series">Side B Records</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0015_SideBRecords_B02_VAR_11_LAST_COPY.png" loading="lazy" alt="NRA-0015" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> LAST COPY</div>
+        <div><strong>Handwritten:</strong> LAST COPY</div>
+        <div><strong>Props:</strong> PROP_VINYL_LABEL_01 </div>
+        <div><strong>Damage:</strong> DMG_TAPE_02</div>
+        <div><strong>Overlay:</strong> OVERLAY_DUST_02</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0015">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0016" data-rarity="Common" data-series="Token Pawn" onclick="toggleSelect(this, 'NRA-0016')">
+      <div class="card-header">
+        <span class="card-id">NRA-0016</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Token Pawn</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0016_TokenPawn_B01_VAR_07_CLAIM_CLOSED.png" loading="lazy" alt="NRA-0016" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> CLAIM CLOSED</div>
+        <div><strong>Handwritten:</strong> HOLD TAG</div>
+        <div><strong>Props:</strong> PROP_VINTAGE_RING_02 PROP_VINTAGE_MEDAL_01</div>
+        <div><strong>Damage:</strong> DMG_FOLD_02</div>
+        <div><strong>Overlay:</strong> OVERLAY_SCAN_NOISE_02</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0016">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0018" data-rarity="Rare" data-series="Night Owl Video" onclick="toggleSelect(this, 'NRA-0018')">
+      <div class="card-header">
+        <span class="card-id">NRA-0018</span>
+        <span class="card-rarity" style="background:#2196f3">Rare</span>
+        <span class="card-series">Night Owl Video</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0018_NightOwlVideo_B08_VAR_03_CHECKED_OUT.png" loading="lazy" alt="NRA-0018" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> CHECKED OUT</div>
+        <div><strong>Handwritten:</strong> TAPE 12</div>
+        <div><strong>Props:</strong> PROP_MAGNIFYING_GLASS_01 </div>
+        <div><strong>Damage:</strong> DMG_EDGE_WEAR_02</div>
+        <div><strong>Overlay:</strong> OVERLAY_SCAN_NOISE_01</div>
+        
+        <div><strong>Legendary:</strong> PROP_HOLO_SEAL_01</div>
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0018">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0022" data-rarity="Common" data-series="Sunset Mart" onclick="toggleSelect(this, 'NRA-0022')">
+      <div class="card-header">
+        <span class="card-id">NRA-0022</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Sunset Mart</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0022_SunsetMart_B04_VAR_07_CLOSED.png" loading="lazy" alt="NRA-0022" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> CLOSED</div>
+        <div><strong>Handwritten:</strong> LAST SHIFT</div>
+        <div><strong>Props:</strong> PROP_ENVELOPE_CORNER_01 </div>
+        <div><strong>Damage:</strong> DMG_THERMAL_FADE_01</div>
+        <div><strong>Overlay:</strong> OVERLAY_SCAN_NOISE_02</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0022">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0023" data-rarity="Common" data-series="Sunset Mart" onclick="toggleSelect(this, 'NRA-0023')">
+      <div class="card-header">
+        <span class="card-id">NRA-0023</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Sunset Mart</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0023_SunsetMart_B07_VAR_03_CLOSED.png" loading="lazy" alt="NRA-0023" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> CLOSED</div>
+        <div><strong>Handwritten:</strong> 512PM</div>
+        <div><strong>Props:</strong> PROP_VINTAGE_COIN_02 </div>
+        <div><strong>Damage:</strong> DMG_EDGE_WEAR_01</div>
+        <div><strong>Overlay:</strong> OVERLAY_DUST_02</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0023">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0024" data-rarity="Legendary" data-series="Sunset Mart" onclick="toggleSelect(this, 'NRA-0024')">
+      <div class="card-header">
+        <span class="card-id">NRA-0024</span>
+        <span class="card-rarity" style="background:#ff9800">Legendary</span>
+        <span class="card-series">Sunset Mart</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0024_SunsetMart_B04_VAR_01_ZERO_SUPPLY_GOLD.png" loading="lazy" alt="NRA-0024" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> ZERO SUPPLY GOLD</div>
+        <div><strong>Handwritten:</strong> LAST SHIFT</div>
+        <div><strong>Props:</strong>  </div>
+        <div><strong>Damage:</strong> DMG_THERMAL_FADE_01</div>
+        <div><strong>Overlay:</strong> OVERLAY_DUST_01</div>
+        
+        <div><strong>Legendary:</strong> OVERLAY_RAINBOW_FOIL_01</div>
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0024">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0025" data-rarity="Uncommon" data-series="Side B Records" onclick="toggleSelect(this, 'NRA-0025')">
+      <div class="card-header">
+        <span class="card-id">NRA-0025</span>
+        <span class="card-rarity" style="background:#4caf50">Uncommon</span>
+        <span class="card-series">Side B Records</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0025_SideBRecords_B01_VAR_02_STORE_CREDIT.png" loading="lazy" alt="NRA-0025" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> STORE CREDIT</div>
+        <div><strong>Handwritten:</strong> STORE CREDIT</div>
+        <div><strong>Props:</strong> PROP_VINTAGE_COIN_01 </div>
+        <div><strong>Damage:</strong> DMG_EDGE_WEAR_01</div>
+        <div><strong>Overlay:</strong> OVERLAY_SCAN_NOISE_02</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0025">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0026" data-rarity="Common" data-series="Night Owl Video" onclick="toggleSelect(this, 'NRA-0026')">
+      <div class="card-header">
+        <span class="card-id">NRA-0026</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Night Owl Video</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0026_NightOwlVideo_B05_VAR_03_NO_REFUNDS.png" loading="lazy" alt="NRA-0026" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> NO REFUNDS</div>
+        <div><strong>Handwritten:</strong> TAPE 12</div>
+        <div><strong>Props:</strong> PROP_POCKET_KNIFE_01 </div>
+        <div><strong>Damage:</strong> DMG_THERMAL_FADE_01</div>
+        <div><strong>Overlay:</strong> OVERLAY_DUST_01</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0026">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0028" data-rarity="Common" data-series="Side B Records" onclick="toggleSelect(this, 'NRA-0028')">
+      <div class="card-header">
+        <span class="card-id">NRA-0028</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Side B Records</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0028_SideBRecords_B06_VAR_07_STORE_CREDIT.png" loading="lazy" alt="NRA-0028" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> STORE CREDIT</div>
+        <div><strong>Handwritten:</strong> TRACK 07</div>
+        <div><strong>Props:</strong> PROP_VINTAGE_COIN_03 </div>
+        <div><strong>Damage:</strong> DMG_EDGE_WEAR_02</div>
+        <div><strong>Overlay:</strong> OVERLAY_DUST_02</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0028">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0029" data-rarity="Rare" data-series="Side B Records" onclick="toggleSelect(this, 'NRA-0029')">
+      <div class="card-header">
+        <span class="card-id">NRA-0029</span>
+        <span class="card-rarity" style="background:#2196f3">Rare</span>
+        <span class="card-series">Side B Records</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0029_SideBRecords_B04_VAR_08_LAST_COPY.png" loading="lazy" alt="NRA-0029" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> LAST COPY</div>
+        <div><strong>Handwritten:</strong> SIDE B</div>
+        <div><strong>Props:</strong> PROP_VINTAGE_COIN_01 </div>
+        <div><strong>Damage:</strong> DMG_FOLD_01</div>
+        <div><strong>Overlay:</strong> OVERLAY_FADED_INK_01</div>
+        
+        <div><strong>Legendary:</strong> PROP_CROWN_CHROME_01</div>
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0029">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0032" data-rarity="Common" data-series="Midnight Diner" onclick="toggleSelect(this, 'NRA-0032')">
+      <div class="card-header">
+        <span class="card-id">NRA-0032</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Midnight Diner</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0032_MidnightDiner_B08_VAR_03_LAST_ORDER.png" loading="lazy" alt="NRA-0032" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> LAST ORDER</div>
+        <div><strong>Handwritten:</strong> LAST ORDER</div>
+        <div><strong>Props:</strong> PROP_FORK_01 </div>
+        <div><strong>Damage:</strong> DMG_DUST_SPECKS_02</div>
+        <div><strong>Overlay:</strong> OVERLAY_ARCHIVE_YELLOWING_01</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0032">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0033" data-rarity="Common" data-series="Lucky 8 Gas &amp; Motel" onclick="toggleSelect(this, 'NRA-0033')">
+      <div class="card-header">
+        <span class="card-id">NRA-0033</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Lucky 8 Gas &amp; Motel</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0033_Lucky8GasMotel_B02_VAR_07_ROOM_PAID.png" loading="lazy" alt="NRA-0033" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> ROOM PAID</div>
+        <div><strong>Handwritten:</strong> ROOM 8</div>
+        <div><strong>Props:</strong> PROP_OLD_KEY_01 </div>
+        <div><strong>Damage:</strong> DMG_WATER_STAIN_03</div>
+        <div><strong>Overlay:</strong> OVERLAY_SOFT_VIGNETTE_01</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0033">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0034" data-rarity="Uncommon" data-series="Sunset Mart" onclick="toggleSelect(this, 'NRA-0034')">
+      <div class="card-header">
+        <span class="card-id">NRA-0034</span>
+        <span class="card-rarity" style="background:#4caf50">Uncommon</span>
+        <span class="card-series">Sunset Mart</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0034_SunsetMart_B04_VAR_06_FINAL_SALE.png" loading="lazy" alt="NRA-0034" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> FINAL SALE</div>
+        <div><strong>Handwritten:</strong> FINAL SALE</div>
+        <div><strong>Props:</strong> PROP_VINTAGE_COIN_03 </div>
+        <div><strong>Damage:</strong> DMG_FOLD_01</div>
+        <div><strong>Overlay:</strong> OVERLAY_SCAN_NOISE_02</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0034">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0035" data-rarity="Uncommon" data-series="Lucky 8 Gas &amp; Motel" onclick="toggleSelect(this, 'NRA-0035')">
+      <div class="card-header">
+        <span class="card-id">NRA-0035</span>
+        <span class="card-rarity" style="background:#4caf50">Uncommon</span>
+        <span class="card-series">Lucky 8 Gas &amp; Motel</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0035_Lucky8GasMotel_B04_VAR_04_NO_VACANCY.png" loading="lazy" alt="NRA-0035" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> NO VACANCY</div>
+        <div><strong>Handwritten:</strong> NO VACANCY</div>
+        <div><strong>Props:</strong> PROP_NEWSPAPER_CLIP_01 </div>
+        <div><strong>Damage:</strong> DMG_EDGE_WEAR_02</div>
+        <div><strong>Overlay:</strong> OVERLAY_SOFT_VIGNETTE_01</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0035">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0036" data-rarity="Common" data-series="Side B Records" onclick="toggleSelect(this, 'NRA-0036')">
+      <div class="card-header">
+        <span class="card-id">NRA-0036</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Side B Records</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0036_SideBRecords_B02_VAR_03_LAST_COPY.png" loading="lazy" alt="NRA-0036" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> LAST COPY</div>
+        <div><strong>Handwritten:</strong> STORE CREDIT</div>
+        <div><strong>Props:</strong> PROP_FOUNTAIN_PEN_01 </div>
+        <div><strong>Damage:</strong> DMG_DUST_SPECKS_02</div>
+        <div><strong>Overlay:</strong> OVERLAY_SCAN_NOISE_02</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0036">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0037" data-rarity="Legendary" data-series="Lucky 8 Gas &amp; Motel" onclick="toggleSelect(this, 'NRA-0037')">
+      <div class="card-header">
+        <span class="card-id">NRA-0037</span>
+        <span class="card-rarity" style="background:#ff9800">Legendary</span>
+        <span class="card-series">Lucky 8 Gas &amp; Motel</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0037_Lucky8GasMotel_B01_VAR_06_GOLD_SEAL_GOLD.png" loading="lazy" alt="NRA-0037" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> GOLD SEAL GOLD</div>
+        <div><strong>Handwritten:</strong> EXIT 22</div>
+        <div><strong>Props:</strong> PROP_KEYCHAIN_01 </div>
+        <div><strong>Damage:</strong> DMG_EDGE_WEAR_02</div>
+        <div><strong>Overlay:</strong> OVERLAY_SOFT_VIGNETTE_01</div>
+        
+        <div><strong>Legendary:</strong> OVERLAY_CRYSTAL_SPARK_01;PROP_HOLO_SEAL_01</div>
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0037">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0038" data-rarity="Common" data-series="Lucky 8 Gas &amp; Motel" onclick="toggleSelect(this, 'NRA-0038')">
+      <div class="card-header">
+        <span class="card-id">NRA-0038</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Lucky 8 Gas &amp; Motel</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0038_Lucky8GasMotel_B06_VAR_02_CLOSED.png" loading="lazy" alt="NRA-0038" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> CLOSED</div>
+        <div><strong>Handwritten:</strong> ROOM 8</div>
+        <div><strong>Props:</strong> PROP_CIGARETTE_01 PROP_OLD_KEY_03</div>
+        <div><strong>Damage:</strong> DMG_FOLD_02</div>
+        <div><strong>Overlay:</strong> OVERLAY_SCAN_NOISE_02</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0038">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0039" data-rarity="Rare" data-series="Midnight Diner" onclick="toggleSelect(this, 'NRA-0039')">
+      <div class="card-header">
+        <span class="card-id">NRA-0039</span>
+        <span class="card-rarity" style="background:#2196f3">Rare</span>
+        <span class="card-series">Midnight Diner</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0039_MidnightDiner_B05_VAR_06_LAST_ORDER.png" loading="lazy" alt="NRA-0039" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> LAST ORDER</div>
+        <div><strong>Handwritten:</strong> TABLE 6</div>
+        <div><strong>Props:</strong> PROP_COFFEE_STIRRER_01 </div>
+        <div><strong>Damage:</strong> DMG_CORNER_CURL_01</div>
+        <div><strong>Overlay:</strong> OVERLAY_ARCHIVE_YELLOWING_01</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0039">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0043" data-rarity="Common" data-series="Midnight Diner" onclick="toggleSelect(this, 'NRA-0043')">
+      <div class="card-header">
+        <span class="card-id">NRA-0043</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Midnight Diner</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0043_MidnightDiner_B06_VAR_06_LAST_ORDER.png" loading="lazy" alt="NRA-0043" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> LAST ORDER</div>
+        <div><strong>Handwritten:</strong> LAST ORDER</div>
+        <div><strong>Props:</strong> PROP_MATCHBOOK_01 PROP_SUGAR_PACKET_01</div>
+        <div><strong>Damage:</strong> DMG_FOLD_01</div>
+        <div><strong>Overlay:</strong> OVERLAY_SCAN_NOISE_01</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0043">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0045" data-rarity="Common" data-series="Side B Records" onclick="toggleSelect(this, 'NRA-0045')">
+      <div class="card-header">
+        <span class="card-id">NRA-0045</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Side B Records</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0045_SideBRecords_B04_VAR_03_LAST_COPY.png" loading="lazy" alt="NRA-0045" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> LAST COPY</div>
+        <div><strong>Handwritten:</strong> TRACK 07</div>
+        <div><strong>Props:</strong> PROP_VINYL_LABEL_01 PROP_VINTAGE_PEN_02</div>
+        <div><strong>Damage:</strong> DMG_CORNER_CURL_01</div>
+        <div><strong>Overlay:</strong> OVERLAY_FADED_INK_01</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0045">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0046" data-rarity="Uncommon" data-series="Token Pawn" onclick="toggleSelect(this, 'NRA-0046')">
+      <div class="card-header">
+        <span class="card-id">NRA-0046</span>
+        <span class="card-rarity" style="background:#4caf50">Uncommon</span>
+        <span class="card-series">Token Pawn</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0046_TokenPawn_B03_VAR_06_PAWN_HOLD.png" loading="lazy" alt="NRA-0046" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> PAWN HOLD</div>
+        <div><strong>Handwritten:</strong> HOLD TAG</div>
+        <div><strong>Props:</strong> PROP_PADLOCK_01 </div>
+        <div><strong>Damage:</strong> DMG_TAPE_01</div>
+        <div><strong>Overlay:</strong> OVERLAY_SCAN_NOISE_01</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0046">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0050" data-rarity="Common" data-series="Lucky 8 Gas &amp; Motel" onclick="toggleSelect(this, 'NRA-0050')">
+      <div class="card-header">
+        <span class="card-id">NRA-0050</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Lucky 8 Gas &amp; Motel</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0050_Lucky8GasMotel_B04_VAR_02_ROOM_PAID.png" loading="lazy" alt="NRA-0050" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> ROOM PAID</div>
+        <div><strong>Handwritten:</strong> NO VACANCY</div>
+        <div><strong>Props:</strong> PROP_OLD_KEY_03 </div>
+        <div><strong>Damage:</strong> DMG_CORNER_CURL_01</div>
+        <div><strong>Overlay:</strong> OVERLAY_DUST_01</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0050">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0051" data-rarity="Ultra Rare" data-series="Token Pawn" onclick="toggleSelect(this, 'NRA-0051')">
+      <div class="card-header">
+        <span class="card-id">NRA-0051</span>
+        <span class="card-rarity" style="background:#e91e63">Ultra Rare</span>
+        <span class="card-series">Token Pawn</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0051_TokenPawn_B03_VAR_07_VAULTED_GOLD.png" loading="lazy" alt="NRA-0051" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> VAULTED GOLD</div>
+        <div><strong>Handwritten:</strong> 30 DAYS</div>
+        <div><strong>Props:</strong> PROP_VINTAGE_MEDAL_01 PROP_VINTAGE_BUTTON_02</div>
+        <div><strong>Damage:</strong> DMG_DUST_SPECKS_01</div>
+        <div><strong>Overlay:</strong> OVERLAY_FILM_GRAIN_02</div>
+        
+        <div><strong>Legendary:</strong> OVERLAY_RAINBOW_FOIL_01;PROP_CROWN_GOLD_01</div>
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0051">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0056" data-rarity="Common" data-series="Token Pawn" onclick="toggleSelect(this, 'NRA-0056')">
+      <div class="card-header">
+        <span class="card-id">NRA-0056</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Token Pawn</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0056_TokenPawn_B07_VAR_02_PAWN_HOLD.png" loading="lazy" alt="NRA-0056" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> PAWN HOLD</div>
+        <div><strong>Handwritten:</strong> CLAIM BY 5</div>
+        <div><strong>Props:</strong> PROP_OLD_KEY_03 </div>
+        <div><strong>Damage:</strong> DMG_FOLD_03</div>
+        <div><strong>Overlay:</strong> OVERLAY_DUST_01</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0056">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0057" data-rarity="Common" data-series="Lucky 8 Gas &amp; Motel" onclick="toggleSelect(this, 'NRA-0057')">
+      <div class="card-header">
+        <span class="card-id">NRA-0057</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Lucky 8 Gas &amp; Motel</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0057_Lucky8GasMotel_B06_VAR_03_PAID_CASH.png" loading="lazy" alt="NRA-0057" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> PAID CASH</div>
+        <div><strong>Handwritten:</strong> EXIT 22</div>
+        <div><strong>Props:</strong> PROP_MATCHBOOK_MOTEL_01 </div>
+        <div><strong>Damage:</strong> DMG_EDGE_WEAR_02</div>
+        <div><strong>Overlay:</strong> OVERLAY_DUST_02</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0057">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0058" data-rarity="Uncommon" data-series="Lucky 8 Gas &amp; Motel" onclick="toggleSelect(this, 'NRA-0058')">
+      <div class="card-header">
+        <span class="card-id">NRA-0058</span>
+        <span class="card-rarity" style="background:#4caf50">Uncommon</span>
+        <span class="card-series">Lucky 8 Gas &amp; Motel</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0058_Lucky8GasMotel_B01_VAR_06_NO_VACANCY.png" loading="lazy" alt="NRA-0058" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> NO VACANCY</div>
+        <div><strong>Handwritten:</strong> ROOM 8</div>
+        <div><strong>Props:</strong> PROP_CIGARETTE_01 </div>
+        <div><strong>Damage:</strong> DMG_EDGE_WEAR_01</div>
+        <div><strong>Overlay:</strong> OVERLAY_DUST_01</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0058">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0059" data-rarity="Common" data-series="Token Pawn" onclick="toggleSelect(this, 'NRA-0059')">
+      <div class="card-header">
+        <span class="card-id">NRA-0059</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Token Pawn</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0059_TokenPawn_B02_VAR_08_CLAIM_CLOSED.png" loading="lazy" alt="NRA-0059" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> CLAIM CLOSED</div>
+        <div><strong>Handwritten:</strong> CLAIM BY 5</div>
+        <div><strong>Props:</strong> PROP_VINTAGE_BUTTON_01 </div>
+        <div><strong>Damage:</strong> DMG_DUST_SPECKS_01</div>
+        <div><strong>Overlay:</strong> OVERLAY_ARCHIVE_YELLOWING_01</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0059">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0061" data-rarity="Common" data-series="Token Pawn" onclick="toggleSelect(this, 'NRA-0061')">
+      <div class="card-header">
+        <span class="card-id">NRA-0061</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Token Pawn</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0061_TokenPawn_B06_VAR_05_PAWN_HOLD.png" loading="lazy" alt="NRA-0061" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> PAWN HOLD</div>
+        <div><strong>Handwritten:</strong> CLAIM BY 5</div>
+        <div><strong>Props:</strong> PROP_OLD_KEY_01 </div>
+        <div><strong>Damage:</strong> DMG_CORNER_CURL_01</div>
+        <div><strong>Overlay:</strong> OVERLAY_DUST_02</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0061">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0062" data-rarity="Common" data-series="Side B Records" onclick="toggleSelect(this, 'NRA-0062')">
+      <div class="card-header">
+        <span class="card-id">NRA-0062</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Side B Records</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0062_SideBRecords_B01_VAR_05_STORE_CREDIT.png" loading="lazy" alt="NRA-0062" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> STORE CREDIT</div>
+        <div><strong>Handwritten:</strong> TRACK 07</div>
+        <div><strong>Props:</strong> PROP_DICE_01 </div>
+        <div><strong>Damage:</strong> DMG_EDGE_WEAR_02</div>
+        <div><strong>Overlay:</strong> OVERLAY_SCAN_NOISE_02</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0062">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0063" data-rarity="Common" data-series="Side B Records" onclick="toggleSelect(this, 'NRA-0063')">
+      <div class="card-header">
+        <span class="card-id">NRA-0063</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Side B Records</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0063_SideBRecords_B01_VAR_07_FINAL_SALE.png" loading="lazy" alt="NRA-0063" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> FINAL SALE</div>
+        <div><strong>Handwritten:</strong> A SIDE GONE</div>
+        <div><strong>Props:</strong> PROP_COMPASS_01 PROP_VINTAGE_COIN_03</div>
+        <div><strong>Damage:</strong> DMG_DUST_SPECKS_02</div>
+        <div><strong>Overlay:</strong> OVERLAY_FILM_GRAIN_02</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0063">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0064" data-rarity="Uncommon" data-series="Night Owl Video" onclick="toggleSelect(this, 'NRA-0064')">
+      <div class="card-header">
+        <span class="card-id">NRA-0064</span>
+        <span class="card-rarity" style="background:#4caf50">Uncommon</span>
+        <span class="card-series">Night Owl Video</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0064_NightOwlVideo_B05_VAR_04_DO_NOT_OPEN.png" loading="lazy" alt="NRA-0064" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> DO NOT OPEN</div>
+        <div><strong>Handwritten:</strong> TAPE 12</div>
+        <div><strong>Props:</strong> PROP_VINTAGE_LIGHTER_01 </div>
+        <div><strong>Damage:</strong> DMG_FOLD_02</div>
+        <div><strong>Overlay:</strong> OVERLAY_FADED_INK_01</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0064">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0065" data-rarity="Uncommon" data-series="Night Owl Video" onclick="toggleSelect(this, 'NRA-0065')">
+      <div class="card-header">
+        <span class="card-id">NRA-0065</span>
+        <span class="card-rarity" style="background:#4caf50">Uncommon</span>
+        <span class="card-series">Night Owl Video</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0065_NightOwlVideo_B06_VAR_08_NO_REFUNDS.png" loading="lazy" alt="NRA-0065" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> NO REFUNDS</div>
+        <div><strong>Handwritten:</strong> LATE FEE</div>
+        <div><strong>Props:</strong> PROP_VINYL_LABEL_01 </div>
+        <div><strong>Damage:</strong> DMG_EDGE_WEAR_02</div>
+        <div><strong>Overlay:</strong> OVERLAY_DUST_02</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0065">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0067" data-rarity="Uncommon" data-series="Token Pawn" onclick="toggleSelect(this, 'NRA-0067')">
+      <div class="card-header">
+        <span class="card-id">NRA-0067</span>
+        <span class="card-rarity" style="background:#4caf50">Uncommon</span>
+        <span class="card-series">Token Pawn</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0067_TokenPawn_B02_VAR_02_CLAIM_CLOSED.png" loading="lazy" alt="NRA-0067" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> CLAIM CLOSED</div>
+        <div><strong>Handwritten:</strong> UNCLAIMED</div>
+        <div><strong>Props:</strong> PROP_VINTAGE_BUTTON_01 PROP_PADLOCK_01</div>
+        <div><strong>Damage:</strong> DMG_DUST_SPECKS_01</div>
+        <div><strong>Overlay:</strong> OVERLAY_SCAN_NOISE_01</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0067">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0068" data-rarity="Common" data-series="Midnight Diner" onclick="toggleSelect(this, 'NRA-0068')">
+      <div class="card-header">
+        <span class="card-id">NRA-0068</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Midnight Diner</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0068_MidnightDiner_B03_VAR_03_NO_REFUNDS.png" loading="lazy" alt="NRA-0068" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> NO REFUNDS</div>
+        <div><strong>Handwritten:</strong> TABLE 6</div>
+        <div><strong>Props:</strong> PROP_MATCHBOOK_01 PROP_BOTTLE_OPENER_01</div>
+        <div><strong>Damage:</strong> DMG_FOLD_01</div>
+        <div><strong>Overlay:</strong> OVERLAY_FILM_GRAIN_02</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0068">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0069" data-rarity="Rare" data-series="Midnight Diner" onclick="toggleSelect(this, 'NRA-0069')">
+      <div class="card-header">
+        <span class="card-id">NRA-0069</span>
+        <span class="card-rarity" style="background:#2196f3">Rare</span>
+        <span class="card-series">Midnight Diner</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0069_MidnightDiner_B04_VAR_05_CLOSED.png" loading="lazy" alt="NRA-0069" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> CLOSED</div>
+        <div><strong>Handwritten:</strong> TABLE 6</div>
+        <div><strong>Props:</strong> PROP_VINTAGE_COIN_03 </div>
+        <div><strong>Damage:</strong> DMG_FOLD_02</div>
+        <div><strong>Overlay:</strong> OVERLAY_DUST_01</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0069">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0071" data-rarity="Common" data-series="Sunset Mart" onclick="toggleSelect(this, 'NRA-0071')">
+      <div class="card-header">
+        <span class="card-id">NRA-0071</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Sunset Mart</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0071_SunsetMart_B03_VAR_02_FINAL_SALE.png" loading="lazy" alt="NRA-0071" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> FINAL SALE</div>
+        <div><strong>Handwritten:</strong> LAST SHIFT</div>
+        <div><strong>Props:</strong> PROP_HAIR_CLIP_01 </div>
+        <div><strong>Damage:</strong> DMG_WATER_STAIN_02</div>
+        <div><strong>Overlay:</strong> OVERLAY_FILM_GRAIN_01</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0071">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0072" data-rarity="Legendary" data-series="Midnight Diner" onclick="toggleSelect(this, 'NRA-0072')">
+      <div class="card-header">
+        <span class="card-id">NRA-0072</span>
+        <span class="card-rarity" style="background:#ff9800">Legendary</span>
+        <span class="card-series">Midnight Diner</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0072_MidnightDiner_B02_VAR_12_ARCHIVED_FOREVER_GOLD.png" loading="lazy" alt="NRA-0072" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> ARCHIVED FOREVER GOLD</div>
+        <div><strong>Handwritten:</strong> 1138PM</div>
+        <div><strong>Props:</strong> PROP_VINTAGE_COIN_02 </div>
+        <div><strong>Damage:</strong> DMG_EDGE_WEAR_02</div>
+        <div><strong>Overlay:</strong> OVERLAY_FILM_GRAIN_01</div>
+        
+        <div><strong>Legendary:</strong> OVERLAY_CRYSTAL_SPARK_01;PROP_CROWN_CHROME_01</div>
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0072">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0074" data-rarity="Rare" data-series="Sunset Mart" onclick="toggleSelect(this, 'NRA-0074')">
+      <div class="card-header">
+        <span class="card-id">NRA-0074</span>
+        <span class="card-rarity" style="background:#2196f3">Rare</span>
+        <span class="card-series">Sunset Mart</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0074_SunsetMart_B06_VAR_02_NO_REFUNDS.png" loading="lazy" alt="NRA-0074" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> NO REFUNDS</div>
+        <div><strong>Handwritten:</strong> REGISTER 2</div>
+        <div><strong>Props:</strong> PROP_HAIR_CLIP_01 PROP_VINTAGE_COIN_02</div>
+        <div><strong>Damage:</strong> DMG_EDGE_WEAR_01</div>
+        <div><strong>Overlay:</strong> OVERLAY_DUST_01</div>
+        
+        <div><strong>Legendary:</strong> PROP_CROWN_GOLD_01</div>
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0074">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0075" data-rarity="Common" data-series="Midnight Diner" onclick="toggleSelect(this, 'NRA-0075')">
+      <div class="card-header">
+        <span class="card-id">NRA-0075</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Midnight Diner</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0075_MidnightDiner_B06_VAR_10_NO_REFUNDS.png" loading="lazy" alt="NRA-0075" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> NO REFUNDS</div>
+        <div><strong>Handwritten:</strong> BOOTH 4</div>
+        <div><strong>Props:</strong> PROP_SHOT_GLASS_01 PROP_CLOTH_NAPKIN_01</div>
+        <div><strong>Damage:</strong> DMG_CORNER_CURL_01</div>
+        <div><strong>Overlay:</strong> OVERLAY_FILM_GRAIN_02</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0075">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0076" data-rarity="Rare" data-series="Night Owl Video" onclick="toggleSelect(this, 'NRA-0076')">
+      <div class="card-header">
+        <span class="card-id">NRA-0076</span>
+        <span class="card-rarity" style="background:#2196f3">Rare</span>
+        <span class="card-series">Night Owl Video</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0076_NightOwlVideo_B02_VAR_09_DO_NOT_OPEN.png" loading="lazy" alt="NRA-0076" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> DO NOT OPEN</div>
+        <div><strong>Handwritten:</strong> LATE FEE</div>
+        <div><strong>Props:</strong> PROP_BARCODE_STICKER_01 PROP_VINTAGE_COIN_03</div>
+        <div><strong>Damage:</strong> DMG_FOLD_02</div>
+        <div><strong>Overlay:</strong> OVERLAY_FILM_GRAIN_02</div>
+        
+        <div><strong>Legendary:</strong> PROP_HOLO_SEAL_01</div>
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0076">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0077" data-rarity="Common" data-series="Lucky 8 Gas &amp; Motel" onclick="toggleSelect(this, 'NRA-0077')">
+      <div class="card-header">
+        <span class="card-id">NRA-0077</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Lucky 8 Gas &amp; Motel</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0077_Lucky8GasMotel_B05_VAR_05_PAID_CASH.png" loading="lazy" alt="NRA-0077" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> PAID CASH</div>
+        <div><strong>Handwritten:</strong> NO VACANCY</div>
+        <div><strong>Props:</strong> PROP_GAS_STATION_TOKEN_01 </div>
+        <div><strong>Damage:</strong> DMG_FOLD_01</div>
+        <div><strong>Overlay:</strong> OVERLAY_FILM_GRAIN_01</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0077">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0081" data-rarity="Uncommon" data-series="Side B Records" onclick="toggleSelect(this, 'NRA-0081')">
+      <div class="card-header">
+        <span class="card-id">NRA-0081</span>
+        <span class="card-rarity" style="background:#4caf50">Uncommon</span>
+        <span class="card-series">Side B Records</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0081_SideBRecords_B06_VAR_07_STORE_CREDIT.png" loading="lazy" alt="NRA-0081" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> STORE CREDIT</div>
+        <div><strong>Handwritten:</strong> TRACK 07</div>
+        <div><strong>Props:</strong> PROP_VINTAGE_PEN_02 </div>
+        <div><strong>Damage:</strong> DMG_FOLD_01</div>
+        <div><strong>Overlay:</strong> OVERLAY_DUST_01</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0081">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0082" data-rarity="Common" data-series="Lucky 8 Gas &amp; Motel" onclick="toggleSelect(this, 'NRA-0082')">
+      <div class="card-header">
+        <span class="card-id">NRA-0082</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Lucky 8 Gas &amp; Motel</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0082_Lucky8GasMotel_B02_VAR_05_ROOM_PAID.png" loading="lazy" alt="NRA-0082" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> ROOM PAID</div>
+        <div><strong>Handwritten:</strong> 1138PM</div>
+        <div><strong>Props:</strong> PROP_OLD_KEY_02 PROP_VINTAGE_COIN_01</div>
+        <div><strong>Damage:</strong> DMG_CORNER_CURL_01</div>
+        <div><strong>Overlay:</strong> OVERLAY_SOFT_VIGNETTE_01</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0082">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0083" data-rarity="Common" data-series="Sunset Mart" onclick="toggleSelect(this, 'NRA-0083')">
+      <div class="card-header">
+        <span class="card-id">NRA-0083</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Sunset Mart</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0083_SunsetMart_B01_VAR_02_CLOSED.png" loading="lazy" alt="NRA-0083" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> CLOSED</div>
+        <div><strong>Handwritten:</strong> 512PM</div>
+        <div><strong>Props:</strong> PROP_SMALL_BOTTLE_01 </div>
+        <div><strong>Damage:</strong> DMG_WATER_STAIN_02</div>
+        <div><strong>Overlay:</strong> OVERLAY_FADED_INK_01</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0083">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0084" data-rarity="Rare" data-series="Midnight Diner" onclick="toggleSelect(this, 'NRA-0084')">
+      <div class="card-header">
+        <span class="card-id">NRA-0084</span>
+        <span class="card-rarity" style="background:#2196f3">Rare</span>
+        <span class="card-series">Midnight Diner</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0084_MidnightDiner_B03_VAR_03_LAST_ORDER.png" loading="lazy" alt="NRA-0084" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> LAST ORDER</div>
+        <div><strong>Handwritten:</strong> 1138PM</div>
+        <div><strong>Props:</strong>  </div>
+        <div><strong>Damage:</strong> DMG_COFFEE_RING_03</div>
+        <div><strong>Overlay:</strong> OVERLAY_SOFT_VIGNETTE_01</div>
+        
+        <div><strong>Legendary:</strong> PROP_DIAMOND_CLIP_01</div>
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0084">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0085" data-rarity="Legendary" data-series="Side B Records" onclick="toggleSelect(this, 'NRA-0085')">
+      <div class="card-header">
+        <span class="card-id">NRA-0085</span>
+        <span class="card-rarity" style="background:#ff9800">Legendary</span>
+        <span class="card-series">Side B Records</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0085_SideBRecords_B03_VAR_02_GOLD_SEAL_GOLD.png" loading="lazy" alt="NRA-0085" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> GOLD SEAL GOLD</div>
+        <div><strong>Handwritten:</strong> A SIDE GONE</div>
+        <div><strong>Props:</strong> PROP_VINTAGE_COIN_01 PROP_RECORD_SLEEVE_CORNER_01</div>
+        <div><strong>Damage:</strong> DMG_FOLD_03</div>
+        <div><strong>Overlay:</strong> OVERLAY_FILM_GRAIN_02</div>
+        
+        <div><strong>Legendary:</strong> OVERLAY_RAINBOW_FOIL_01</div>
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0085">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0086" data-rarity="Common" data-series="Sunset Mart" onclick="toggleSelect(this, 'NRA-0086')">
+      <div class="card-header">
+        <span class="card-id">NRA-0086</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Sunset Mart</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0086_SunsetMart_B01_VAR_04_NO_REFUNDS.png" loading="lazy" alt="NRA-0086" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> NO REFUNDS</div>
+        <div><strong>Handwritten:</strong> REGISTER 2</div>
+        <div><strong>Props:</strong> PROP_SAFETY_RAZOR_01 PROP_BOTTLE_CAP_01</div>
+        <div><strong>Damage:</strong> DMG_COFFEE_RING_01</div>
+        <div><strong>Overlay:</strong> OVERLAY_FILM_GRAIN_01</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0086">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0087" data-rarity="Common" data-series="Night Owl Video" onclick="toggleSelect(this, 'NRA-0087')">
+      <div class="card-header">
+        <span class="card-id">NRA-0087</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Night Owl Video</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0087_NightOwlVideo_B05_VAR_03_DO_NOT_OPEN.png" loading="lazy" alt="NRA-0087" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> DO NOT OPEN</div>
+        <div><strong>Handwritten:</strong> TAPE 12</div>
+        <div><strong>Props:</strong> PROP_RECORD_SLEEVE_CORNER_01 </div>
+        <div><strong>Damage:</strong> DMG_SCAN_NOISE_01</div>
+        <div><strong>Overlay:</strong> OVERLAY_FILM_GRAIN_02</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0087">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0088" data-rarity="Uncommon" data-series="Lucky 8 Gas &amp; Motel" onclick="toggleSelect(this, 'NRA-0088')">
+      <div class="card-header">
+        <span class="card-id">NRA-0088</span>
+        <span class="card-rarity" style="background:#4caf50">Uncommon</span>
+        <span class="card-series">Lucky 8 Gas &amp; Motel</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0088_Lucky8GasMotel_B01_VAR_01_PAID_CASH.png" loading="lazy" alt="NRA-0088" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> PAID CASH</div>
+        <div><strong>Handwritten:</strong> EXIT 22</div>
+        <div><strong>Props:</strong> PROP_CIGARETTE_01 PROP_GAS_STATION_TOKEN_01</div>
+        <div><strong>Damage:</strong> DMG_WATER_STAIN_01</div>
+        <div><strong>Overlay:</strong> OVERLAY_DUST_02</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0088">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0089" data-rarity="Common" data-series="Night Owl Video" onclick="toggleSelect(this, 'NRA-0089')">
+      <div class="card-header">
+        <span class="card-id">NRA-0089</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Night Owl Video</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0089_NightOwlVideo_B02_VAR_03_NO_REFUNDS.png" loading="lazy" alt="NRA-0089" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> NO REFUNDS</div>
+        <div><strong>Handwritten:</strong> REWIND</div>
+        <div><strong>Props:</strong> PROP_RECORD_SLEEVE_CORNER_01 </div>
+        <div><strong>Damage:</strong> DMG_DUST_SPECKS_01</div>
+        <div><strong>Overlay:</strong> OVERLAY_FILM_GRAIN_01</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0089">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0090" data-rarity="Uncommon" data-series="Night Owl Video" onclick="toggleSelect(this, 'NRA-0090')">
+      <div class="card-header">
+        <span class="card-id">NRA-0090</span>
+        <span class="card-rarity" style="background:#4caf50">Uncommon</span>
+        <span class="card-series">Night Owl Video</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0090_NightOwlVideo_B07_VAR_04_CHECKED_OUT.png" loading="lazy" alt="NRA-0090" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> CHECKED OUT</div>
+        <div><strong>Handwritten:</strong> REWIND</div>
+        <div><strong>Props:</strong> PROP_RECORD_SLEEVE_CORNER_01 </div>
+        <div><strong>Damage:</strong> DMG_SCAN_NOISE_02</div>
+        <div><strong>Overlay:</strong> OVERLAY_DUST_02</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0090">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0092" data-rarity="Common" data-series="Token Pawn" onclick="toggleSelect(this, 'NRA-0092')">
+      <div class="card-header">
+        <span class="card-id">NRA-0092</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Token Pawn</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0092_TokenPawn_B02_VAR_06_UNCLAIMED.png" loading="lazy" alt="NRA-0092" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> UNCLAIMED</div>
+        <div><strong>Handwritten:</strong> 30 DAYS</div>
+        <div><strong>Props:</strong> PROP_PADLOCK_01 PROP_VINTAGE_BUTTON_02</div>
+        <div><strong>Damage:</strong> DMG_DUST_SPECKS_01</div>
+        <div><strong>Overlay:</strong> OVERLAY_FILM_GRAIN_02</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0092">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0093" data-rarity="Common" data-series="Sunset Mart" onclick="toggleSelect(this, 'NRA-0093')">
+      <div class="card-header">
+        <span class="card-id">NRA-0093</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Sunset Mart</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0093_SunsetMart_B02_VAR_12_CLOSED.png" loading="lazy" alt="NRA-0093" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> CLOSED</div>
+        <div><strong>Handwritten:</strong> AISLE 3</div>
+        <div><strong>Props:</strong> PROP_VINTAGE_COMB_01 </div>
+        <div><strong>Damage:</strong> DMG_DUST_SPECKS_02</div>
+        <div><strong>Overlay:</strong> OVERLAY_DUST_01</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0093">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0095" data-rarity="Common" data-series="Sunset Mart" onclick="toggleSelect(this, 'NRA-0095')">
+      <div class="card-header">
+        <span class="card-id">NRA-0095</span>
+        <span class="card-rarity" style="background:#9e9e9e">Common</span>
+        <span class="card-series">Sunset Mart</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0095_SunsetMart_B07_VAR_01_CLOSED.png" loading="lazy" alt="NRA-0095" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> CLOSED</div>
+        <div><strong>Handwritten:</strong> AISLE 3</div>
+        <div><strong>Props:</strong> PROP_SAFETY_RAZOR_01 </div>
+        <div><strong>Damage:</strong> DMG_EDGE_WEAR_02</div>
+        <div><strong>Overlay:</strong> OVERLAY_ARCHIVE_YELLOWING_01</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0095">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0097" data-rarity="Rare" data-series="Token Pawn" onclick="toggleSelect(this, 'NRA-0097')">
+      <div class="card-header">
+        <span class="card-id">NRA-0097</span>
+        <span class="card-rarity" style="background:#2196f3">Rare</span>
+        <span class="card-series">Token Pawn</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0097_TokenPawn_B06_VAR_09_PAWN_HOLD.png" loading="lazy" alt="NRA-0097" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> PAWN HOLD</div>
+        <div><strong>Handwritten:</strong> 30 DAYS</div>
+        <div><strong>Props:</strong> PROP_VINTAGE_COIN_03 </div>
+        <div><strong>Damage:</strong> DMG_FOLD_03</div>
+        <div><strong>Overlay:</strong> OVERLAY_SCAN_NOISE_02</div>
+        
+        <div><strong>Legendary:</strong> PROP_PEARL_TAG_01</div>
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0097">
+        <label>Select</label>
+      </div>
+    </div>
+    <div class="card" data-id="NRA-0100" data-rarity="Uncommon" data-series="Side B Records" onclick="toggleSelect(this, 'NRA-0100')">
+      <div class="card-header">
+        <span class="card-id">NRA-0100</span>
+        <span class="card-rarity" style="background:#4caf50">Uncommon</span>
+        <span class="card-series">Side B Records</span>
+      </div>
+      <img src="NRA_ComfyUI_Batch_Tools/output/final_images_v2/NRA_0100_SideBRecords_B06_VAR_05_STORE_CREDIT.png" loading="lazy" alt="NRA-0100" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><rect fill=%22%23333%22 width=%22300%22 height=%22300%22/><text fill=%22%23666%22 x=%22150%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22>Image not found</text></svg>'">
+      <div class="card-traits">
+        <div><strong>Stamp:</strong> STORE CREDIT</div>
+        <div><strong>Handwritten:</strong> STORE CREDIT</div>
+        <div><strong>Props:</strong> PROP_RECORD_SLEEVE_CORNER_01 </div>
+        <div><strong>Damage:</strong> DMG_DUST_SPECKS_01</div>
+        <div><strong>Overlay:</strong> OVERLAY_DUST_02</div>
+        
+        
+      </div>
+      <div class="card-select">
+        <input type="checkbox" class="select-checkbox" data-id="NRA-0100">
+        <label>Select</label>
+      </div>
+    </div>
+</div>
+
+<div class="export-bar">
+  <button class="btn-export" onclick="exportSelection()">Export Selected IDs</button>
+  <button class="btn-clear" onclick="clearSelection()">Clear All</button>
+  <span id="exportResult"></span>
+</div>
+
+<script>
+let selected = new Set();
+
+function toggleSelect(card, id) {
+  const checkbox = card.querySelector('.select-checkbox');
+  checkbox.checked = !checkbox.checked;
+  if (checkbox.checked) {
+    card.classList.add('selected');
+    selected.add(id);
+  } else {
+    card.classList.remove('selected');
+    selected.delete(id);
+  }
+  updateCount();
+}
+
+function updateCount() {
+  document.getElementById('selCount').textContent = selected.size;
+}
+
+function filterBy(rarity) {
+  document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  const cards = document.querySelectorAll('.card');
+  cards.forEach(c => {
+    if (rarity === 'all' || c.dataset.rarity === rarity) {
+      c.classList.remove('hidden');
+    } else {
+      c.classList.add('hidden');
+    }
+  });
+}
+
+function clearSelection() {
+  selected.clear();
+  document.querySelectorAll('.card').forEach(c => c.classList.remove('selected'));
+  document.querySelectorAll('.select-checkbox').forEach(cb => cb.checked = false);
+  updateCount();
+  document.getElementById('exportResult').textContent = '';
+}
+
+function exportSelection() {
+  const ids = Array.from(selected).sort();
+  const text = ids.join('\n');
+  document.getElementById('exportResult').textContent = 'Selected: ' + ids.length + ' images. IDs copied to clipboard.';
+  navigator.clipboard.writeText(text).catch(() => {
+    document.getElementById('exportResult').textContent = 'IDs: ' + text;
+  });
+  console.log('Selected IDs:\n' + text);
+}
+</script>
+
+</body>
+</html>

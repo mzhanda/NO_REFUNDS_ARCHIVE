@@ -309,6 +309,38 @@ Codex 接手后**暂时不要**：
 
 ---
 
-> **文档版本**: 1.0  
+---
+
+## 11. Codex 接手检查记录 (2026-07-10)
+
+### Git 状态
+- ✅ commit `27cfd6d` 存在，工作区干净
+- ⚠️ **未推送到 GitHub**（网络连接被重置）
+- 远程: `origin → https://github.com/mzhanda/NO_REFUNDS_ARCHIVE.git`
+
+### 规则校验
+- ✅ `validate_compose_plan.py` — 0 errors, 0 warnings, 100行全部通过
+
+### 缺失素材（重要发现）
+- ⚠️ **交接文档原记录 2~5 个缺失，实际检查发现 20 个 prop 缺失**
+- CSV 引用 41 个不同 prop，其中 20 个素材文件不存在
+- 影响 32 行（Common 17, Uncommon 10, Rare 4, Legendary 1），全部"待拼装"
+- 最严重: `PROP_RECORD_SLEEVE_CORNER_01` 缺失影响 7 行（含 1 Legendary NRA-0085）
+- 已拼装的 67 张中**无一行**受缺失影响 ✅
+
+### 输出清点
+- ✅ `final_images_v2/`: 67 PNG，编号 NRA-0001 ~ NRA-0100
+- ✅ `metadata_v2/`: 67 JSON，与 PNG 一一对应
+- ✅ 无重复编号
+- ✅ 无旧输出残留（output/ 下仅 v2 目录）
+- 缺失编号 33 个（均为未拼装行）
+
+### 新增文件
+- ✅ `data/v2_image_selection_review.csv` — 100 行全量筛选清单（含67张已生成+33张未生成）
+- ✅ `review_v2_gallery.html` — 67 张可视化浏览页面（支持稀有度筛选、选择导出）
+
+---
+
+> **文档版本**: 1.1 (Codex 接手更新)  
 > **最后更新**: 2026-07-10  
 > **下一个接手者**: Codex
