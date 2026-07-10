@@ -1,0 +1,1138 @@
+{
+  "prop_amber_stone_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      532,
+      591,
+      623,
+      660
+    ],
+    "cropped_size": [
+      91,
+      69
+    ]
+  },
+  "prop_ashtray_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      421,
+      590,
+      481,
+      649
+    ],
+    "cropped_size": [
+      60,
+      59
+    ]
+  },
+  "prop_bottle_cap_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      305,
+      583,
+      374,
+      685
+    ],
+    "cropped_size": [
+      69,
+      102
+    ]
+  },
+  "prop_brooch_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      529,
+      467,
+      598,
+      588
+    ],
+    "cropped_size": [
+      69,
+      121
+    ]
+  },
+  "prop_cameo_brooch_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      427,
+      544,
+      524,
+      617
+    ],
+    "cropped_size": [
+      97,
+      73
+    ]
+  },
+  "prop_chain_fragment_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      553,
+      435,
+      663,
+      514
+    ],
+    "cropped_size": [
+      110,
+      79
+    ]
+  },
+  "prop_chatelaine_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      649,
+      704,
+      695,
+      786
+    ],
+    "cropped_size": [
+      46,
+      82
+    ]
+  },
+  "prop_cigar_cutter_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      448,
+      598,
+      541,
+      691
+    ],
+    "cropped_size": [
+      93,
+      93
+    ]
+  },
+  "prop_compass_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      602,
+      508,
+      663,
+      633
+    ],
+    "cropped_size": [
+      61,
+      125
+    ]
+  },
+  "prop_crystal_ball_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      635,
+      448,
+      716,
+      540
+    ],
+    "cropped_size": [
+      81,
+      92
+    ]
+  },
+  "prop_filigree_collar_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      563,
+      549,
+      647,
+      625
+    ],
+    "cropped_size": [
+      84,
+      76
+    ]
+  },
+  "prop_gas_station_token_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      628,
+      318,
+      668,
+      403
+    ],
+    "cropped_size": [
+      40,
+      85
+    ]
+  },
+  "prop_gemstone_pendant_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      545,
+      570,
+      600,
+      633
+    ],
+    "cropped_size": [
+      55,
+      63
+    ]
+  },
+  "prop_hand_mirror_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      402,
+      463,
+      449,
+      546
+    ],
+    "cropped_size": [
+      47,
+      83
+    ]
+  },
+  "prop_jeweled_compact_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      270,
+      313,
+      339,
+      382
+    ],
+    "cropped_size": [
+      69,
+      69
+    ]
+  },
+  "prop_keychain_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      442,
+      700,
+      523,
+      794
+    ],
+    "cropped_size": [
+      81,
+      94
+    ]
+  },
+  "prop_magnifying_glass_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      391,
+      675,
+      480,
+      763
+    ],
+    "cropped_size": [
+      89,
+      88
+    ]
+  },
+  "prop_monocle_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      408,
+      237,
+      525,
+      336
+    ],
+    "cropped_size": [
+      117,
+      99
+    ]
+  },
+  "prop_old_key_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      577,
+      570,
+      635,
+      619
+    ],
+    "cropped_size": [
+      58,
+      49
+    ]
+  },
+  "prop_old_key_02.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      367,
+      318,
+      411,
+      426
+    ],
+    "cropped_size": [
+      44,
+      108
+    ]
+  },
+  "prop_old_key_03.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      378,
+      562,
+      422,
+      641
+    ],
+    "cropped_size": [
+      44,
+      79
+    ]
+  },
+  "prop_opera_glasses_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      289,
+      364,
+      358,
+      419
+    ],
+    "cropped_size": [
+      69,
+      55
+    ]
+  },
+  "prop_padlock_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      592,
+      355,
+      692,
+      442
+    ],
+    "cropped_size": [
+      100,
+      87
+    ]
+  },
+  "prop_pearl_earring_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      482,
+      280,
+      515,
+      325
+    ],
+    "cropped_size": [
+      33,
+      45
+    ]
+  },
+  "prop_pearl_necklace_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      295,
+      565,
+      367,
+      606
+    ],
+    "cropped_size": [
+      72,
+      41
+    ]
+  },
+  "prop_pocket_knife_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      302,
+      498,
+      341,
+      573
+    ],
+    "cropped_size": [
+      39,
+      75
+    ]
+  },
+  "prop_pocket_mirror_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      281,
+      290,
+      346,
+      371
+    ],
+    "cropped_size": [
+      65,
+      81
+    ]
+  },
+  "prop_pocket_sundial_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      529,
+      255,
+      564,
+      344
+    ],
+    "cropped_size": [
+      35,
+      89
+    ]
+  },
+  "prop_pocket_watch_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      336,
+      409,
+      401,
+      484
+    ],
+    "cropped_size": [
+      65,
+      75
+    ]
+  },
+  "prop_pocket_watch_02.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      334,
+      595,
+      430,
+      707
+    ],
+    "cropped_size": [
+      96,
+      112
+    ]
+  },
+  "prop_powder_box_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      445,
+      449,
+      508,
+      513
+    ],
+    "cropped_size": [
+      63,
+      64
+    ]
+  },
+  "prop_rosary_beads_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      684,
+      691,
+      754,
+      760
+    ],
+    "cropped_size": [
+      70,
+      69
+    ]
+  },
+  "prop_shot_glass_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      630,
+      378,
+      691,
+      479
+    ],
+    "cropped_size": [
+      61,
+      101
+    ]
+  },
+  "prop_signet_ring_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      403,
+      323,
+      487,
+      407
+    ],
+    "cropped_size": [
+      84,
+      84
+    ]
+  },
+  "prop_small_jewelry_bag_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      422,
+      707,
+      490,
+      761
+    ],
+    "cropped_size": [
+      68,
+      54
+    ]
+  },
+  "prop_snuff_box_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      673,
+      551,
+      760,
+      638
+    ],
+    "cropped_size": [
+      87,
+      87
+    ]
+  },
+  "prop_thimble_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      642,
+      524,
+      736,
+      580
+    ],
+    "cropped_size": [
+      94,
+      56
+    ]
+  },
+  "prop_vintage_badge_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      470,
+      411,
+      589,
+      498
+    ],
+    "cropped_size": [
+      119,
+      87
+    ]
+  },
+  "prop_vintage_barrette_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      470,
+      579,
+      570,
+      626
+    ],
+    "cropped_size": [
+      100,
+      47
+    ]
+  },
+  "prop_vintage_bracelet_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      513,
+      402,
+      602,
+      471
+    ],
+    "cropped_size": [
+      89,
+      69
+    ]
+  },
+  "prop_vintage_bracelet_02.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      609,
+      291,
+      716,
+      358
+    ],
+    "cropped_size": [
+      107,
+      67
+    ]
+  },
+  "prop_vintage_brooch_02.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      366,
+      699,
+      439,
+      766
+    ],
+    "cropped_size": [
+      73,
+      67
+    ]
+  },
+  "prop_vintage_button_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      535,
+      264,
+      577,
+      366
+    ],
+    "cropped_size": [
+      42,
+      102
+    ]
+  },
+  "prop_vintage_button_02.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      465,
+      311,
+      509,
+      402
+    ],
+    "cropped_size": [
+      44,
+      91
+    ]
+  },
+  "prop_vintage_coin_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      565,
+      603,
+      633,
+      646
+    ],
+    "cropped_size": [
+      68,
+      43
+    ]
+  },
+  "prop_vintage_coin_02.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      671,
+      327,
+      709,
+      415
+    ],
+    "cropped_size": [
+      38,
+      88
+    ]
+  },
+  "prop_vintage_coin_03.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      384,
+      555,
+      472,
+      644
+    ],
+    "cropped_size": [
+      88,
+      89
+    ]
+  },
+  "prop_vintage_coin_04.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      288,
+      688,
+      343,
+      743
+    ],
+    "cropped_size": [
+      55,
+      55
+    ]
+  },
+  "prop_vintage_cufflink_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      597,
+      380,
+      685,
+      465
+    ],
+    "cropped_size": [
+      88,
+      85
+    ]
+  },
+  "prop_vintage_earring_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      652,
+      559,
+      694,
+      637
+    ],
+    "cropped_size": [
+      42,
+      78
+    ]
+  },
+  "prop_vintage_filigree_bracelet_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      535,
+      296,
+      610,
+      353
+    ],
+    "cropped_size": [
+      75,
+      57
+    ]
+  },
+  "prop_vintage_glass_vial_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      355,
+      676,
+      391,
+      751
+    ],
+    "cropped_size": [
+      36,
+      75
+    ]
+  },
+  "prop_vintage_glasses_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      273,
+      366,
+      358,
+      411
+    ],
+    "cropped_size": [
+      85,
+      45
+    ]
+  },
+  "prop_vintage_hair_comb_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      291,
+      589,
+      355,
+      643
+    ],
+    "cropped_size": [
+      64,
+      54
+    ]
+  },
+  "prop_vintage_hat_pin_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      490,
+      611,
+      555,
+      676
+    ],
+    "cropped_size": [
+      65,
+      65
+    ]
+  },
+  "prop_vintage_lighter_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      412,
+      617,
+      487,
+      716
+    ],
+    "cropped_size": [
+      75,
+      99
+    ]
+  },
+  "prop_vintage_locket_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      614,
+      392,
+      694,
+      498
+    ],
+    "cropped_size": [
+      80,
+      106
+    ]
+  },
+  "prop_vintage_medal_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      443,
+      264,
+      530,
+      319
+    ],
+    "cropped_size": [
+      87,
+      55
+    ]
+  },
+  "prop_vintage_perfume_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      349,
+      561,
+      421,
+      639
+    ],
+    "cropped_size": [
+      72,
+      78
+    ]
+  },
+  "prop_vintage_perfume_02.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      309,
+      227,
+      389,
+      338
+    ],
+    "cropped_size": [
+      80,
+      111
+    ]
+  },
+  "prop_vintage_perfume_03.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      665,
+      367,
+      731,
+      483
+    ],
+    "cropped_size": [
+      66,
+      116
+    ]
+  },
+  "prop_vintage_perfume_04.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      626,
+      632,
+      662,
+      689
+    ],
+    "cropped_size": [
+      36,
+      57
+    ]
+  },
+  "prop_vintage_potion_bottle_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      405,
+      355,
+      455,
+      423
+    ],
+    "cropped_size": [
+      50,
+      68
+    ]
+  },
+  "prop_vintage_ring_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      268,
+      308,
+      332,
+      374
+    ],
+    "cropped_size": [
+      64,
+      66
+    ]
+  },
+  "prop_vintage_ring_02.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      640,
+      340,
+      735,
+      443
+    ],
+    "cropped_size": [
+      95,
+      103
+    ]
+  },
+  "prop_vintage_ring_03.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      634,
+      249,
+      738,
+      364
+    ],
+    "cropped_size": [
+      104,
+      115
+    ]
+  },
+  "prop_vintage_thimble_02.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      634,
+      270,
+      707,
+      327
+    ],
+    "cropped_size": [
+      73,
+      57
+    ]
+  },
+  "prop_vintage_tiara_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      439,
+      699,
+      500,
+      759
+    ],
+    "cropped_size": [
+      61,
+      60
+    ]
+  },
+  "prop_vintage_tie_pin_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      541,
+      346,
+      596,
+      391
+    ],
+    "cropped_size": [
+      55,
+      45
+    ]
+  },
+  "prop_wax_seal_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      679,
+      302,
+      746,
+      343
+    ],
+    "cropped_size": [
+      67,
+      41
+    ]
+  },
+  "prop_zippo_lighter_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      432,
+      236,
+      492,
+      319
+    ],
+    "cropped_size": [
+      60,
+      83
+    ]
+  }
+}

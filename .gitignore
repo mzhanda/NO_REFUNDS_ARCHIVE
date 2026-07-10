@@ -1,0 +1,60 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Large output images (exclude from Git, managed locally)
+NRA_ComfyUI_Batch_Tools/output/
+
+# Temporary scripts
+NRA_ComfyUI_Batch_Tools/check_*.py
+NRA_ComfyUI_Batch_Tools/recompose_*.py
+
+# Old clone directory (large)
+NO_REFUNDS_ARCHIVE_clone/
+
+# Node modules (if any)
+node_modules/
+
+# Zip archives (large)
+*.zip
+
+# Preview grid PNGs (large, generated)
+NRA_ComfyUI_Batch_Tools/*_preview_grid*.png
+NRA_ComfyUI_Batch_Tools/*_preview_*.png
+
+# Old batch output directories
+NRA_ComfyUI_Batch_Tools/assets/02_Trait_Examples*/
+NRA_ComfyUI_Batch_Tools/assets/03_BlindBox*/
+NRA_ComfyUI_Batch_Tools/assets/04_Pilot_Images*/
+NRA_ComfyUI_Batch_Tools/assets/05_Test_Batch*/
+NRA_ComfyUI_Batch_Tools/assets/06_Final_Composition*/
+
+# Large asset preview directories (webp/jpg duplicates)
+NRA_ComfyUI_Batch_Tools/assets/__MACOSX/
+NRA_ComfyUI_Batch_Tools/assets/base_thumbnails/
+NRA_ComfyUI_Batch_Tools/assets/*_thumbnails/
+
+# Non-essential data
+NRA_ComfyUI_Batch_Tools/data/auto_compose_plan.csv
+NRA_ComfyUI_Batch_Tools/data/auto_compose_plan_0100.csv
+NRA_ComfyUI_Batch_Tools/data/compose_plan_validation_report.csv
+NRA_ComfyUI_Batch_Tools/data/trait_review_list.csv
+
+# Individual preview files in root assets/
+assets/no-refunds/
+assets/opensea-starter/

@@ -1,0 +1,162 @@
+{
+  "prop_acrylic_token_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      104,
+      721,
+      357,
+      950
+    ],
+    "cropped_size": [
+      253,
+      229
+    ]
+  },
+  "prop_chain_luxe_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      264,
+      95,
+      540,
+      288
+    ],
+    "cropped_size": [
+      276,
+      193
+    ]
+  },
+  "prop_crown_chrome_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      467,
+      626,
+      756,
+      825
+    ],
+    "cropped_size": [
+      289,
+      199
+    ]
+  },
+  "prop_crown_gold_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      351,
+      484,
+      538,
+      700
+    ],
+    "cropped_size": [
+      187,
+      216
+    ]
+  },
+  "prop_crystal_shard_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      296,
+      308,
+      525,
+      490
+    ],
+    "cropped_size": [
+      229,
+      182
+    ]
+  },
+  "prop_diamond_clip_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      581,
+      307,
+      831,
+      493
+    ],
+    "cropped_size": [
+      250,
+      186
+    ]
+  },
+  "prop_gem_badge_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      485,
+      389,
+      769,
+      618
+    ],
+    "cropped_size": [
+      284,
+      229
+    ]
+  },
+  "prop_holo_seal_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      427,
+      521,
+      647,
+      731
+    ],
+    "cropped_size": [
+      220,
+      210
+    ]
+  },
+  "prop_laser_sticker_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      613,
+      336,
+      887,
+      517
+    ],
+    "cropped_size": [
+      274,
+      181
+    ]
+  },
+  "prop_pearl_tag_01.png": {
+    "orig_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      659,
+      301,
+      903,
+      528
+    ],
+    "cropped_size": [
+      244,
+      227
+    ]
+  }
+}
