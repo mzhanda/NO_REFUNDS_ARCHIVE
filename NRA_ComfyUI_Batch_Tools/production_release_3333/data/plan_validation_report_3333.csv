@@ -1,0 +1,9 @@
+﻿check,result,details
+plan_rows,pass,3333
+unique_token_ids,pass,0 duplicates
+unique_filenames,pass,0 duplicates
+unique_combination_fingerprints,pass,0 duplicates
+approved_assets_only,pass,0 missing/deprecated
+rarity_distribution,pass,exact
+series_distribution,pass,exact
+metadata_fields_available,pass,yes

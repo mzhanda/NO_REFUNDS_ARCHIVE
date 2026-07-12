@@ -1,0 +1,478 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NO REFUNDS ARCHIVE - Formal 3333 Sample Review</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #111; color: #ddd; padding: 20px; }
+header { margin-bottom: 24px; }
+h1 { font-size: 22px; color: #d4a853; margin-bottom: 6px; }
+.subtitle { color: #888; font-size: 13px; }
+.controls { position: sticky; top: 0; z-index: 20; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-bottom: 20px; padding: 14px 16px; background: rgba(26,26,26,0.96); border: 1px solid #2d2d2d; border-radius: 10px; backdrop-filter: blur(8px); }
+.controls label { font-size: 13px; color: #aaa; margin-right: 4px; }
+.controls select, .controls button { padding: 7px 10px; border-radius: 6px; border: 1px solid #444; background: #2a2a2a; color: #eee; font-size: 13px; }
+.controls button { cursor: pointer; background: #d4a853; color: #111; border: none; font-weight: 600; }
+.controls button:hover { background: #e0b860; }
+.stats { font-size: 12px; color: #aaa; margin-left: auto; }
+#gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+.card { background: #1a1a1a; border-radius: 12px; overflow: hidden; border: 2px solid transparent; transition: border-color 0.2s, opacity 0.2s; }
+.card:hover { border-color: #444; }
+.card.marked-keep { border-color: #4caf50; }
+.card.marked-redo { border-color: #f44336; }
+.card.marked-delete { border-color: #ff5722; opacity: 0.62; }
+.card.marked-legendary { border-color: #ff9800; }
+.card-img { width: 100%; aspect-ratio: 1; background: #222; display: flex; align-items: center; justify-content: center; overflow: hidden; cursor: pointer; }
+.card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.2s; }
+.card-img:hover img { transform: scale(1.05); }
+.card-info { padding: 10px 12px; font-size: 12px; }
+.card-info .nft-id { color: #d4a853; font-weight: 700; font-size: 13px; margin-bottom: 4px; }
+.card-info .meta-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 3px; }
+.card-info .tag { display: inline-block; padding: 2px 6px; border-radius: 3px; font-size: 10px; }
+.tag-series { background: #333; color: #ccc; }
+.tag-rarity { background: #333; color: #ccc; }
+.tag-Common { background: #555; color: #eee; }
+.tag-Uncommon { background: #2e7d32; color: #e8f5e9; }
+.tag-Rare { background: #1565c0; color: #e3f2fd; }
+.tag-Legendary { background: #f57c00; color: #fff3e0; }
+.tag-UltraRare, .tag-Ultra { background: #6a1b9a; color: #f3e5f5; }
+.tag-mat { background: #1b5e20; color: #a5d6a7; }
+.tag-legend { background: #e65100; color: #ffe0b2; }
+.card-info .file-name { color: #666; font-size: 10px; word-break: break-all; margin-top: 4px; }
+.card-actions { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; padding: 0 12px 10px; }
+.card-actions button { min-width: 44px; padding: 6px 6px; border-radius: 4px; border: 1px solid #444; background: #2a2a2a; color: #ccc; cursor: pointer; font-size: 11px; transition: all 0.15s; }
+.card-actions button:hover { background: #3a3a3a; }
+.card-actions .btn-keep { border-color: #4caf50; color: #4caf50; }
+.card-actions .btn-keep.active { background: #4caf50; color: #fff; }
+.card-actions .btn-redo { border-color: #f44336; color: #f44336; }
+.card-actions .btn-redo.active { background: #f44336; color: #fff; }
+.card-actions .btn-delete { border-color: #ff5722; color: #ff5722; }
+.card-actions .btn-delete.active { background: #ff5722; color: #fff; }
+.card-actions .btn-legendary { border-color: #ff9800; color: #ff9800; }
+.card-actions .btn-legendary.active { background: #ff9800; color: #fff; }
+.export-bar { margin-top: 20px; padding: 14px 16px; background: #1a1a1a; border: 1px solid #2d2d2d; border-radius: 10px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.export-bar button { padding: 8px 18px; border-radius: 6px; border: none; cursor: pointer; font-weight: 600; font-size: 13px; }
+.btn-confirm { background: #4caf50; color: #fff; }
+.btn-export { background: #d4a853; color: #111; }
+.btn-reset { background: #444; color: #ccc; }
+.export-bar .summary { font-size: 12px; color: #888; margin-left: 4px; }
+.export-bar .status { font-size: 12px; color: #9ccc65; width: 100%; min-height: 16px; }
+.confirm-panel { display: none; margin-top: 18px; padding: 16px; background: #171717; border: 1px solid #333; border-radius: 10px; }
+.confirm-panel.active { display: block; }
+.confirm-head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; margin-bottom: 12px; }
+.confirm-head h2 { font-size: 16px; color: #d4a853; }
+.confirm-head .hint { font-size: 12px; color: #888; }
+.confirm-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; max-height: 520px; overflow: auto; padding-right: 4px; }
+.confirm-card { background: #202020; border: 1px solid #333; border-radius: 8px; overflow: hidden; }
+.confirm-card img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; cursor: pointer; }
+.confirm-card .confirm-info { padding: 7px 8px; font-size: 11px; color: #aaa; }
+.confirm-card .confirm-id { color: #d4a853; font-weight: 700; margin-bottom: 3px; }
+.confirm-card .confirm-mark { font-weight: 700; }
+.confirm-mark.keep { color: #66bb6a; }
+.confirm-mark.redo { color: #ef5350; }
+.confirm-mark.delete { color: #ff7043; }
+.confirm-mark.legendary { color: #ffa726; }
+.lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.95); display: none; align-items: center; justify-content: center; z-index: 1000; }
+.lightbox.active { display: flex; }
+.lightbox img { max-width: 90vw; max-height: 85vh; object-fit: contain; }
+.lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 54px; height: 72px; border: 1px solid #555; background: rgba(20,20,20,0.72); color: #f5e6c8; font-size: 34px; cursor: pointer; }
+.lightbox-nav:hover { background: rgba(212,168,83,0.25); border-color: #d4a853; }
+.lightbox-prev { left: 28px; }
+.lightbox-next { right: 28px; }
+.lightbox-caption { position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%); padding: 7px 12px; background: rgba(0,0,0,0.58); border: 1px solid #444; border-radius: 6px; color: #d4a853; font-size: 12px; }
+.lightbox-close { position: absolute; top: 20px; right: 30px; font-size: 36px; color: #fff; cursor: pointer; background: none; border: none; }
+.lightbox-nav:disabled { opacity: 0.22; cursor: default; background: rgba(20,20,20,0.45); border-color: #333; color: #777; }
+.lightbox-actions { position: absolute; left: 50%; bottom: 64px; transform: translateX(-50%); display: grid; grid-template-columns: repeat(4, minmax(74px, auto)); gap: 8px; }
+.lightbox-actions button { padding: 8px 10px; border-radius: 5px; border: 1px solid #555; background: rgba(20,20,20,0.82); color: #ddd; cursor: pointer; font-size: 12px; font-weight: 700; }
+.lightbox-actions .btn-keep { border-color: #4caf50; color: #66bb6a; }
+.lightbox-actions .btn-redo { border-color: #f44336; color: #ef5350; }
+.lightbox-actions .btn-delete { border-color: #ff5722; color: #ff7043; }
+.lightbox-actions .btn-legendary { border-color: #ff9800; color: #ffa726; }
+.lightbox-actions button.active { color: #fff; }
+.lightbox-actions .btn-keep.active { background: #4caf50; }
+.lightbox-actions .btn-redo.active { background: #f44336; }
+.lightbox-actions .btn-delete.active { background: #ff5722; }
+.lightbox-actions .btn-legendary.active { background: #ff9800; }
+.empty { color: #666; text-align: center; padding: 60px; grid-column: 1 / -1; }
+</style>
+</head>
+<body>
+<header>
+  <h1>NO REFUNDS ARCHIVE - Formal 3333 Sample Review</h1>
+  <div class="subtitle">50 images from the validated 3333 plan. Filter, inspect, mark, confirm, and export.</div>
+</header>
+<div class="controls">
+  <label>系列:</label>
+  <select id="filterSeries"><option value="">全部</option></select>
+  <label>稀有度:</label>
+  <select id="filterRarity"><option value="">全部</option></select>
+  <label>特征:</label><select id="filterTrait"><option value="">全部</option></select><label>标记:</label>
+  <select id="filterMark">
+    <option value="">全部</option>
+    <option value="unmarked">未标记</option>
+    <option value="keep">保留</option>
+    <option value="redo">重做</option>
+    <option value="delete">删除</option>
+    <option value="legendary">传奇候选</option>
+  </select>
+  <button id="btnClear">清除筛选</button>
+  <div class="stats" id="stats">共 0 张</div>
+</div>
+<div id="gallery"></div>
+<div class="export-bar">
+  <button class="btn-confirm" id="btnConfirm">确认审核结果</button>
+  <button class="btn-export" id="btnExport">导出 review_decisions_0050.csv</button>
+  <button class="btn-reset" id="btnReset">重置所有标记</button>
+  <span class="summary" id="exportSummary"></span>
+  <div class="status" id="confirmStatus"></div>
+</div>
+<section class="confirm-panel" id="confirmPanel">
+  <div class="confirm-head">
+    <h2>已确认标记图片</h2>
+    <div class="hint" id="confirmHint">确认后这里会展示所有已标记图片。</div>
+  </div>
+  <div class="confirm-grid" id="confirmGrid"></div>
+</section>
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
+  <img id="lightboxImg" src="" alt="">
+  <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
+  <div class="lightbox-actions" id="lightboxActions">
+    <button class="btn-keep" data-mark="keep">保留</button>
+    <button class="btn-redo" data-mark="redo">重做</button>
+    <button class="btn-delete" data-mark="delete">删除</button>
+    <button class="btn-legendary" data-mark="legendary">传奇候选</button>
+  </div>
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+<script>
+const IMG_BASE = "../images/";
+const STORAGE_KEY = "nra_production_sample_0050_review";
+const CONFIRMED_KEY = "nra_production_sample_0050_review_confirmed";
+const MARK_LABELS = { keep: '保留', redo: '重做', delete: '删除', legendary: '传奇候选' };
+const MARK_ORDER = { keep: 1, redo: 2, delete: 3, legendary: 4 };
+let allCards = [];
+let currentLightboxIndex = -1;
+let currentLightboxFilename = '';
+let decisions = loadStoredDecisions();
+
+function parseCSV(text) {
+  const rows = [];
+  let row = [], cell = '', quoted = false;
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i], next = text[i + 1];
+    if (ch === '"' && quoted && next === '"') { cell += '"'; i++; continue; }
+    if (ch === '"') { quoted = !quoted; continue; }
+    if (ch === ',' && !quoted) { row.push(cell); cell = ''; continue; }
+    if ((ch === '\n' || ch === '\r') && !quoted) {
+      if (ch === '\r' && next === '\n') i++;
+      row.push(cell); cell = '';
+      if (row.some(v => v.trim())) rows.push(row);
+      row = [];
+      continue;
+    }
+    cell += ch;
+  }
+  row.push(cell);
+  if (row.some(v => v.trim())) rows.push(row);
+  return rows;
+}
+function csvEscape(value) {
+  const text = String(value ?? '');
+  return /[",\n\r]/.test(text) ? '"' + text.replace(/"/g, '""') + '"' : text;
+}
+function loadStoredDecisions() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); }
+  catch { return {}; }
+}
+function saveStoredDecisions() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(decisions));
+}
+const REVIEW_CSV = "编号,图片文件名,metadata文件名,是否有对应metadata,是否在计划中,是否重复编号,系列,稀有度,material_pattern,legendary_accent,Special Feature,Feature Variant,combination_fingerprint,是否通过规则校验,是否建议保留,是否需要人工复查,备注\n1,NRA_0001.png,NRA_0001.json,是,是,否,Token Pawn,Common,,,,,a3aaa0be5ba82f570459f0c5305945c55e48d2b7eb37ecfc0490498b7326faef,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n2,NRA_0002.png,NRA_0002.json,是,是,否,Token Pawn,Common,,,,,41c55e2f7a639d228061e929e621b7b292964561bff35dfdf02d63deda26030d,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n3,NRA_0003.png,NRA_0003.json,是,是,否,Token Pawn,Common,,,,,10e63dd0bd9967a01f03131fde7f3c2703687fb566395e6b7ea4dbea70c05cec,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n4,NRA_0004.png,NRA_0004.json,是,是,否,Token Pawn,Common,,,,,ed4574f672feab71b81eb8d803f013a613e4cafff94cd3fb1dd1936559b0d808,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n5,NRA_0005.png,NRA_0005.json,是,是,否,Token Pawn,Common,,,,,71b3ba211157280af4ef1a49935fad70a590608afdc158e4cd0c8ab42d2c46bf,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n6,NRA_0006.png,NRA_0006.json,是,是,否,Token Pawn,Common,,,,,682956523ec319db8aae76fc92f57b8ac78412d7adc025006cc7f16f76bbef56,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n7,NRA_0007.png,NRA_0007.json,是,是,否,Token Pawn,Common,,,,,ac877d7a862f737d0869bd6d868d66acf0c1e20ff5ff72c6fbb453707bfedde8,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n8,NRA_0008.png,NRA_0008.json,是,是,否,Token Pawn,Common,,,,,ba58888e9c0f00627a27c4211043d0d504924aa7905e76df1fb4359838361125,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n9,NRA_0009.png,NRA_0009.json,是,是,否,Token Pawn,Common,,,,,370e00281d75a590f22b274f4faa1e33bca214a07b5feb07cc2b33eb619e5265,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n10,NRA_0010.png,NRA_0010.json,是,是,否,Token Pawn,Common,,,,,52839b0672c24f2b54fb208d4b7c6a1061c2141bd1a40461e4ba71eb3f667ee4,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n334,NRA_0334.png,NRA_0334.json,是,是,否,Token Pawn,Uncommon,,,,,e4dbb16fd632824623d8edfe97f5cfe36d61db1ec469975daa1fc000c708fcaa,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n335,NRA_0335.png,NRA_0335.json,是,是,否,Token Pawn,Uncommon,,,,,a3fd495f72b83635fd39f08f29615856af7504fe79195b052d68b02e6a838951,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n336,NRA_0336.png,NRA_0336.json,是,是,否,Token Pawn,Uncommon,,,,,1a925b4b0fcf741c55b55c4a6d36b2022f5be8b85a4afd2f2c48035ae391537a,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n337,NRA_0337.png,NRA_0337.json,是,是,否,Token Pawn,Uncommon,,,,,c636e227072a1308a7cd94b8392c15f82cdb6ccf516624d56910cade249ea1b7,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n338,NRA_0338.png,NRA_0338.json,是,是,否,Token Pawn,Uncommon,,,,,956b49b1940ceb01ec9500133615aabb4cd34daf24ac9c818f28cdb5d9349f61,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n339,NRA_0339.png,NRA_0339.json,是,是,否,Token Pawn,Uncommon,,,,,a88bed4f35c8d8d16f4d022d16862f2c8c94b23e90bc9c5bf209b14b4e058a79,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n340,NRA_0340.png,NRA_0340.json,是,是,否,Token Pawn,Uncommon,,,,,37aff51ce16e4ed5e9bf723bb464e484e5b9242d096f89ecae6870836cc0ef82,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n473,NRA_0473.png,NRA_0473.json,是,是,否,Token Pawn,Rare,,,Recovered Format,Fax Copy,df4ad84f12bdbccb00e9844577eec641ed8e2da4416da9a16354f0dc19f39595,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n474,NRA_0474.png,NRA_0474.json,是,是,否,Token Pawn,Rare,,,Recovered Format,Carbon Copy,74d85773c9336685a934059beae33dcc3965c1ccb683d6c014b1fd64f4dfc267,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n475,NRA_0475.png,NRA_0475.json,是,是,否,Token Pawn,Rare,,,Archive Reconstruction,Centered Reconstruction 3,891d9c0d3925700428729c50bdf86eafdbe31391a6a11e4b57b5589cb26620e1,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n476,NRA_0476.png,NRA_0476.json,是,是,否,Token Pawn,Rare,,,,,f346ad03f41685ef573d32528677f594c6fd22df5f2d44c75925a21ff6ab81de,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n477,NRA_0477.png,NRA_0477.json,是,是,否,Token Pawn,Rare,,,,,c3143ed82ba1d127c84359415cdcd69d2a6f200f8dcc3b019d24c8a49a269e3b,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n532,NRA_0532.png,NRA_0532.json,是,是,否,Token Pawn,Legendary,,,Latent Memory,Diner,d48997f5d77bff53de1cfc01985e0f4bc8f94d7bcb79da65d8d0faf06ae514fe,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n533,NRA_0533.png,NRA_0533.json,是,是,否,Token Pawn,Legendary,,,Latent Memory,Motel,9eba0a72b68f795af310967def11f377fe5fa012190f6eaeb35b2e6c3c8e1200,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n534,NRA_0534.png,NRA_0534.json,是,是,否,Token Pawn,Legendary,,,Latent Memory,Video Store,10edc3e0b015e3a967ac6ce27ea5d42e1ff3a0a7eb57db0ad3d8a07485ec5e06,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n552,NRA_0552.png,NRA_0552.json,是,是,否,Token Pawn,Ultra Rare,,,Dual Recovery,Latent Memory + Reconstruction 1,79a77273c472f837eac6124a85e2cb6f4b3b1da4d68b17657836ab8b9013dc09,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n557,NRA_0557.png,NRA_0557.json,是,是,否,Side B Records,Common,,,,,3481c84e6ae200939c478c39bc023b11430a43cbe8ddaa20cc633bda42e2699b,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n890,NRA_0890.png,NRA_0890.json,是,是,否,Side B Records,Uncommon,,,,,bfc44e331138154fc9dd2ee04d0593f522fbab690ef41ebb61d37941570081d5,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n1029,NRA_1029.png,NRA_1029.json,是,是,否,Side B Records,Rare,,,Recovered Format,Fax Copy,99771389832500f8d5ed04be57d25a19e764dd5d36efa588e91554a00e90c0b4,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n1088,NRA_1088.png,NRA_1088.json,是,是,否,Side B Records,Legendary,,,Latent Memory,Diner,d2b58525094e28ca9a4ed385cfec221f185bf624935e6273f6e4ac48fc227f25,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n1108,NRA_1108.png,NRA_1108.json,是,是,否,Side B Records,Ultra Rare,,,Dual Recovery,Latent Memory + Reconstruction 1,08e7f1ed9b05a15ce9306c62dcd34d45d1e8098e17a0c5082b616f040306ffc3,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n1113,NRA_1113.png,NRA_1113.json,是,是,否,Night Owl Video,Common,MAT_GLOW_INK_01,,,,a872a8b7887742399adbf3eb91b96fc0331a1f8daaaa6b8be8cc50835124350e,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n1446,NRA_1446.png,NRA_1446.json,是,是,否,Night Owl Video,Uncommon,,,,,788e0ab2bdacb3da589c599fab4dc4a855b02b92dc3fc4e7afaac4af400397c5,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n1585,NRA_1585.png,NRA_1585.json,是,是,否,Night Owl Video,Rare,,,Recovered Format,Fax Copy,072a6a3beb84fdb244ac5984d882a995e36ce3b5fac1b0c87750d6b5146bf3e9,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n1643,NRA_1643.png,NRA_1643.json,是,是,否,Night Owl Video,Legendary,,,Latent Memory,Diner,ed21a087936066f599b3ea0d01f4ac0446732d0cfbaccce68586720435c1aea9,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n1663,NRA_1663.png,NRA_1663.json,是,是,否,Night Owl Video,Ultra Rare,,,Dual Recovery,Latent Memory + Reconstruction 1,8b31e5964db736cf1852df1e2c5ce7b853f2bfdeee45634dbc8347d77b0bac61,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n1668,NRA_1668.png,NRA_1668.json,是,是,否,Night Owl Video,1/1,,,Dual Recovery,Latent Memory + Reconstruction 1,83b65b1100f648ed714bf3df7d90d772bcee47a4b5cfd07e350f96638cc18d86,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n1669,NRA_1669.png,NRA_1669.json,是,是,否,Midnight Diner,Common,,,,,a8bb869cc5efda978212a9e58258cff34f00178950e232682b2648ae238c328b,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n2002,NRA_2002.png,NRA_2002.json,是,是,否,Midnight Diner,Uncommon,MAT_TRANSPARENT_RECEIPT_01,,,,b22f9a353953c312a2b5ca7c493336e566f98dee95f993c6f82d35a57d782f33,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n2141,NRA_2141.png,NRA_2141.json,是,是,否,Midnight Diner,Rare,,,Recovered Format,Fax Copy,9a1a89177ba615abba8ae1ea60fb81838167f03f94e4b3b1d434e798980bfdbd,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n2199,NRA_2199.png,NRA_2199.json,是,是,否,Midnight Diner,Legendary,,,Latent Memory,Diner,042d9dc8f48ec81bd850dfa687361f8041d90a4941165716374d8464864bb5f4,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n2219,NRA_2219.png,NRA_2219.json,是,是,否,Midnight Diner,Ultra Rare,,,Dual Recovery,Latent Memory + Reconstruction 1,ba80af8173671aed8f4868a0324aa2154963992b9583a2ed9089fa2ff3f93c1b,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n2224,NRA_2224.png,NRA_2224.json,是,是,否,Lucky 8 Gas & Motel,Common,,,,,f81b8325d4571fe601b07161ebd5eca23aacb2f75119a94f8bbe05d210284338,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n2557,NRA_2557.png,NRA_2557.json,是,是,否,Lucky 8 Gas & Motel,Uncommon,,,,,5f2c0adb41fdefa6af5ff2ffda87b7dad3ed723b7fd29ec95b20826436955f2b,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n2696,NRA_2696.png,NRA_2696.json,是,是,否,Lucky 8 Gas & Motel,Rare,,,Recovered Format,Fax Copy,e279692e0a1d15e930108408512a290e70114abf6c3bf333325f18907e7f9b03,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n2754,NRA_2754.png,NRA_2754.json,是,是,否,Lucky 8 Gas & Motel,Legendary,,,Latent Memory,Diner,043d662cea4219f8c97da3884d99dbf0e4d69b68e55aea78045b3863ab12e92c,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n2779,NRA_2779.png,NRA_2779.json,是,是,否,Sunset Mart,Common,,,,,7c5c8602cff48e98006fcd6aabb192646df35e8ac08e7d4663161981ffe50dcd,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n3113,NRA_3113.png,NRA_3113.json,是,是,否,Sunset Mart,Uncommon,,,,,8b434e1a8ce7b6d450c8e40559d20e0dbf34226a63dd646bc2d1e2ef140bde35,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n3251,NRA_3251.png,NRA_3251.json,是,是,否,Sunset Mart,Rare,,,Recovered Format,Fax Copy,45752b67ef7ab664940a198f5816f6f35af1ca94c3c78c18c28e9fa6da7b6a5f,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n3309,NRA_3309.png,NRA_3309.json,是,是,否,Sunset Mart,Legendary,,,Latent Memory,Diner,93343564eba50eca1d3694fd41c424db19a988e53c0ff02f3a78e2030d0dff4e,是,待人工确认,待人工确认,Formal 3333 plan representative sample\n";
+function loadReviewCsv(csv) {
+    const parsed = parseCSV(csv);
+    const headers = parsed.shift().map(h => h.trim());
+    allCards = parsed.map(cols => {
+      const card = {};
+      headers.forEach((h, j) => card[h] = (cols[j] || '').trim());
+      return card;
+    }).filter(card => card['图片文件名']);
+    pruneMissingDecisions();
+    initFilters();
+    render();
+    renderConfirmed(false);
+}
+loadReviewCsv(REVIEW_CSV);
+function pruneMissingDecisions() {
+  const known = new Set(allCards.map(c => c['图片文件名']));
+  Object.keys(decisions).forEach(fn => { if (!known.has(fn)) delete decisions[fn]; });
+  saveStoredDecisions();
+}
+function initFilters() {
+  fillSelect('filterSeries', [...new Set(allCards.map(c => c['系列']).filter(Boolean))].sort());
+  fillSelect('filterRarity', [...new Set(allCards.map(c => c['稀有度']).filter(Boolean))].sort((a, b) => rarityRank(a) - rarityRank(b)));
+  fillSelect('filterTrait', [...new Set(allCards.map(c => c['Special Feature']).filter(Boolean))].sort());
+}
+function rarityRank(rarity) {
+  return { Common: 1, Uncommon: 2, Rare: 3, Legendary: 4, 'Ultra Rare': 5 }[rarity] || 99;
+}
+function fillSelect(id, values) {
+  const select = document.getElementById(id);
+  const current = select.value;
+  select.innerHTML = '<option value="">全部</option>';
+  values.forEach(value => {
+    const opt = document.createElement('option');
+    opt.value = value;
+    opt.textContent = value;
+    select.appendChild(opt);
+  });
+  if ([...select.options].some(o => o.value === current)) select.value = current;
+}
+function getFiltered() {
+  const series = document.getElementById('filterSeries').value;
+  const rarity = document.getElementById('filterRarity').value;
+  const mark = document.getElementById('filterMark').value;
+  const trait = document.getElementById('filterTrait').value;
+  return allCards.filter(card => {
+    const fn = card['图片文件名'];
+    const decision = decisions[fn] || '';
+    if (series && card['系列'] !== series) return false;
+    if (rarity && card['稀有度'] !== rarity) return false;
+    if (trait && card['Special Feature'] !== trait) return false;
+    if (mark === 'unmarked') return !decision;
+    if (mark && decision !== mark) return false;
+    return true;
+  });
+}
+function render() {
+  const filtered = getFiltered();
+  const gallery = document.getElementById('gallery');
+  gallery.innerHTML = '';
+  document.getElementById('stats').textContent = `显示 ${filtered.length} / ${allCards.length} 张`;
+  if (!filtered.length) {
+    gallery.innerHTML = '<div class="empty">无匹配结果</div>';
+    updateSummary();
+    return;
+  }
+  filtered.forEach(card => gallery.appendChild(createCard(card)));
+  updateSummary();
+}
+function createCard(card) {
+  const fn = card['图片文件名'];
+  const mark = decisions[fn] || '';
+  const div = document.createElement('div');
+  div.className = 'card ' + (mark ? `marked-${mark}` : '');
+  div.innerHTML = `
+    <div class="card-img">
+      <img src="${IMG_BASE}${fn}" alt="${card['编号']}" loading="lazy" onclick="openLightboxByFilename('${fn}')">
+    </div>
+    <div class="card-info">
+      <div class="nft-id">${card['编号']}</div>
+      <div class="meta-row">
+        <span class="tag tag-series">${card['系列'] || '?'}</span>
+        <span class="tag tag-rarity tag-${classSafe(card['稀有度'])}">${card['稀有度'] || '?'}</span>
+        ${card['material_pattern'] ? `<span class="tag tag-mat">${card['material_pattern']}</span>` : ''}
+        ${card['Special Feature'] ? `<span class="tag tag-legend">${card['Special Feature']}</span>` : ''}<div class="file-name">${card['combination_fingerprint'] || ''}</div>
+      </div>
+      <div class="meta-row" style="font-size:10px; color:#777;">
+        ${card['metadata是否生成'] === '是' || card['是否有对应metadata'] === '是' ? 'meta OK' : 'meta ?'}
+        ${card['是否通过规则校验'] === '是' ? ' · rule OK' : ' · rule ?'}
+        ${mark ? ` · 已标记 ${MARK_LABELS[mark]}` : ''}
+      </div>
+      <div class="file-name">${fn}<br>${card['combination_fingerprint'] || ''}</div>
+    </div>
+    <div class="card-actions">
+      ${actionButton(fn, mark, 'keep')}
+      ${actionButton(fn, mark, 'redo')}
+      ${actionButton(fn, mark, 'delete')}
+      ${actionButton(fn, mark, 'legendary')}
+    </div>`;
+  return div;
+}
+function actionButton(filename, current, mark) {
+  return `<button class="btn-${mark} ${current === mark ? 'active' : ''}" onclick="markCard('${filename}','${mark}')">${MARK_LABELS[mark]}</button>`;
+}
+function classSafe(value) {
+  return String(value || '').replace(/\s+/g, '');
+}
+function markCard(filename, mark) {
+  if (decisions[filename] === mark) delete decisions[filename];
+  else decisions[filename] = mark;
+  saveStoredDecisions();
+  localStorage.removeItem(CONFIRMED_KEY);
+  document.getElementById('confirmStatus').textContent = '有新的标记改动，还没有重新确认。';
+  render();
+  renderConfirmed(false);
+  updateLightboxActions(filename);
+}
+function countMarks() {
+  const counts = { keep: 0, redo: 0, delete: 0, legendary: 0 };
+  Object.values(decisions).forEach(mark => { counts[mark] = (counts[mark] || 0) + 1; });
+  return counts;
+}
+function updateSummary() {
+  const counts = countMarks();
+  const total = Object.keys(decisions).length;
+  document.getElementById('exportSummary').textContent = `保留:${counts.keep} 重做:${counts.redo} 删除:${counts.delete} 传奇候选:${counts.legendary} | 已标记:${total}/${allCards.length}`;
+}
+function buildDecisionRows() {
+  const rows = [['编号', '图片文件名', '标记', '标记中文', '系列', '稀有度', '备注']];
+  allCards.forEach(card => {
+    const mark = decisions[card['图片文件名']] || '';
+    rows.push([card['编号'], card['图片文件名'], mark, MARK_LABELS[mark] || '', card['系列'], card['稀有度'], '']);
+  });
+  return rows;
+}
+function downloadCSV() {
+  const csv = buildDecisionRows().map(row => row.map(csvEscape).join(',')).join('\n');
+  const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'review_decisions_0050.csv';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+function confirmReview() {
+  saveStoredDecisions();
+  const markedImages = getMarkedCards().map(card => ({
+    id: card['编号'],
+    filename: card['图片文件名'],
+    mark: decisions[card['图片文件名']],
+    markLabel: MARK_LABELS[decisions[card['图片文件名']]],
+    series: card['系列'],
+    rarity: card['稀有度']
+  }));
+  localStorage.setItem(CONFIRMED_KEY, JSON.stringify({
+    confirmedAt: new Date().toISOString(),
+    decisions,
+    counts: countMarks(),
+    markedImages
+  }));
+  renderConfirmed(true);
+  downloadCSV();
+  document.getElementById('confirmStatus').textContent = `已确认 ${markedImages.length} 张标记图片，并已下载 review_decisions_0050.csv。`;
+}
+function getMarkedCards() {
+  return allCards
+    .filter(card => decisions[card['图片文件名']])
+    .sort((a, b) => MARK_ORDER[decisions[a['图片文件名']]] - MARK_ORDER[decisions[b['图片文件名']]] || a['编号'].localeCompare(b['编号']));
+}
+function renderConfirmed(forceOpen) {
+  const panel = document.getElementById('confirmPanel');
+  const grid = document.getElementById('confirmGrid');
+  const hint = document.getElementById('confirmHint');
+  const marked = getMarkedCards();
+  if (!marked.length) {
+    grid.innerHTML = '<div class="empty">还没有标记图片。</div>';
+    hint.textContent = '确认后这里会展示所有已标记图片。';
+    if (forceOpen) panel.classList.add('active');
+    return;
+  }
+  const confirmed = localStorage.getItem(CONFIRMED_KEY);
+  if (forceOpen || confirmed) panel.classList.add('active');
+  hint.textContent = `共 ${marked.length} 张已标记；我接手时可以按这些文件名读取你的决定。`;
+  grid.innerHTML = '';
+  marked.forEach(card => {
+    const fn = card['图片文件名'];
+    const mark = decisions[fn];
+    const item = document.createElement('div');
+    item.className = 'confirm-card';
+    item.innerHTML = `
+      <img src="${IMG_BASE}${fn}" alt="${card['编号']}" loading="lazy" onclick="openLightboxByFilename('${fn}')">
+      <div class="confirm-info">
+        <div class="confirm-id">${card['编号']}</div>
+        <div><span class="confirm-mark ${mark}">${MARK_LABELS[mark]}</span> · ${card['稀有度'] || '?'} · ${card['系列'] || '?'}</div>
+        <div class="file-name">${fn}<br>${card['combination_fingerprint'] || ''}</div>
+      </div>`;
+    grid.appendChild(item);
+  });
+}
+document.getElementById('btnConfirm').addEventListener('click', confirmReview);
+document.getElementById('btnExport').addEventListener('click', downloadCSV);
+document.getElementById('btnReset').addEventListener('click', () => {
+  if (confirm('确定要清除所有标记？')) {
+    decisions = {};
+    saveStoredDecisions();
+    localStorage.removeItem(CONFIRMED_KEY);
+    document.getElementById('confirmStatus').textContent = '已清除所有标记。';
+    document.getElementById('confirmPanel').classList.remove('active');
+    render();
+    renderConfirmed(false);
+  }
+});
+['filterSeries', 'filterRarity', 'filterTrait', 'filterMark'].forEach(id => document.getElementById(id).addEventListener('change', render));
+document.getElementById('btnClear').addEventListener('click', () => {
+  document.getElementById('filterSeries').value = '';
+  document.getElementById('filterRarity').value = '';
+  document.getElementById('filterMark').value = '';
+  document.getElementById('filterTrait').value = '';
+  render();
+});
+function currentLightboxList() {
+  const filtered = getFiltered();
+  return filtered.length ? filtered : allCards;
+}
+function openLightboxByFilename(filename) {
+  const list = currentLightboxList();
+  const index = list.findIndex(card => card['图片文件名'] === filename);
+  openLightboxAt(index >= 0 ? index : 0, list);
+}
+function openLightboxAt(index, list = currentLightboxList()) {
+  if (!list.length) return;
+  currentLightboxIndex = Math.max(0, Math.min(index, list.length - 1));
+  const card = list[currentLightboxIndex];
+  currentLightboxFilename = card['图片文件名'];
+  const src = IMG_BASE + currentLightboxFilename;
+  document.getElementById('lightboxImg').src = src;
+  document.getElementById('lightboxCaption').textContent = `${card['编号']} · ${card['稀有度'] || '?'} · ${card['系列'] || '?'} · ${currentLightboxIndex + 1}/${list.length}`;
+  document.getElementById('lightboxPrev').disabled = currentLightboxIndex === 0;
+  document.getElementById('lightboxNext').disabled = currentLightboxIndex === list.length - 1;
+  updateLightboxActions(currentLightboxFilename);
+  document.getElementById('lightbox').classList.add('active');
+}
+function stepLightbox(delta) {
+  if (!document.getElementById('lightbox').classList.contains('active')) return;
+  const list = currentLightboxList();
+  const nextIndex = currentLightboxIndex + delta;
+  if (nextIndex < 0 || nextIndex >= list.length) return;
+  openLightboxAt(nextIndex, list);
+}
+function updateLightboxActions(filename = currentLightboxFilename) {
+  const current = decisions[filename] || '';
+  document.querySelectorAll('#lightboxActions button').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.mark === current);
+  });
+}
+function markCurrentLightbox(mark) {
+  if (!currentLightboxFilename) return;
+  markCard(currentLightboxFilename, mark);
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+}
+document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+document.getElementById('lightboxPrev').addEventListener('click', e => { e.stopPropagation(); stepLightbox(-1); });
+document.getElementById('lightboxNext').addEventListener('click', e => { e.stopPropagation(); stepLightbox(1); });
+document.querySelectorAll('#lightboxActions button').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    markCurrentLightbox(btn.dataset.mark);
+  });
+});
+document.getElementById('lightbox').addEventListener('click', e => {
+  if (e.target === document.getElementById('lightbox')) closeLightbox();
+});
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('lightbox').classList.contains('active')) return;
+  if (e.key === 'ArrowLeft') stepLightbox(-1);
+  if (e.key === 'ArrowRight') stepLightbox(1);
+  if (e.key === 'Escape') closeLightbox();
+});
+</script>
+</body>
+</html>
+
+

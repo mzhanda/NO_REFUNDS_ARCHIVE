@@ -1,0 +1,77 @@
+{
+  "series": {
+    "Token Pawn": {
+      "total": 556,
+      "rarity_counts": {
+        "Common": 333,
+        "Uncommon": 139,
+        "Rare": 59,
+        "Legendary": 20,
+        "Ultra Rare": 5,
+        "1/1": 0
+      },
+      "source": "approved_0333 series-safe asset pools"
+    },
+    "Side B Records": {
+      "total": 556,
+      "rarity_counts": {
+        "Common": 333,
+        "Uncommon": 139,
+        "Rare": 59,
+        "Legendary": 20,
+        "Ultra Rare": 5,
+        "1/1": 0
+      },
+      "source": "approved_0333 series-safe asset pools"
+    },
+    "Night Owl Video": {
+      "total": 556,
+      "rarity_counts": {
+        "Common": 333,
+        "Uncommon": 139,
+        "Rare": 58,
+        "Legendary": 20,
+        "Ultra Rare": 5,
+        "1/1": 1
+      },
+      "source": "approved_0333 series-safe asset pools"
+    },
+    "Midnight Diner": {
+      "total": 555,
+      "rarity_counts": {
+        "Common": 333,
+        "Uncommon": 139,
+        "Rare": 58,
+        "Legendary": 20,
+        "Ultra Rare": 5,
+        "1/1": 0
+      },
+      "source": "approved_0333 series-safe asset pools"
+    },
+    "Lucky 8 Gas & Motel": {
+      "total": 555,
+      "rarity_counts": {
+        "Common": 333,
+        "Uncommon": 139,
+        "Rare": 58,
+        "Legendary": 20,
+        "Ultra Rare": 5,
+        "1/1": 0
+      },
+      "source": "approved_0333 series-safe asset pools"
+    },
+    "Sunset Mart": {
+      "total": 555,
+      "rarity_counts": {
+        "Common": 334,
+        "Uncommon": 138,
+        "Rare": 58,
+        "Legendary": 20,
+        "Ultra Rare": 5,
+        "1/1": 0
+      },
+      "source": "approved_0333 series-safe asset pools"
+    }
+  },
+  "rule": "Only traits observed in an approved series pool may be scheduled for that series."
+}

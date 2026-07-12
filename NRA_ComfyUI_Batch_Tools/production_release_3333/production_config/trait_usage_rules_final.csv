@@ -1,0 +1,384 @@
+﻿trait_id,asset_type,allowed_series,allowed_rarities,minimum_usage,maximum_usage,target_usage,exclusive,conflicts_with,notes
+B01_VAR_01,base_templates,Lucky 8 Gas & Motel|Token Pawn,Common|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B01_VAR_02,base_templates,Side B Records|Sunset Mart,Common|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B01_VAR_03,base_templates,Sunset Mart,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B01_VAR_04,base_templates,Midnight Diner|Sunset Mart,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B01_VAR_05,base_templates,Night Owl Video|Side B Records,Common|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B01_VAR_06,base_templates,Lucky 8 Gas & Motel,Legendary|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B01_VAR_07,base_templates,Side B Records|Token Pawn,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B01_VAR_08,base_templates,Midnight Diner|Side B Records,Common|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B02_VAR_01,base_templates,Night Owl Video,Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B02_VAR_02,base_templates,Token Pawn,Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B02_VAR_03,base_templates,Night Owl Video|Side B Records,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B02_VAR_04,base_templates,Midnight Diner|Night Owl Video,Common|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B02_VAR_05,base_templates,Lucky 8 Gas & Motel,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B02_VAR_06,base_templates,Token Pawn,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B02_VAR_07,base_templates,Lucky 8 Gas & Motel|Night Owl Video,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B02_VAR_08,base_templates,Token Pawn,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B02_VAR_09,base_templates,Night Owl Video,Rare,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B02_VAR_10,base_templates,Midnight Diner|Night Owl Video,Common|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B02_VAR_11,base_templates,Side B Records|Sunset Mart,Rare|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B02_VAR_12,base_templates,Midnight Diner|Sunset Mart,Common|Legendary,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B03_VAR_01,base_templates,Token Pawn,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B03_VAR_02,base_templates,Side B Records|Sunset Mart,Common|Legendary,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B03_VAR_03,base_templates,Midnight Diner,Common|Rare,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B03_VAR_04,base_templates,Lucky 8 Gas & Motel|Token Pawn,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B03_VAR_05,base_templates,Lucky 8 Gas & Motel|Midnight Diner,Common|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B03_VAR_06,base_templates,Token Pawn,Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B03_VAR_07,base_templates,Midnight Diner|Token Pawn,Common|Ultra Rare,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B03_VAR_08,base_templates,Midnight Diner,Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B04_VAR_01,base_templates,Side B Records|Sunset Mart,Legendary|Rare,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B04_VAR_02,base_templates,Lucky 8 Gas & Motel,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B04_VAR_03,base_templates,Midnight Diner|Side B Records,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B04_VAR_04,base_templates,Lucky 8 Gas & Motel,Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B04_VAR_05,base_templates,Lucky 8 Gas & Motel|Midnight Diner,Common|Rare,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B04_VAR_06,base_templates,Sunset Mart,Common|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B04_VAR_07,base_templates,Sunset Mart,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B04_VAR_08,base_templates,Side B Records,Rare,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B05_VAR_01,base_templates,Token Pawn,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B05_VAR_02,base_templates,Sunset Mart,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B05_VAR_03,base_templates,Night Owl Video,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B05_VAR_04,base_templates,Night Owl Video,Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B05_VAR_05,base_templates,Lucky 8 Gas & Motel|Token Pawn,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B05_VAR_06,base_templates,Midnight Diner,Rare,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B06_VAR_01,base_templates,Midnight Diner|Night Owl Video,Common|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B06_VAR_02,base_templates,Lucky 8 Gas & Motel|Sunset Mart,Common|Rare,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B06_VAR_03,base_templates,Lucky 8 Gas & Motel|Token Pawn,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B06_VAR_04,base_templates,Lucky 8 Gas & Motel,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B06_VAR_05,base_templates,Side B Records|Token Pawn,Common|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B06_VAR_06,base_templates,Midnight Diner,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B06_VAR_07,base_templates,Side B Records,Common|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B06_VAR_08,base_templates,Night Owl Video|Token Pawn,Common|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B06_VAR_09,base_templates,Token Pawn,Rare,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B06_VAR_10,base_templates,Midnight Diner|Side B Records,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B07_VAR_01,base_templates,Sunset Mart,Common|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B07_VAR_02,base_templates,Token Pawn,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B07_VAR_03,base_templates,Side B Records|Sunset Mart,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B07_VAR_04,base_templates,Night Owl Video|Side B Records,Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B07_VAR_05,base_templates,Lucky 8 Gas & Motel,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B08_VAR_01,base_templates,Night Owl Video|Side B Records,Common|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B08_VAR_02,base_templates,Night Owl Video,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B08_VAR_03,base_templates,Midnight Diner|Night Owl Video,Common|Rare,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+B08_VAR_04,base_templates,Lucky 8 Gas & Motel,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+stamp_1_of_1_gold,stamps,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+STAMP_AFTER_HOURS,stamps,Midnight Diner,Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+STAMP_ARCHIVED_FOREVER_GOLD,stamps,Midnight Diner,Rare|Legendary|Ultra Rare|1/1,0,30,30,false,Archive Label|Signal Trace|props,Approved final pool
+STAMP_CHECKED_OUT,stamps,Night Owl Video,Common|Rare|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+STAMP_CLAIM_CLOSED,stamps,Token Pawn,Common|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+STAMP_CLOSED,stamps,Lucky 8 Gas & Motel|Midnight Diner|Sunset Mart,Common|Rare|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+STAMP_DO_NOT_OPEN,stamps,Night Owl Video,Common|Rare|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+stamp_due_friday_red,stamps,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+STAMP_FINAL_SALE,stamps,Side B Records|Sunset Mart,Common|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+stamp_genesis_gold,stamps,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+STAMP_GOLD_SEAL_GOLD,stamps,Lucky 8 Gas & Motel|Side B Records,Rare|Legendary|Ultra Rare|1/1,0,30,30,false,Archive Label|Signal Trace|props,Approved final pool
+STAMP_LAST_COPY,stamps,Side B Records,Common|Rare|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+STAMP_LAST_ORDER,stamps,Midnight Diner,Common|Rare,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+STAMP_NO_REFUNDS,stamps,Midnight Diner|Night Owl Video|Sunset Mart,Common|Rare|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+STAMP_NO_VACANCY,stamps,Lucky 8 Gas & Motel,Common|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+STAMP_OVERDUE,stamps,Night Owl Video,Common|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+STAMP_PAID_CASH,stamps,Lucky 8 Gas & Motel,Common|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+STAMP_PAWN_HOLD,stamps,Token Pawn,Common|Rare|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+stamp_redeemed_gold,stamps,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+stamp_returned_empty_red,stamps,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+STAMP_ROOM_PAID,stamps,Lucky 8 Gas & Motel,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+STAMP_STORE_CREDIT,stamps,Side B Records,Common|Rare|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+stamp_ultra_rare_gold,stamps,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+STAMP_UNCLAIMED,stamps,Token Pawn,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+STAMP_VAULTED_GOLD,stamps,Token Pawn,Rare|Legendary|Ultra Rare|1/1,0,30,30,false,Archive Label|Signal Trace|props,Approved final pool
+STAMP_ZERO_SUPPLY_GOLD,stamps,Sunset Mart,Rare|Legendary|Ultra Rare|1/1,0,30,30,false,Archive Label|Signal Trace|props,Approved final pool
+NOTE_1138PM,handwritten,Lucky 8 Gas & Motel|Midnight Diner,Common|Legendary|Rare|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+NOTE_30_DAYS,handwritten,Token Pawn,Common|Rare|Ultra Rare,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+NOTE_512PM,handwritten,Sunset Mart,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+NOTE_A_SIDE_GONE,handwritten,Side B Records,Common|Legendary|Rare,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+NOTE_AISLE_3,handwritten,Sunset Mart,Common|Rare|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+NOTE_BOOTH_4,handwritten,Midnight Diner,Common|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+NOTE_CASE_14,handwritten,Token Pawn,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+NOTE_CLAIM_BY_5,handwritten,Token Pawn,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+NOTE_DUE_FRIDAY,handwritten,Night Owl Video,Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+NOTE_EXIT_22,handwritten,Lucky 8 Gas & Motel,Common|Legendary|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+NOTE_FINAL_SALE,handwritten,Sunset Mart,Common|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+NOTE_HOLD_TAG,handwritten,Token Pawn,Common|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+NOTE_LAST_COPY,handwritten,Side B Records,Common|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+note_last_night,handwritten,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+NOTE_LAST_ORDER,handwritten,Midnight Diner,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+NOTE_LAST_SHIFT,handwritten,Sunset Mart,Common|Legendary,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+NOTE_LATE_FEE,handwritten,Night Owl Video,Common|Rare|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+NOTE_NO_VACANCY,handwritten,Lucky 8 Gas & Motel,Common|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+note_paid_cash,handwritten,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+NOTE_REGISTER_2,handwritten,Sunset Mart,Common|Rare,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+NOTE_RETURNED_EMPTY,handwritten,Night Owl Video,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+NOTE_REWIND,handwritten,Night Owl Video,Common|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+NOTE_ROOM_8,handwritten,Lucky 8 Gas & Motel,Common|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+note_server_m,handwritten,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+NOTE_SIDE_B,handwritten,Side B Records,Rare|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+NOTE_STORE_CREDIT,handwritten,Side B Records,Common|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+NOTE_TABLE_6,handwritten,Midnight Diner,Common|Rare|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+NOTE_TAPE_12,handwritten,Night Owl Video,Common|Rare|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+NOTE_TRACK_07,handwritten,Side B Records,Common|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+NOTE_UNCLAIMED,handwritten,Token Pawn,Common|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+prop_amber_stone_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_ashtray_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_barcode_sticker_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_bottle_cap_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_bottle_opener_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_brooch_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_cameo_brooch_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_chain_fragment_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_chatelaine_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_cigar_cutter_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_cigarette_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_cloth_napkin_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_coffee_stirrer_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_compass_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_crystal_ball_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_dice_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_envelope_corner_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_filigree_collar_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_fork_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_fountain_pen_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_gas_station_token_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_gemstone_pendant_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_hair_clip_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_hand_mirror_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_jeweled_compact_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_keychain_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_magnifying_glass_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_matchbook_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_matchbook_motel_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_monocle_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_newspaper_clip_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_old_key_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_old_key_02,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_old_key_03,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_opera_glasses_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_padlock_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_pearl_earring_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_pearl_necklace_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_pocket_knife_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_pocket_mirror_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_pocket_sundial_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_pocket_watch_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_pocket_watch_02,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_powder_box_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_record_sleeve_corner_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_rosary_beads_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_safety_razor_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_shot_glass_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_signet_ring_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_small_bottle_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_small_jewelry_bag_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_snuff_box_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_sugar_packet_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_thimble_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_badge_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_barrette_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_bracelet_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_bracelet_02,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_brooch_02,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_button_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_button_02,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_coin_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_coin_02,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_coin_03,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_coin_04,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_comb_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_cufflink_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_earring_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_filigree_bracelet_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_glass_vial_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_glasses_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_hair_comb_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_hat_pin_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_lighter_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_locket_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_medal_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_pen_02,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_perfume_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_perfume_02,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_perfume_03,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_perfume_04,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_potion_bottle_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_ring_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_ring_02,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_ring_03,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_thimble_02,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_tiara_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_tie_pin_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vinyl_label_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_wax_seal_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_zippo_lighter_01,props,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_amber_stone_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_ashtray_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_barcode_sticker_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_bottle_cap_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_bottle_opener_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_brooch_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_cameo_brooch_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_chain_fragment_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_chatelaine_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_cigar_cutter_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_cigarette_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_cloth_napkin_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_coffee_stirrer_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_compass_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_crystal_ball_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_dice_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_envelope_corner_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_filigree_collar_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_fork_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_fountain_pen_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_gas_station_token_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_gemstone_pendant_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_hair_clip_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_hand_mirror_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_jeweled_compact_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_keychain_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_magnifying_glass_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_matchbook_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_matchbook_motel_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_monocle_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_newspaper_clip_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_old_key_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_old_key_02,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_old_key_03,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_opera_glasses_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_padlock_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_pearl_earring_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_pearl_necklace_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_pocket_knife_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_pocket_mirror_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_pocket_sundial_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_pocket_watch_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_pocket_watch_02,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_powder_box_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_record_sleeve_corner_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_rosary_beads_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_safety_razor_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_shot_glass_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_signet_ring_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_small_bottle_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_small_jewelry_bag_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_snuff_box_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_sugar_packet_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_thimble_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_badge_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_barrette_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_bracelet_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_bracelet_02,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_brooch_02,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_button_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_button_02,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_coin_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_coin_02,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_coin_03,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_coin_04,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_comb_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_cufflink_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_earring_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_filigree_bracelet_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_glass_vial_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_glasses_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_hair_comb_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_hat_pin_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_lighter_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_locket_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_medal_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_pen_02,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_perfume_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_perfume_02,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_perfume_03,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_perfume_04,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_potion_bottle_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_ring_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_ring_02,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_ring_03,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_thimble_02,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_tiara_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vintage_tie_pin_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_vinyl_label_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_wax_seal_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_zippo_lighter_01,props_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+DMG_COFFEE_RING_01,damage,Midnight Diner|Sunset Mart,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+DMG_COFFEE_RING_02,damage,Midnight Diner,Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+DMG_COFFEE_RING_03,damage,Midnight Diner|Sunset Mart,Common|Rare,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+DMG_CORNER_CURL_01,damage,Lucky 8 Gas & Motel|Midnight Diner|Side B Records|Token Pawn,Common|Rare|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+DMG_DUST_SPECKS_01,damage,Night Owl Video|Side B Records|Token Pawn,Common|Ultra Rare|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+DMG_DUST_SPECKS_02,damage,Midnight Diner|Side B Records|Sunset Mart,Common|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+DMG_EDGE_WEAR_01,damage,Lucky 8 Gas & Motel|Night Owl Video|Side B Records|Sunset Mart|Token Pawn,Common|Rare|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+DMG_EDGE_WEAR_02,damage,Lucky 8 Gas & Motel|Midnight Diner|Night Owl Video|Side B Records|Sunset Mart,Common|Legendary|Rare|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+DMG_FOLD_01,damage,Lucky 8 Gas & Motel|Midnight Diner|Side B Records|Sunset Mart|Token Pawn,Common|Rare|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+DMG_FOLD_02,damage,Lucky 8 Gas & Motel|Midnight Diner|Night Owl Video|Side B Records|Token Pawn,Common|Rare|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+DMG_FOLD_03,damage,Midnight Diner|Night Owl Video|Side B Records|Token Pawn,Common|Legendary|Rare|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+DMG_SCAN_NOISE_01,damage,Night Owl Video,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+DMG_SCAN_NOISE_02,damage,Night Owl Video,Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+damage_small_tear_01,damage,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+DMG_TAPE_01,damage,Night Owl Video|Token Pawn,Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+DMG_TAPE_02,damage,Side B Records,Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+DMG_THERMAL_FADE_01,damage,Midnight Diner|Night Owl Video|Sunset Mart,Common|Legendary|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+DMG_WATER_STAIN_01,damage,Lucky 8 Gas & Motel|Sunset Mart,Common|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+DMG_WATER_STAIN_02,damage,Lucky 8 Gas & Motel|Sunset Mart,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+DMG_WATER_STAIN_03,damage,Lucky 8 Gas & Motel,Common,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+OVERLAY_ARCHIVE_YELLOWING_01,overlays,Midnight Diner|Sunset Mart|Token Pawn,Common|Rare,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+overlay_crt_grain_01,overlays,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+overlay_crt_grain_02,overlays,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+OVERLAY_DUST_01,overlays,Lucky 8 Gas & Motel|Midnight Diner|Night Owl Video|Side B Records|Sunset Mart|Token Pawn,Common|Legendary|Rare|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+OVERLAY_DUST_02,overlays,Lucky 8 Gas & Motel|Night Owl Video|Side B Records|Sunset Mart|Token Pawn,Common|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+OVERLAY_FADED_INK_01,overlays,Midnight Diner|Night Owl Video|Side B Records|Sunset Mart,Common|Rare|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+OVERLAY_FILM_GRAIN_01,overlays,Lucky 8 Gas & Motel|Midnight Diner|Night Owl Video|Side B Records|Sunset Mart,Common|Legendary|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+OVERLAY_FILM_GRAIN_02,overlays,Midnight Diner|Night Owl Video|Side B Records|Token Pawn,Common|Legendary|Rare|Ultra Rare,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+overlay_glass_glare_01,overlays,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+overlay_glass_glare_02,overlays,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+overlay_rain_glow_01,overlays,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+overlay_rain_glow_02,overlays,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+OVERLAY_SCAN_NOISE_01,overlays,Lucky 8 Gas & Motel|Midnight Diner|Night Owl Video|Token Pawn,Common|Rare|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+OVERLAY_SCAN_NOISE_02,overlays,Lucky 8 Gas & Motel|Night Owl Video|Side B Records|Sunset Mart|Token Pawn,Common|Rare|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+OVERLAY_SOFT_VIGNETTE_01,overlays,Lucky 8 Gas & Motel|Midnight Diner,Common|Legendary|Rare|Uncommon,0,500,30,false,Archive Label|Signal Trace|props,Approved final pool
+mat_black_gold_receipt_01,material_pattern,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+MAT_CHROME_EDGE_01,material_pattern,Lucky 8 Gas & Motel,Legendary,0,120,30,false,Archive Label|Signal Trace|props,Approved final pool
+MAT_FROSTED_RECEIPT_01,material_pattern,Night Owl Video,Uncommon,0,120,30,false,Archive Label|Signal Trace|props,Approved final pool
+MAT_GLASS_ARCHIVE_01,material_pattern,Side B Records,Legendary,0,120,30,false,Archive Label|Signal Trace|props,Approved final pool
+MAT_GLOW_INK_01,material_pattern,Midnight Diner|Night Owl Video|Side B Records,Rare|Legendary|Ultra Rare|1/1,0,30,30,false,Archive Label|Signal Trace|props,Approved final pool
+mat_holographic_receipt_01,material_pattern,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+MAT_SILVER_FOIL_RECEIPT_01,material_pattern,Midnight Diner,Rare|Legendary|Ultra Rare|1/1,0,30,30,false,Archive Label|Signal Trace|props,Approved final pool
+MAT_TRANSPARENT_RECEIPT_01,material_pattern,Lucky 8 Gas & Motel|Midnight Diner,Uncommon,0,120,30,false,Archive Label|Signal Trace|props,Approved final pool
+PAT_GOLD_FLECK_01,material_pattern,Token Pawn,Rare|Legendary|Ultra Rare|1/1,0,30,30,false,Archive Label|Signal Trace|props,Approved final pool
+PAT_HOLO_GRID_01,material_pattern,Night Owl Video|Sunset Mart,Rare|Legendary|Ultra Rare|1/1,0,30,30,false,Archive Label|Signal Trace|props,Approved final pool
+pat_iridescent_wave_01,material_pattern,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+PAT_LEOPARD_01,material_pattern,Sunset Mart,Rare|Legendary|Ultra Rare|1/1,0,30,30,false,Archive Label|Signal Trace|props,Approved final pool
+pat_security_print_01,material_pattern,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+PAT_SNAKESKIN_01,material_pattern,Midnight Diner|Token Pawn,Rare|Ultra Rare,0,120,30,false,Archive Label|Signal Trace|props,Approved final pool
+overlay_crystal_spark_01,legendary_accent,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+overlay_gold_dust_01,legendary_accent,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+overlay_holo_prism_01,legendary_accent,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+overlay_iridescent_glow_01,legendary_accent,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+overlay_luxe_vignette_01,legendary_accent,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+overlay_neon_archive_01,legendary_accent,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+overlay_rainbow_foil_01,legendary_accent,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+overlay_ultra_rare_shimmer_01,legendary_accent,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_acrylic_token_01,legendary_accent,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_chain_luxe_01,legendary_accent,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_crown_chrome_01,legendary_accent,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_crown_gold_01,legendary_accent,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_crystal_shard_01,legendary_accent,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_diamond_clip_01,legendary_accent,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_gem_badge_01,legendary_accent,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_holo_seal_01,legendary_accent,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_laser_sticker_01,legendary_accent,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_pearl_tag_01,legendary_accent,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_acrylic_token_01,legendary_accent_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_chain_luxe_01,legendary_accent_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_crown_chrome_01,legendary_accent_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_crown_gold_01,legendary_accent_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_crystal_shard_01,legendary_accent_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_diamond_clip_01,legendary_accent_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_gem_badge_01,legendary_accent_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_holo_seal_01,legendary_accent_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_laser_sticker_01,legendary_accent_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+prop_pearl_tag_01,legendary_accent_cropped,,,0,0,0,false,,Deprecated: blocked from 3333 plan
+diner,latent_memory_scene,,Legendary|Ultra Rare|1/1,0,500,30,false,,Approved final pool
+motel,latent_memory_scene,,Legendary|Ultra Rare|1/1,0,500,30,false,,Approved final pool
+video_store,latent_memory_scene,,Legendary|Ultra Rare|1/1,0,500,30,false,,Approved final pool
+Recovered Format,special_feature,Token Pawn|Side B Records|Night Owl Video|Midnight Diner|Lucky 8 Gas & Motel|Sunset Mart,Rare,0,70,70,true,,Rare-only document recovery
+Archive Reconstruction,special_feature,Token Pawn|Side B Records|Night Owl Video|Midnight Diner|Lucky 8 Gas & Motel|Sunset Mart,Rare,0,50,50,true,,Receipt-local torn reconstruction
+Latent Memory,special_feature,Token Pawn|Side B Records|Night Owl Video|Midnight Diner|Lucky 8 Gas & Motel|Sunset Mart,Legendary,0,120,120,true,,Receipt-local latent scene
+Dual Recovery,special_feature,Token Pawn|Side B Records|Night Owl Video|Midnight Diner|Lucky 8 Gas & Motel|Sunset Mart,Ultra Rare|1/1,0,31,31,true,,Two confirmed special layers

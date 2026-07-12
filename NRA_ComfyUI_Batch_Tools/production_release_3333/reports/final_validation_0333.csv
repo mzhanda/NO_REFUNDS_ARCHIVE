@@ -1,0 +1,11 @@
+﻿check,result,details
+image_count,pass,333
+metadata_count,pass,333
+image_metadata_pairs,pass,all plan pairs present
+duplicate_token_id,pass,0
+duplicate_filename,pass,0
+duplicate_combination_fingerprint,pass,0
+missing_assets,pass,0; source plan previously validated
+cross_series_trait_errors,pass,0; generated from series pools
+metadata_matches_plan,pass,metadata copied with approved image pair
+approved_files_unchanged,pass,sha256 recorded at freeze

@@ -1,0 +1,41 @@
+﻿group,asset_type,trait_id,count
+most_used_20,stamp,STAMP_CLOSED,65
+most_used_20,overlay,OVERLAY_SCAN_NOISE_02,52
+most_used_20,overlay,OVERLAY_FILM_GRAIN_01,51
+most_used_20,damage,DMG_CORNER_CURL_01,50
+most_used_20,stamp,STAMP_NO_REFUNDS,48
+most_used_20,overlay,OVERLAY_DUST_01,45
+most_used_20,overlay,OVERLAY_FADED_INK_01,40
+most_used_20,damage,DMG_EDGE_WEAR_01,39
+most_used_20,damage,DMG_FOLD_02,34
+most_used_20,overlay,OVERLAY_FILM_GRAIN_02,33
+most_used_20,overlay,OVERLAY_ARCHIVE_YELLOWING_01,32
+most_used_20,damage,DMG_FOLD_03,30
+most_used_20,overlay,OVERLAY_DUST_02,29
+most_used_20,stamp,STAMP_LAST_COPY,29
+most_used_20,overlay,OVERLAY_SCAN_NOISE_01,28
+most_used_20,stamp,STAMP_PAWN_HOLD,26
+most_used_20,damage,DMG_FOLD_01,25
+most_used_20,damage,DMG_EDGE_WEAR_02,24
+most_used_20,handwritten,NOTE_1138PM,24
+most_used_20,handwritten,NOTE_CLAIM_BY_5,24
+least_used_20,base_template,B02_VAR_01,1
+least_used_20,base_template,B02_VAR_09,1
+least_used_20,base_template,B03_VAR_06,1
+least_used_20,base_template,B04_VAR_01,1
+least_used_20,base_template,B04_VAR_04,1
+least_used_20,base_template,B04_VAR_08,1
+least_used_20,base_template,B05_VAR_06,1
+least_used_20,base_template,B06_VAR_09,1
+least_used_20,feature_variant,Aperture Card,1
+least_used_20,feature_variant,Archive Scan,1
+least_used_20,feature_variant,Carbon Copy,1
+least_used_20,feature_variant,Centered Reconstruction 1,1
+least_used_20,feature_variant,Centered Reconstruction 2,1
+least_used_20,feature_variant,Centered Reconstruction 3,1
+least_used_20,feature_variant,Centered Reconstruction 4,1
+least_used_20,feature_variant,Contact Print,1
+least_used_20,feature_variant,Diazo Blueprint,1
+least_used_20,feature_variant,Dot Matrix Reprint,1
+least_used_20,feature_variant,Fax Copy,1
+least_used_20,feature_variant,Microfilm Record,1

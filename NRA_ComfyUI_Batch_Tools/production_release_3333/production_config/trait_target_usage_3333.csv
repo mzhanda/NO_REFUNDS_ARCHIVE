@@ -1,0 +1,163 @@
+﻿trait_id,asset_type,target_usage
+B01_VAR_01,base_template,69
+B01_VAR_02,base_template,89
+B01_VAR_03,base_template,57
+B01_VAR_04,base_template,117
+B01_VAR_05,base_template,52
+B01_VAR_07,base_template,72
+B01_VAR_08,base_template,55
+B02_VAR_01,base_template,7
+B02_VAR_03,base_template,56
+B02_VAR_04,base_template,64
+B02_VAR_05,base_template,80
+B02_VAR_06,base_template,38
+B02_VAR_07,base_template,141
+B02_VAR_08,base_template,41
+B02_VAR_09,base_template,7
+B02_VAR_10,base_template,62
+B02_VAR_11,base_template,21
+B02_VAR_12,base_template,34
+B03_VAR_01,base_template,29
+B03_VAR_02,base_template,32
+B03_VAR_03,base_template,73
+B03_VAR_04,base_template,118
+B03_VAR_05,base_template,46
+B03_VAR_06,base_template,7
+B03_VAR_07,base_template,30
+B04_VAR_01,base_template,15
+B04_VAR_02,base_template,40
+B04_VAR_03,base_template,86
+B04_VAR_04,base_template,12
+B04_VAR_05,base_template,34
+B04_VAR_06,base_template,78
+B04_VAR_07,base_template,19
+B04_VAR_08,base_template,13
+B05_VAR_01,base_template,51
+B05_VAR_02,base_template,69
+B05_VAR_03,base_template,115
+B05_VAR_04,base_template,34
+B05_VAR_05,base_template,89
+B05_VAR_06,base_template,12
+B06_VAR_01,base_template,94
+B06_VAR_02,base_template,120
+B06_VAR_03,base_template,126
+B06_VAR_04,base_template,31
+B06_VAR_05,base_template,41
+B06_VAR_06,base_template,44
+B06_VAR_07,base_template,132
+B06_VAR_08,base_template,65
+B06_VAR_09,base_template,12
+B06_VAR_10,base_template,86
+B07_VAR_01,base_template,88
+B07_VAR_02,base_template,37
+B07_VAR_03,base_template,71
+B07_VAR_04,base_template,34
+B07_VAR_05,base_template,33
+B08_VAR_01,base_template,90
+B08_VAR_02,base_template,40
+B08_VAR_03,base_template,85
+B08_VAR_04,base_template,40
+MAT_FROSTED_RECEIPT_01,material_pattern,3
+MAT_GLOW_INK_01,material_pattern,168
+MAT_TRANSPARENT_RECEIPT_01,material_pattern,64
+None,material_pattern,3038
+PAT_GOLD_FLECK_01,material_pattern,30
+PAT_HOLO_GRID_01,material_pattern,21
+PAT_SNAKESKIN_01,material_pattern,9
+DMG_COFFEE_RING_01,damage,71
+DMG_COFFEE_RING_02,damage,8
+DMG_COFFEE_RING_03,damage,80
+DMG_CORNER_CURL_01,damage,481
+DMG_DUST_SPECKS_01,damage,165
+DMG_DUST_SPECKS_02,damage,242
+DMG_EDGE_WEAR_01,damage,390
+DMG_EDGE_WEAR_02,damage,242
+DMG_FOLD_01,damage,280
+DMG_FOLD_02,damage,352
+DMG_FOLD_03,damage,281
+DMG_SCAN_NOISE_01,damage,134
+DMG_SCAN_NOISE_02,damage,54
+DMG_TAPE_01,damage,36
+DMG_TAPE_02,damage,48
+DMG_THERMAL_FADE_01,damage,123
+DMG_WATER_STAIN_01,damage,122
+DMG_WATER_STAIN_02,damage,167
+DMG_WATER_STAIN_03,damage,57
+STAMP_AFTER_HOURS,stamp,18
+STAMP_CHECKED_OUT,stamp,84
+STAMP_CLAIM_CLOSED,stamp,107
+STAMP_CLOSED,stamp,646
+STAMP_DO_NOT_OPEN,stamp,132
+STAMP_FINAL_SALE,stamp,173
+STAMP_LAST_COPY,stamp,264
+STAMP_LAST_ORDER,stamp,159
+STAMP_NO_REFUNDS,stamp,502
+STAMP_NO_VACANCY,stamp,67
+STAMP_OVERDUE,stamp,130
+STAMP_PAID_CASH,stamp,158
+STAMP_PAWN_HOLD,stamp,262
+STAMP_ROOM_PAID,stamp,209
+STAMP_STORE_CREDIT,stamp,235
+STAMP_UNCLAIMED,stamp,187
+NOTE_1138PM,handwritten,228
+NOTE_30_DAYS,handwritten,105
+NOTE_512PM,handwritten,106
+NOTE_AISLE_3,handwritten,122
+NOTE_A_SIDE_GONE,handwritten,38
+NOTE_BOOTH_4,handwritten,141
+NOTE_CASE_14,handwritten,108
+NOTE_CLAIM_BY_5,handwritten,227
+NOTE_DUE_FRIDAY,handwritten,58
+NOTE_EXIT_22,handwritten,97
+NOTE_FINAL_SALE,handwritten,93
+NOTE_HOLD_TAG,handwritten,39
+NOTE_LAST_COPY,handwritten,168
+NOTE_LAST_ORDER,handwritten,226
+NOTE_LAST_SHIFT,handwritten,130
+NOTE_LATE_FEE,handwritten,111
+NOTE_NO_VACANCY,handwritten,217
+NOTE_REGISTER_2,handwritten,104
+NOTE_RETURNED_EMPTY,handwritten,83
+NOTE_REWIND,handwritten,139
+NOTE_ROOM_8,handwritten,104
+NOTE_SIDE_B,handwritten,81
+NOTE_STORE_CREDIT,handwritten,94
+NOTE_TABLE_6,handwritten,97
+NOTE_TAPE_12,handwritten,165
+NOTE_TRACK_07,handwritten,175
+NOTE_UNCLAIMED,handwritten,77
+OVERLAY_ARCHIVE_YELLOWING_01,overlay,353
+OVERLAY_DUST_01,overlay,448
+OVERLAY_DUST_02,overlay,275
+OVERLAY_FADED_INK_01,overlay,356
+OVERLAY_FILM_GRAIN_01,overlay,533
+OVERLAY_FILM_GRAIN_02,overlay,322
+OVERLAY_SCAN_NOISE_01,overlay,294
+OVERLAY_SCAN_NOISE_02,overlay,537
+OVERLAY_SOFT_VIGNETTE_01,overlay,215
+Archive Reconstruction,special_feature,36
+Dual Recovery,special_feature,31
+Latent Memory,special_feature,120
+None,special_feature,3074
+Recovered Format,special_feature,72
+Archive Scan,feature_variant,6
+Carbon Copy,feature_variant,12
+Centered Reconstruction 13,feature_variant,6
+Centered Reconstruction 18,feature_variant,6
+Centered Reconstruction 23,feature_variant,6
+Centered Reconstruction 3,feature_variant,12
+Centered Reconstruction 8,feature_variant,6
+Diner,feature_variant,42
+Dot Matrix Reprint,feature_variant,6
+Fax Copy,feature_variant,12
+Latent Memory + Reconstruction 1,feature_variant,7
+Latent Memory + Reconstruction 2,feature_variant,6
+Latent Memory + Reconstruction 3,feature_variant,6
+Latent Memory + Reconstruction 4,feature_variant,6
+Latent Memory + Reconstruction 5,feature_variant,6
+Microfilm Record,feature_variant,12
+Motel,feature_variant,42
+None,feature_variant,3074
+Photocopy,feature_variant,12
+Telex Record,feature_variant,12
+Video Store,feature_variant,36

@@ -1,0 +1,4 @@
+﻿check,result,details
+image_metadata_pairs,pass,50
+source_plan_rows,pass,all selected from auto_compose_plan_3333.csv
+approved_0333_unchanged,pass,not written by sample composer
