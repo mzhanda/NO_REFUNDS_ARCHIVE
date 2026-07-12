@@ -1,0 +1,43 @@
+{
+  "name": "NRA #2221",
+  "description": "A layered archival receipt NFT from NO REFUNDS ARCHIVE.",
+  "image": "NRA_2221.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Sunset Mart"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Ultra Rare"
+    },
+    {
+      "trait_type": "Base Template",
+      "value": "B04_VAR_03"
+    },
+    {
+      "trait_type": "Damage",
+      "value": "DMG_DUST_SPECKS_02"
+    },
+    {
+      "trait_type": "Stamp",
+      "value": "STAMP_LAST_ORDER"
+    },
+    {
+      "trait_type": "Handwritten",
+      "value": "NOTE_LAST_ORDER"
+    },
+    {
+      "trait_type": "Overlay",
+      "value": "OVERLAY_ARCHIVE_YELLOWING_01"
+    },
+    {
+      "trait_type": "Special Feature",
+      "value": "Dual Recovery"
+    },
+    {
+      "trait_type": "Feature Variant",
+      "value": "Latent Memory + Reconstruction 3"
+    }
+  ]
+}

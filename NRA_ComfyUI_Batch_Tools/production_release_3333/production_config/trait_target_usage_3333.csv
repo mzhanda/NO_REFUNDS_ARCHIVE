@@ -136,9 +136,10 @@ OVERLAY_SCAN_NOISE_01,overlay,294
 OVERLAY_SCAN_NOISE_02,overlay,537
 OVERLAY_SOFT_VIGNETTE_01,overlay,215
 Archive Reconstruction,special_feature,36
-Dual Recovery,special_feature,31
+Dual Recovery,special_feature,30
 Latent Memory,special_feature,120
-None,special_feature,3074
+None,special_feature,3069
+One of One Archive,special_feature,6
 Recovered Format,special_feature,72
 Archive Scan,feature_variant,6
 Carbon Copy,feature_variant,12
@@ -150,14 +151,20 @@ Centered Reconstruction 8,feature_variant,6
 Diner,feature_variant,42
 Dot Matrix Reprint,feature_variant,6
 Fax Copy,feature_variant,12
-Latent Memory + Reconstruction 1,feature_variant,7
+Latent Memory + Reconstruction 1,feature_variant,6
 Latent Memory + Reconstruction 2,feature_variant,6
 Latent Memory + Reconstruction 3,feature_variant,6
 Latent Memory + Reconstruction 4,feature_variant,6
 Latent Memory + Reconstruction 5,feature_variant,6
+Lucky 8 Gas & Motel / Last Receipt,feature_variant,1
 Microfilm Record,feature_variant,12
+Midnight Diner / Table Seven,feature_variant,1
 Motel,feature_variant,42
-None,feature_variant,3074
+Night Owl Video / Final Broadcast,feature_variant,1
+None,feature_variant,3069
 Photocopy,feature_variant,12
+Side B Records / Side A Missing,feature_variant,1
+Sunset Mart / Closing Register,feature_variant,1
 Telex Record,feature_variant,12
+Token Pawn / Master Ledger,feature_variant,1
 Video Store,feature_variant,36

@@ -1,24 +1,60 @@
-# NO REFUNDS ARCHIVE - Current Project Progress
+# NO REFUNDS ARCHIVE - Final Production Status
 
-## Current status
-- All approved traits are frozen in the final asset manifest.
-- The 100-image test batch is approved and locked at `release/approved_0100/`.
-- The 333-image stress batch is manually approved and locked at `release/approved_0333/`.
-- The stable production route is deterministic Python/Pillow layered composition. ComfyUI is used only to create source assets, never to generate the final collection images.
-- The next gate is review of a 50-image representative sample from the validated 3333 plan.
-- Current GitHub baseline before this freeze: `39488a9f46ea255c68268b826bc20ec0ab5f42f2`.
+Updated: 2026-07-13
 
-## Website frontend
-- The website is a separate module from the NFT production toolchain. No website or whitelist changes are included in this production freeze.
+## Production Status
 
-## NFT production toolchain
-- Approved production inputs: base papers, print/stamp/handwriting, damage, material and scan overlays, plus receipt-local special features.
-- Retired from formal production: props, Archive Label, Signal Trace, Time Imprint.
-- Confirmed production traits: 149 approved source assets plus 3 approved receipt-local latent-memory scenes. The final inventory lists 379 files, with the remaining 227 marked `deprecated` and blocked from the plan.
-- Batch locations: `staging/0333/`, `release/approved_0100/`, `release/approved_0333/`, `data/auto_compose_plan_3333.csv`.
+- Final production output: 3,333 PNG images and 3,333 ERC-721-compatible metadata JSON files.
+- Image size: 1024x1024 PNG.
+- Final production route: deterministic Python/Pillow layered composition.
+- ComfyUI is retained only for source-asset generation, not final full-image generation.
+- The approved 100-image and 333-image batches remain frozen and were not modified.
+- Four previously corrupted production PNGs (`NRA_0418`, `NRA_0814`, `NRA_1566`, `NRA_3177`) were replaced with their approved reworks on 2026-07-13.
+- Final image readability check: 3,333 checked, 0 broken PNG files.
+- Metadata pairing check: 3,333 images / 3,333 metadata files.
+- Combination-fingerprint check: 0 duplicates.
 
-## Remaining work
-1. Review the 50-image production sample.
-2. Fix only rejected sample rows, then repeat the sample gate if necessary.
-3. Only after explicit approval, compose the full 3333 plan in a new immutable release output.
-4. Run final metadata/image validation and mint-readiness checks.
+## Collection Distribution
+
+| Rarity | Count |
+| --- | ---: |
+| Common | 1994 |
+| Uncommon | 833 |
+| Rare | 350 |
+| Legendary | 120 |
+| Ultra Rare | 30 |
+| 1/1 | 6 |
+| Total | 3333 |
+
+Series identity follows the store visibly printed on the base receipt.
+
+| Visual Store Series | Count |
+| --- | ---: |
+| Lucky 8 Gas & Motel | 263 |
+| Midnight Diner | 552 |
+| Night Owl Video | 369 |
+| Pine Hollow General Store | 511 |
+| Side B Records | 750 |
+| Sunset Mart | 298 |
+| Token Pawn | 590 |
+
+## Review And Records
+
+- Review directory: `release/final_review/review_index.html`.
+- Production plan: `data/auto_compose_plan_3333.csv`.
+- Production images: `release/production_3333/images/`.
+- Production metadata: `release/production_3333/metadata/`.
+- Production provenance: `release/production_3333/reports/production_provenance_3333.csv`.
+- Final validation: `release/production_3333/reports/final_production_validation_3333.csv`.
+- Final image integrity result: `release/production_3333/reports/rework_promotion_0418_0814_1566_3177.csv`.
+
+## OpenSea Release State
+
+The collection will use OpenSea's mint/deployment workflow. No separate custom smart-contract deployment is currently required from this production repository.
+
+Before mint is opened:
+
+1. Upload final images and metadata through the chosen OpenSea workflow.
+2. Confirm the platform's metadata URI and reveal configuration requirements.
+3. Confirm collection settings: total supply 3333, public price 0.0006 ETH, whitelist allocation, royalties, treasury wallet, and mint dates.
+4. Keep the final images and metadata unchanged after upload.

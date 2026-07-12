@@ -5,5 +5,6 @@ unique_filenames,pass,0 duplicates
 unique_combination_fingerprints,pass,0 duplicates
 approved_assets_only,pass,0 missing/deprecated
 rarity_distribution,pass,exact
-series_distribution,pass,exact
+series_distribution,pass,exact visual-store distribution
+visual_store_series_mapping,pass,all base templates match their printed store
 metadata_fields_available,pass,yes

@@ -1,0 +1,35 @@
+{
+  "name": "NRA #0349",
+  "description": "A layered archival receipt NFT from NO REFUNDS ARCHIVE.",
+  "image": "NRA_0349.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Side B Records"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Uncommon"
+    },
+    {
+      "trait_type": "Base Template",
+      "value": "B06_VAR_09"
+    },
+    {
+      "trait_type": "Damage",
+      "value": "DMG_DUST_SPECKS_01"
+    },
+    {
+      "trait_type": "Stamp",
+      "value": "STAMP_PAWN_HOLD"
+    },
+    {
+      "trait_type": "Handwritten",
+      "value": "NOTE_HOLD_TAG"
+    },
+    {
+      "trait_type": "Overlay",
+      "value": "OVERLAY_ARCHIVE_YELLOWING_01"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "NRA #1820",
+  "description": "A layered archival receipt NFT from NO REFUNDS ARCHIVE.",
+  "image": "NRA_1820.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Token Pawn"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Base Template",
+      "value": "B03_VAR_07"
+    },
+    {
+      "trait_type": "Damage",
+      "value": "DMG_DUST_SPECKS_02"
+    },
+    {
+      "trait_type": "Stamp",
+      "value": "STAMP_CLOSED"
+    },
+    {
+      "trait_type": "Handwritten",
+      "value": "NOTE_1138PM"
+    },
+    {
+      "trait_type": "Overlay",
+      "value": "OVERLAY_DUST_01"
+    }
+  ]
+}

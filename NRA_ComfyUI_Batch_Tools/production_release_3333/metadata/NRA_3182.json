@@ -1,0 +1,39 @@
+{
+  "name": "NRA #3182",
+  "description": "A layered archival receipt NFT from NO REFUNDS ARCHIVE.",
+  "image": "NRA_3182.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Pine Hollow General Store"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Uncommon"
+    },
+    {
+      "trait_type": "Base Template",
+      "value": "B01_VAR_02"
+    },
+    {
+      "trait_type": "Material Pattern",
+      "value": "PAT_HOLO_GRID_01"
+    },
+    {
+      "trait_type": "Damage",
+      "value": "DMG_WATER_STAIN_01"
+    },
+    {
+      "trait_type": "Stamp",
+      "value": "STAMP_FINAL_SALE"
+    },
+    {
+      "trait_type": "Handwritten",
+      "value": "NOTE_LAST_SHIFT"
+    },
+    {
+      "trait_type": "Overlay",
+      "value": "OVERLAY_DUST_02"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "NRA #1446",
+  "description": "A layered archival receipt NFT from NO REFUNDS ARCHIVE.",
+  "image": "NRA_1446.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Night Owl Video"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Uncommon"
+    },
+    {
+      "trait_type": "Base Template",
+      "value": "B05_VAR_03"
+    },
+    {
+      "trait_type": "Damage",
+      "value": "DMG_SCAN_NOISE_02"
+    },
+    {
+      "trait_type": "Stamp",
+      "value": "STAMP_DO_NOT_OPEN"
+    },
+    {
+      "trait_type": "Handwritten",
+      "value": "NOTE_RETURNED_EMPTY"
+    },
+    {
+      "trait_type": "Overlay",
+      "value": "OVERLAY_SCAN_NOISE_01"
+    }
+  ]
+}

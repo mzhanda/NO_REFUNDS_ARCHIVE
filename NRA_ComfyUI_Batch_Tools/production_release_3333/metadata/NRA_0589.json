@@ -1,0 +1,35 @@
+{
+  "name": "NRA #0589",
+  "description": "A layered archival receipt NFT from NO REFUNDS ARCHIVE.",
+  "image": "NRA_0589.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Sunset Mart"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Base Template",
+      "value": "B04_VAR_03"
+    },
+    {
+      "trait_type": "Damage",
+      "value": "DMG_EDGE_WEAR_02"
+    },
+    {
+      "trait_type": "Stamp",
+      "value": "STAMP_STORE_CREDIT"
+    },
+    {
+      "trait_type": "Handwritten",
+      "value": "NOTE_TRACK_07"
+    },
+    {
+      "trait_type": "Overlay",
+      "value": "OVERLAY_FILM_GRAIN_02"
+    }
+  ]
+}

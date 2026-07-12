@@ -1,0 +1,43 @@
+{
+  "name": "NRA #1664",
+  "description": "A layered archival receipt NFT from NO REFUNDS ARCHIVE.",
+  "image": "NRA_1664.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Midnight Diner"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Ultra Rare"
+    },
+    {
+      "trait_type": "Base Template",
+      "value": "B02_VAR_07"
+    },
+    {
+      "trait_type": "Damage",
+      "value": "DMG_SCAN_NOISE_01"
+    },
+    {
+      "trait_type": "Stamp",
+      "value": "STAMP_NO_REFUNDS"
+    },
+    {
+      "trait_type": "Handwritten",
+      "value": "NOTE_RETURNED_EMPTY"
+    },
+    {
+      "trait_type": "Overlay",
+      "value": "OVERLAY_SCAN_NOISE_01"
+    },
+    {
+      "trait_type": "Special Feature",
+      "value": "Dual Recovery"
+    },
+    {
+      "trait_type": "Feature Variant",
+      "value": "Latent Memory + Reconstruction 2"
+    }
+  ]
+}

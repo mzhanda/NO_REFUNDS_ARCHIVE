@@ -1,0 +1,35 @@
+{
+  "name": "NRA #1940",
+  "description": "A layered archival receipt NFT from NO REFUNDS ARCHIVE.",
+  "image": "NRA_1940.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Side B Records"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Base Template",
+      "value": "B06_VAR_06"
+    },
+    {
+      "trait_type": "Damage",
+      "value": "DMG_COFFEE_RING_01"
+    },
+    {
+      "trait_type": "Stamp",
+      "value": "STAMP_LAST_ORDER"
+    },
+    {
+      "trait_type": "Handwritten",
+      "value": "NOTE_LAST_ORDER"
+    },
+    {
+      "trait_type": "Overlay",
+      "value": "OVERLAY_FADED_INK_01"
+    }
+  ]
+}

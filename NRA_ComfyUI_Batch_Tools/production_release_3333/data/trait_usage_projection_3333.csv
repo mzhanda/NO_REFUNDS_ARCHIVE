@@ -8,7 +8,7 @@ base_template,B01_VAR_07,72
 base_template,B01_VAR_08,55
 base_template,B02_VAR_01,7
 base_template,B02_VAR_03,56
-base_template,B02_VAR_04,64
+base_template,B02_VAR_04,65
 base_template,B02_VAR_05,80
 base_template,B02_VAR_06,38
 base_template,B02_VAR_07,141
@@ -26,14 +26,14 @@ base_template,B03_VAR_06,7
 base_template,B03_VAR_07,30
 base_template,B04_VAR_01,15
 base_template,B04_VAR_02,40
-base_template,B04_VAR_03,86
+base_template,B04_VAR_03,87
 base_template,B04_VAR_04,12
 base_template,B04_VAR_05,34
 base_template,B04_VAR_06,78
 base_template,B04_VAR_07,19
 base_template,B04_VAR_08,13
 base_template,B05_VAR_01,51
-base_template,B05_VAR_02,69
+base_template,B05_VAR_02,68
 base_template,B05_VAR_03,115
 base_template,B05_VAR_04,34
 base_template,B05_VAR_05,89
@@ -47,7 +47,7 @@ base_template,B06_VAR_06,44
 base_template,B06_VAR_07,132
 base_template,B06_VAR_08,65
 base_template,B06_VAR_09,12
-base_template,B06_VAR_10,86
+base_template,B06_VAR_10,85
 base_template,B07_VAR_01,88
 base_template,B07_VAR_02,37
 base_template,B07_VAR_03,71
@@ -136,9 +136,10 @@ overlay,OVERLAY_SCAN_NOISE_01,294
 overlay,OVERLAY_SCAN_NOISE_02,537
 overlay,OVERLAY_SOFT_VIGNETTE_01,215
 special_feature,Archive Reconstruction,36
-special_feature,Dual Recovery,31
+special_feature,Dual Recovery,30
 special_feature,Latent Memory,120
-special_feature,None,3074
+special_feature,None,3069
+special_feature,One of One Archive,6
 special_feature,Recovered Format,72
 feature_variant,Archive Scan,6
 feature_variant,Carbon Copy,12
@@ -150,14 +151,20 @@ feature_variant,Centered Reconstruction 8,6
 feature_variant,Diner,42
 feature_variant,Dot Matrix Reprint,6
 feature_variant,Fax Copy,12
-feature_variant,Latent Memory + Reconstruction 1,7
+feature_variant,Latent Memory + Reconstruction 1,6
 feature_variant,Latent Memory + Reconstruction 2,6
 feature_variant,Latent Memory + Reconstruction 3,6
 feature_variant,Latent Memory + Reconstruction 4,6
 feature_variant,Latent Memory + Reconstruction 5,6
+feature_variant,Lucky 8 Gas & Motel / Last Receipt,1
 feature_variant,Microfilm Record,12
+feature_variant,Midnight Diner / Table Seven,1
 feature_variant,Motel,42
-feature_variant,None,3074
+feature_variant,Night Owl Video / Final Broadcast,1
+feature_variant,None,3069
 feature_variant,Photocopy,12
+feature_variant,Side B Records / Side A Missing,1
+feature_variant,Sunset Mart / Closing Register,1
 feature_variant,Telex Record,12
+feature_variant,Token Pawn / Master Ledger,1
 feature_variant,Video Store,36

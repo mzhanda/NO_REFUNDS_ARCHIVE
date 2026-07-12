@@ -1,7 +1,8 @@
-﻿series,count
-Token Pawn,556
-Side B Records,556
-Night Owl Video,556
-Midnight Diner,555
-Lucky 8 Gas & Motel,555
-Sunset Mart,555
+﻿series,total,common,uncommon,rare,legendary,ultra_rare,one_of_one
+Lucky 8 Gas & Motel,263,167,57,27,11,1,0
+Midnight Diner,552,335,153,55,4,4,1
+Night Owl Video,369,221,78,41,23,5,1
+Pine Hollow General Store,511,297,143,52,14,4,1
+Side B Records,750,440,189,76,39,6,0
+Sunset Mart,298,181,64,39,9,4,1
+Token Pawn,590,353,149,60,20,6,2

@@ -1,77 +1,89 @@
 {
   "series": {
-    "Token Pawn": {
-      "total": 556,
+    "Lucky 8 Gas & Motel": {
+      "total": 263,
       "rarity_counts": {
-        "Common": 333,
-        "Uncommon": 139,
-        "Rare": 59,
-        "Legendary": 20,
-        "Ultra Rare": 5,
+        "Common": 167,
+        "Uncommon": 57,
+        "Rare": 27,
+        "Legendary": 11,
+        "Ultra Rare": 1,
         "1/1": 0
       },
-      "source": "approved_0333 series-safe asset pools"
+      "source": "visual base receipt mapping"
     },
-    "Side B Records": {
-      "total": 556,
+    "Midnight Diner": {
+      "total": 552,
       "rarity_counts": {
-        "Common": 333,
-        "Uncommon": 139,
-        "Rare": 59,
-        "Legendary": 20,
-        "Ultra Rare": 5,
-        "1/1": 0
+        "Common": 335,
+        "Uncommon": 153,
+        "Rare": 55,
+        "Legendary": 4,
+        "Ultra Rare": 4,
+        "1/1": 1
       },
-      "source": "approved_0333 series-safe asset pools"
+      "source": "visual base receipt mapping"
     },
     "Night Owl Video": {
-      "total": 556,
+      "total": 369,
       "rarity_counts": {
-        "Common": 333,
-        "Uncommon": 139,
-        "Rare": 58,
-        "Legendary": 20,
+        "Common": 221,
+        "Uncommon": 78,
+        "Rare": 41,
+        "Legendary": 23,
         "Ultra Rare": 5,
         "1/1": 1
       },
-      "source": "approved_0333 series-safe asset pools"
+      "source": "visual base receipt mapping"
     },
-    "Midnight Diner": {
-      "total": 555,
+    "Pine Hollow General Store": {
+      "total": 511,
       "rarity_counts": {
-        "Common": 333,
-        "Uncommon": 139,
-        "Rare": 58,
-        "Legendary": 20,
-        "Ultra Rare": 5,
+        "Common": 297,
+        "Uncommon": 143,
+        "Rare": 52,
+        "Legendary": 14,
+        "Ultra Rare": 4,
+        "1/1": 1
+      },
+      "source": "visual base receipt mapping"
+    },
+    "Side B Records": {
+      "total": 750,
+      "rarity_counts": {
+        "Common": 440,
+        "Uncommon": 189,
+        "Rare": 76,
+        "Legendary": 39,
+        "Ultra Rare": 6,
         "1/1": 0
       },
-      "source": "approved_0333 series-safe asset pools"
-    },
-    "Lucky 8 Gas & Motel": {
-      "total": 555,
-      "rarity_counts": {
-        "Common": 333,
-        "Uncommon": 139,
-        "Rare": 58,
-        "Legendary": 20,
-        "Ultra Rare": 5,
-        "1/1": 0
-      },
-      "source": "approved_0333 series-safe asset pools"
+      "source": "visual base receipt mapping"
     },
     "Sunset Mart": {
-      "total": 555,
+      "total": 298,
       "rarity_counts": {
-        "Common": 334,
-        "Uncommon": 138,
-        "Rare": 58,
-        "Legendary": 20,
-        "Ultra Rare": 5,
-        "1/1": 0
+        "Common": 181,
+        "Uncommon": 64,
+        "Rare": 39,
+        "Legendary": 9,
+        "Ultra Rare": 4,
+        "1/1": 1
       },
-      "source": "approved_0333 series-safe asset pools"
+      "source": "visual base receipt mapping"
+    },
+    "Token Pawn": {
+      "total": 590,
+      "rarity_counts": {
+        "Common": 353,
+        "Uncommon": 149,
+        "Rare": 60,
+        "Legendary": 20,
+        "Ultra Rare": 6,
+        "1/1": 2
+      },
+      "source": "visual base receipt mapping"
     }
   },
-  "rule": "Only traits observed in an approved series pool may be scheduled for that series."
+  "rule": "Collection series is determined by the printed base receipt, not by a reusable asset-pool label."
 }

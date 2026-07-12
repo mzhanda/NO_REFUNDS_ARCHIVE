@@ -1,0 +1,43 @@
+{
+  "name": "NRA #1090",
+  "description": "A layered archival receipt NFT from NO REFUNDS ARCHIVE.",
+  "image": "NRA_1090.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Token Pawn"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Legendary"
+    },
+    {
+      "trait_type": "Base Template",
+      "value": "B08_VAR_01"
+    },
+    {
+      "trait_type": "Damage",
+      "value": "DMG_TAPE_02"
+    },
+    {
+      "trait_type": "Stamp",
+      "value": "STAMP_STORE_CREDIT"
+    },
+    {
+      "trait_type": "Handwritten",
+      "value": "NOTE_SIDE_B"
+    },
+    {
+      "trait_type": "Overlay",
+      "value": "OVERLAY_FADED_INK_01"
+    },
+    {
+      "trait_type": "Special Feature",
+      "value": "Latent Memory"
+    },
+    {
+      "trait_type": "Feature Variant",
+      "value": "Video Store"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "NRA #2729",
+  "description": "A layered archival receipt NFT from NO REFUNDS ARCHIVE.",
+  "image": "NRA_2729.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Side B Records"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Base Template",
+      "value": "B06_VAR_04"
+    },
+    {
+      "trait_type": "Damage",
+      "value": "DMG_WATER_STAIN_03"
+    },
+    {
+      "trait_type": "Stamp",
+      "value": "STAMP_PAID_CASH"
+    },
+    {
+      "trait_type": "Handwritten",
+      "value": "NOTE_1138PM"
+    },
+    {
+      "trait_type": "Overlay",
+      "value": "OVERLAY_SCAN_NOISE_02"
+    }
+  ]
+}

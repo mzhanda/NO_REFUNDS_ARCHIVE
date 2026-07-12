@@ -10,20 +10,21 @@
   "approved_asset_manifest": "release/manifests/assets_manifest_final.csv",
   "seed": 19770821,
   "series": [
-    "Token Pawn",
-    "Side B Records",
-    "Night Owl Video",
-    "Midnight Diner",
     "Lucky 8 Gas & Motel",
-    "Sunset Mart"
+    "Midnight Diner",
+    "Night Owl Video",
+    "Pine Hollow General Store",
+    "Side B Records",
+    "Sunset Mart",
+    "Token Pawn"
   ],
   "rarity_distribution": {
-    "Common": 1999,
+    "Common": 1994,
+    "1/1": 6,
     "Uncommon": 833,
     "Rare": 350,
     "Legendary": 120,
-    "Ultra Rare": 30,
-    "1/1": 1
+    "Ultra Rare": 30
   },
   "output_policy": "never overwrite approved output",
   "approved_batches": [
@@ -36,5 +37,10 @@
     "Archive Label",
     "Signal Trace",
     "Time Imprint"
-  ]
+  ],
+  "one_of_one_policy": {
+    "count": 6,
+    "rule": "Six visual-store one-of-one editions; store identity follows the printed base receipt."
+  },
+  "series_identity_rule": "Series is determined by the store visibly printed on the base receipt."
 }

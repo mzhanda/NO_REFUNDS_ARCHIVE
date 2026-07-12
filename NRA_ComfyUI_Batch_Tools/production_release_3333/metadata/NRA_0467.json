@@ -1,0 +1,35 @@
+{
+  "name": "NRA #0467",
+  "description": "A layered archival receipt NFT from NO REFUNDS ARCHIVE.",
+  "image": "NRA_0467.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Lucky 8 Gas & Motel"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Uncommon"
+    },
+    {
+      "trait_type": "Base Template",
+      "value": "B07_VAR_02"
+    },
+    {
+      "trait_type": "Damage",
+      "value": "DMG_FOLD_02"
+    },
+    {
+      "trait_type": "Stamp",
+      "value": "STAMP_UNCLAIMED"
+    },
+    {
+      "trait_type": "Handwritten",
+      "value": "NOTE_HOLD_TAG"
+    },
+    {
+      "trait_type": "Overlay",
+      "value": "OVERLAY_FILM_GRAIN_02"
+    }
+  ]
+}

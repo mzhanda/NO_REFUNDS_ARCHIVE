@@ -1,0 +1,4 @@
+﻿check,result,details
+replacement_pngs_promoted,pass,"0418,0814,1566,3177"
+metadata_unchanged,pass,formal metadata retained
+approved_batches_untouched,pass,no writes to approved_0100 or approved_0333

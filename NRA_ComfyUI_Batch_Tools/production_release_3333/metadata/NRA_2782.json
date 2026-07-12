@@ -1,0 +1,43 @@
+{
+  "name": "NRA #2782",
+  "description": "A layered archival receipt NFT from NO REFUNDS ARCHIVE.",
+  "image": "NRA_2782.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Sunset Mart"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "1/1"
+    },
+    {
+      "trait_type": "Base Template",
+      "value": "B05_VAR_02"
+    },
+    {
+      "trait_type": "Damage",
+      "value": "DMG_WATER_STAIN_01"
+    },
+    {
+      "trait_type": "Stamp",
+      "value": "STAMP_CLOSED"
+    },
+    {
+      "trait_type": "Handwritten",
+      "value": "NOTE_LAST_SHIFT"
+    },
+    {
+      "trait_type": "Overlay",
+      "value": "OVERLAY_FADED_INK_01"
+    },
+    {
+      "trait_type": "Special Feature",
+      "value": "One of One Archive"
+    },
+    {
+      "trait_type": "Feature Variant",
+      "value": "Sunset Mart / Closing Register"
+    }
+  ]
+}
