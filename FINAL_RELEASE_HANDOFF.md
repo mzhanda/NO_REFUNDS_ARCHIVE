@@ -21,6 +21,14 @@ Updated: 2026-07-13
 - Rarity counts: Common 1994, Uncommon 833, Rare 350, Legendary 120, Ultra Rare 30, 1/1 6.
 - Series follow the store visibly printed on each base receipt; the production data contains seven visual-store series.
 
+## Website Content
+
+- Website content is final and matches the production release.
+- The website presents seven store series and ten trait categories: Material Pattern, Damage, Stamp, Handwritten, Overlay, Latent Memory, Recovered Format, Archive Reconstruction, Dual Recovery, and One of One Archive.
+- All site gallery images are archive samples, not pre-revealed token combinations.
+- Final traits will be revealed within three days after the collection is fully minted.
+- `props` is retired and must not return to public site copy or formal production.
+
 ## Critical Files
 
 - Plan: `data/auto_compose_plan_3333.csv`.

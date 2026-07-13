@@ -48,6 +48,15 @@ Series identity follows the store visibly printed on the base receipt.
 - Final validation: `release/production_3333/reports/final_production_validation_3333.csv`.
 - Final image integrity result: `release/production_3333/reports/rework_promotion_0418_0814_1566_3177.csv`.
 
+## Website Content Status
+
+- The public website content is complete and aligned with the final production vocabulary.
+- The archive contains seven visual store series: Lucky 8 Gas & Motel, Midnight Diner, Night Owl Video, Pine Hollow General Store, Side B Records, Sunset Mart, and Token Pawn.
+- The formal trait system contains ten categories: Material Pattern, Damage, Stamp, Handwritten, Overlay, Latent Memory, Recovered Format, Archive Reconstruction, Dual Recovery, and One of One Archive.
+- Website galleries show archive samples only; they do not reveal a token's final trait combination before reveal.
+- Final token traits will be revealed within three days after the collection is fully minted.
+- Props are retired from both the production vocabulary and public website copy. 1997 is not a fixed setting for the project.
+
 ## OpenSea Release State
 
 The collection will use OpenSea's mint/deployment workflow. No separate custom smart-contract deployment is currently required from this production repository.

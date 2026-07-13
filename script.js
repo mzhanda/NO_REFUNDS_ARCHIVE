@@ -294,12 +294,12 @@ const counterFiles = {
   mint: {
     kicker: "",
     title: "Mint Information",
-    intro: "The register keeps only the numbers that matter. Supply, claims, price, and the moment the sealed slips open.",
+    intro: "The register keeps only the numbers that matter. The gallery shows archive samples; every token's final traits remain sealed until reveal after mint.",
     cards: [
       { label: "", title: "3333 Receipts", body: "A fixed drawer of archived slips from places that no longer exist." },
       { label: "", title: "1111 Free Claims", body: "Early collectors may print one whitelist slip. One wallet, one claim." },
       { label: "", title: "0.0006 ETH", body: "After the first drawer closes, the remaining receipts move to the public counter." },
-      { label: "", title: "Reveal After Mint", body: "The sealed slips open with store, stamp, damage, handwriting, and surrounding evidence." }
+      { label: "", title: "Reveal After Mint", body: "Each token opens after mint with its final series and ten-trait combination." }
     ]
   },
   process: {
@@ -310,8 +310,7 @@ const counterFiles = {
       { label: "", title: "Intake", body: "Receipts are recovered, scanned, numbered, and placed by the store they came from." },
       { label: "", title: "Whitelist Tape", body: "The first collectors follow the archive signal and print one claim from the terminal." },
       { label: "", title: "Public Counter", body: "The remaining receipts are left on the counter until the drawer is empty." },
-      { label: "", title: "Reveal", body: "Each slip shows its found format, paper damage, stamp, handwriting, and quiet evidence." },
-      { label: "", title: "After Hours", body: "More archive logs, recovered stories, collector files, and printable-style records may surface later." }
+      { label: "", title: "Reveal", body: "Each token opens after mint with its final series and ten-trait archive combination." }
     ]
   },
   faq: {
@@ -323,16 +322,17 @@ const counterFiles = {
       { label: "", title: "Are the stores real?", body: "No. All store names, items, locations, and stories are fictional." },
       { label: "", title: "Why receipts?", body: "A receipt is cheap paper until it becomes the last proof that a moment happened." },
       { label: "", title: "How to join?", body: "Follow the archive, log the latest receipt, and submit your wallet through the VCR terminal." },
-      { label: "", title: "When reveal?", body: "The sealed files open after mint, one archive slip at a time." }
+      { label: "", title: "When reveal?", body: "All token traits will be revealed within three days after the collection is fully minted." }
     ]
   },
   catalog: {
     kicker: "",
     title: "The Things Left Behind",
-    intro: "Every store series holds its own language. Six closed doors, and what they left on the counter.",
+    intro: "Every store series holds its own language. Seven closed doors, and what they left on the counter.",
     cards: [
       { label: "Midnight Diner", title: "Black Coffee. Table 7.", body: "Two cups. Night shift. Someone left before sunrise. The receipt kept the stain." },
       { label: "Night Owl Video", title: "VHS Rental. Late Fee.", body: "Be kind rewind. The tape was never returned. The final broadcast still owes time." },
+      { label: "Pine Hollow General Store", title: "Dry Goods. Open Credit.", body: "A small town ledger stayed open after the road forgot where it led." },
       { label: "Lucky 8 Gas & Motel", title: "Full Tank. Room 8.", body: "Highway 8. One night. Paid cash. The key was never returned to the front desk." },
       { label: "Side B Records", title: "Used LP. Last Copy.", body: "Basement level. Cat. No. B-0222. All sales are final. The B-side still plays." },
       { label: "Sunset Mart", title: "Cashier 03. 11:47 PM.", body: "Lost change. Candy bar. The store closed on May 31. The receipt survived." },

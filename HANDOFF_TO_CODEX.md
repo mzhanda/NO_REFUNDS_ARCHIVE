@@ -7,17 +7,21 @@
 - ComfyUI may create raw assets only. It must not generate final collection images.
 - Formal production assets are governed by `release/manifests/assets_manifest_final.csv`.
 
-## Current gate
-`data/auto_compose_plan_3333.csv` has 3333 deterministic, validated planned rows. It is a plan only; the full 3333 image batch has not been composed.
+## Current Status
 
-The next required human gate is:
-`staging/production_sample_0050/gallery/review_production_sample_0050.html`
-
-The 50 images come from the formal 3333 plan and cover every series and rarity, including special features. Review with the standard gallery controls, export `review_decisions_0050.csv`, then regenerate only rows marked `redo`.
+- Final production is complete: 3,333 PNG images and 3,333 ERC-721-compatible metadata JSON files exist in `release/production_3333/`.
+- The 50-image production sample, the six 1/1 images, and the completed 3333-image batch have all passed human review.
+- Final validation reports 0 broken PNG files and 0 duplicate combination fingerprints.
+- The final rarity distribution is Common 1994, Uncommon 833, Rare 350, Legendary 120, Ultra Rare 30, and 1/1 6.
+- Series identity follows the actual store printed on the receipt. The seven series are Lucky 8 Gas & Motel, Midnight Diner, Night Owl Video, Pine Hollow General Store, Side B Records, Sunset Mart, and Token Pawn.
+- The formal trait system contains ten categories: Material Pattern, Damage, Stamp, Handwritten, Overlay, Latent Memory, Recovered Format, Archive Reconstruction, Dual Recovery, and One of One Archive.
+- Website content is complete. It shows archive samples rather than final token combinations; final traits reveal within three days after the collection is fully minted.
+- The project is ready for OpenSea upload, deployment, and mint configuration. Do not regenerate or alter final PNG or metadata output without a new approval gate.
 
 ## Safety rules
 1. Never overwrite `release/approved_0100/` or `release/approved_0333/`.
-2. Never compose all 3333 before the 50-image sample is approved.
-3. Use only assets marked `approved` in `assets_manifest_final.csv`.
-4. Do not revive props, Archive Label, Signal Trace, or Time Imprint without a separate approved art direction.
-5. Keep special features receipt-local, with their existing alignment validation approach.
+2. Do not overwrite final production output or regenerate it without a new approved production gate.
+3. Keep production metadata and final PNGs unchanged after marketplace upload is finalized.
+4. Use only assets marked `approved` in `assets_manifest_final.csv`.
+5. Do not revive props, Archive Label, Signal Trace, or Time Imprint without a separate approved art direction.
+6. Keep special features receipt-local, with their existing alignment validation approach.
